@@ -1,8 +1,8 @@
 # Team Valerin:  Valeria Velásquez, Katerina Holan, and Devin Molnau
 ## Group Project EEOB 546X
-##Instructions
+## Instructions
 
-###Project
+### Project
 
 1. Downloading, inspecting, and describing the data utilized in the study.
 2. Processing the data if necessary to format them for the analysis the group has chosen to reproduce.
