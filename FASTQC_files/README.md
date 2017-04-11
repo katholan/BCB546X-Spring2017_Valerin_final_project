@@ -1,5 +1,6 @@
 
 #FASTQC_files for inspecting raw RNA sequencing data
+
 *Author: Valeria Velasquez Zapata*
 
 This folder contains a serie of FASTQC analyses that were made in order to show an example of the quality assesing and trimming that the authirs of the paper have done before obtaining the counting data. 
