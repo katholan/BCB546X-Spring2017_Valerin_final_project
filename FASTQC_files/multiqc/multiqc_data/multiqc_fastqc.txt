@@ -1,0 +1,8 @@
+Sample	per_base_n_content	overrepresented_sequences	sequence_duplication_levels	sequence_length_distribution	Encoding	File type	Sequence length	per_base_gc_content	Filename	per_sequence_quality_scores	basic_statistics	kmer_content	%GC	per_sequence_gc_content	per_base_sequence_content	avg_sequence_length	per_base_sequence_quality	Total Sequences	Filtered Sequences
+SRR1639282	pass	pass	fail	warn	Sanger / Illumina 1.9	Conventional base calls	100-200	fail	SRR1639282_trimmed.fastq	pass	pass	warn	46.0	warn	fail	191.36201611862424	pass	11142142.0	0.0
+SRR1639282_10bp	pass	pass	fail	warn	Sanger / Illumina 1.9	Conventional base calls	90-190	warn	SRR1639282_10bp_trimmed.fastq	pass	pass	pass	46.0	warn	pass	181.36201611862424	pass	11142142.0	0.0
+SRR1642915	pass	warn	fail	pass	Sanger / Illumina 1.9	Conventional base calls	202.0	fail	SRR1642915.fastq	pass	pass	warn	47.0	warn	fail	202.0	pass	21213480.0	0.0
+SRR1642915_AdapTrimmed	pass	warn	fail	fail	Sanger / Illumina 1.9	Conventional base calls	0-202	fail	SRR1642915_AdapTrimmed.fastq	pass	pass	warn	47.0	fail	fail	198.57985125495676	pass	21213480.0	0.0
+SRR1642915_AdapTrimmed2	pass	warn	fail	fail	Sanger / Illumina 1.9	Conventional base calls	0-202	fail	SRR1642915_AdapTrimmed2.fastq	pass	pass	warn	47.0	fail	fail	198.57760673873406	pass	21213480.0	0.0
+SRR1642915_Adapt_Quali	pass	fail	fail	fail	Sanger / Illumina 1.9	Conventional base calls	0-202	fail	SRR1642915_Adapt_Quali_trimmed.fastq	pass	pass	warn	47.0	fail	fail	190.45469616489137	pass	21213480.0	0.0
+SRR1642915_Adapt_Quali_9bp	pass	fail	fail	fail	Sanger / Illumina 1.9	Conventional base calls	0-193	warn	SRR1642915_Adapt_Quali_9bp_trimmed.fastq	pass	pass	pass	47.0	warn	warn	181.68874272396607	pass	21213480.0	0.0
