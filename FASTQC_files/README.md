@@ -1,5 +1,5 @@
 
-#FASTQC_files for inspecting raw RNA sequencing data
+# FASTQC_files for inspecting raw RNA sequencing data
 
 *Author: Valeria Velasquez Zapata*
 
