@@ -112,7 +112,7 @@ legend(3.5, 2.57, legend=c("Line 8A", "Line 8B","Line 10", "Line 9"), col= c("bl
 
 
 ###make plots pretty/colored/etc
-###compare gene lists from comparisons to paper gene lists (detags)
+###compare gene lists from comparisons to paper gene lists (detags), extract gene names that are different
 ###venn diagram of de genes
 ###heatmap of total DEGs, as well as smaller heatmaps for comparisons??
 lrt_FSupM <- glmLRT(fit, coef=4)
@@ -137,7 +137,7 @@ FDR_MSupM <- p.adjust(lrt_MSupM$table$PValue, method="fdr")
 sum(FDR_MSupM < 0.05)
 
 ###total number of unique DEGs in our analysis
-detags <- c(detags_FM, detags_FsupM, detags_MsupM)
+detags <- c(detags_FM, detags_FSupM, detags_MSupM)
 detags_df <- as.data.frame(detags)
 uniq_detags <- unique(detags_df)
 colnames(uniq_detags) <- "gene_id"
@@ -153,4 +153,4 @@ uniq_paper_detags <- unique(paper_detags)
 
 ###comparing paper DEGs to our DEGs
 total_detags <- rbind(uniq_detags, uniq_paper_detags) #931
-same_detags <- total_detags != unique(total_detags) #615
+compare_detags <- unique(total_detags) #615
