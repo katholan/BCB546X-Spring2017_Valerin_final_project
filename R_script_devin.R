@@ -28,40 +28,57 @@ rownames(design) <- colnames(cd)
 design
 
 #design matrix by by sex
-rm(design)
-sex<-factor(c("XX","XY","YY","XX","XY","YY","XX","XY","YY","XX","XY"))
-data.frame(Sample=colnames(cd),sex)
-design<-model.matrix(~0+sex)
-rownames(design) <- colnames(cd)
-design
+#rm(design)
+#sex<-factor(c("XX","XY","YY","XX","XY","YY","XX","XY","YY","XX","XY"))
+#data.frame(Sample=colnames(cd),sex)
+#design<-model.matrix(~0+sex)
+#rownames(design) <- colnames(cd)
+#design
 
 #estimates dispersion
 cd <- estimateDisp(cd, design)
 #gits using glm QL fit (recommended glm)
 fit <- glmQLFit(cd, design)
-plotQLDisp(fit)
+#plotQLDisp(fit)
 
-qlf<-glmQLFTest(fit,coef=5:6)
-FDR<-p.adjust(qlf$table$PValue, method="BH")
-sum(FDR<0.05)
-summary(decideTests(qlf))
+lrt_FSupM <- glmLRT(fit, coef=6)  #Female VS Supermale
+summary(de_FemvsSupMal <- decideTestsDGE(lrt_FSupM, adjust.method="fdr"))
+FDR_FSupM <- p.adjust(lrt_FSupM$table$PValue, method="fdr") 
+sum(FDR_FSupM < 0.05)
 
+detags <- rownames(cd)[as.logical(de_FemvsSupMal)]
+plotSmear(lrt_FSupM, de_FemvsSupMal.tags=detags)
+abline(h=c(-1, 1))
 
-qlf<-glmQLFTest(fit, contrast=c(0,0,0,-1,1)) #male VS supermale
+lrt_FM <- glmLRT(fit, coef=5) #female VS male
+summary(de_FemvsMal <- decideTestsDGE(lrt_FM, adjust.method="fdr"))
+FDR_FMale<-p.adjust(lrt_FM$table$PValue,method="fdr")
+sum(FDR_FMale<0.05)
+plotMD(lrt_FM)
 
-topTags(qlf)
-plotMD(qlf)
+lrt_MSupM <- glmLRT(fit, contrast=c(0,0,0,0,-1,1))
+summary(de_MalvsSupMal <- decideTestsDGE(lrt_MSupM, adjust.method="fdr"))
+FDR_MSupMale<-p.adjust(lrt_MSupM$table$PValue,method="fdr")
+sum(FDR_MSupMale<0.05)
 
-qlf2<-glmQLFTest(fit, coef=5) #female vs male
-FDR2<-p.adjust(qlf2$table$PValue, method="BH")
-sum(FDR<0.05)
-topTags(qlf2)
-plotMD(qlf2)
-
-qlf3<-glmQLFTest(fit, coef=6)
-FDR3<-p.adjust(qlf3$table$PValue, method="BH")
-sum(FDR<0.05)
-topTags(qlf3)
-plotMD(qlf3)
-
+#qlf<-glmQLFTest(fit,coef=5:6)
+#FDR<-p.adjust(qlf$table$PValue, method="BH")
+#sum(FDR<0.05)
+#summary(decideTests(qlf))
+#qlf<-glmQLFTest(fit, contrast=c(0,0,0,-1,1)) #male VS supermale
+#topTags(qlf)
+#plotMD(qlf)
+#design
+#qlf2<-glmQLFTest(fit, coef=3)#female vs male
+#FDR2<-p.adjust(qlf2$table$PValue, method="fdr")
+#summary(de_FemaleVSMale <- decideTestsDGE(qlf2, adjust.method="fdr"))
+#FDR_FSupM <- p.adjust(qlf2$table$PValue, method="fdr") 
+#sum(FDR2<0.05)
+#topTags(qlf2)
+#plotMD(qlf2)
+#qlf3<-glmQLFTest(fit, coef=6)
+#FDR3<-p.adjust(qlf3$table$PValue, method="BH")
+#sum(FDR<0.05)
+#topTags(qlf3)
+#plotMD(qlf3)
 
