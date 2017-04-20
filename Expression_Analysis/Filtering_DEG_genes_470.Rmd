@@ -35,8 +35,8 @@ nrow(cd)
 ```
 Then we can create the groups that we are going to use for the experimental design
 ```{r}
-group_line<-c(88,88,88,89,89,89,103,103,103,9,9)
-group_sex <- c("Female", "Male",	"Super Male",	"Female",	"Male",	"Super Male",	"Female",	"Male",	"Super Male",	"Female",	"Male")
+group_line<-factor(c(88,88,88,89,89,89,103,103,103,9,9))
+group_sex <- factor(c("Female", "Male",	"Super Male",	"Female",	"Male",	"Super Male",	"Female",	"Male",	"Super Male",	"Female",	"Male"))
 
 ```
 
@@ -46,6 +46,8 @@ Then we build the design as an additive model, and estimate the three types os d
 design <- model.matrix(~group_line + group_sex)
 rownames(design) <- colnames(cd)
 
+#cd <- estimateDisp(cd, design)
+
 cd <- estimateGLMCommonDisp(cd, design)
 cd <- estimateGLMTrendedDisp(cd, design)
 cd <- estimateGLMTagwiseDisp(cd, design)
@@ -54,10 +56,18 @@ fit <- glmFit(cd, design)
 
 ```
 
-now the comparisons fem vs sup male and an example of a plot
+Let`s explore a little more the design object. It indicates the experimental design we are using to analyze the data
 
 ```{r}
-lrt_FSupM <- glmLRT(fit, coef=4)
+design
+```
+
+Therefore, the model takes the intercept as the baseline (Female phenotype), and then each coeficient in the desing corresponds to: (2) line88, (3) line89, (4) line103, (5) Male, (6) Super Male. 
+
+Now the comparisons fem vs sup male and an example of a plot (taking the coef=6 vs 1-female, default)
+
+```{r}
+lrt_FSupM <- glmLRT(fit, coef=6)
 summary(de_FemvsSupMal <- decideTestsDGE(lrt_FSupM, adjust.method="fdr"))
 FDR_FSupM <- p.adjust(lrt_FSupM$table$PValue, method="fdr")
 sum(FDR_FSupM < 0.05)
@@ -70,19 +80,21 @@ abline(h=c(-1, 1))
 female vs super male
 
 ```{r}
-lrt_FM <- glmLRT(fit, coef=3)
+lrt_FM <- glmLRT(fit, coef=5)
 summary(de_FemvsMal <- decideTestsDGE(lrt_FM, adjust.method="fdr"))
+
+FDR_FM <- p.adjust(lrt_FM$table$PValue, method="fdr")
+sum(FDR_FM < 0.05)
 ```
 male vs sup male
 
 
 ```{r}
-lrt_MSupM <- glmLRT(fit, contrast=c(0,0,-1,1))
+lrt_MSupM <- glmLRT(fit, contrast=c(0,0,0,0,-1,1))
 summary(de_MalvsSupMal <- decideTestsDGE(lrt_MSupM, adjust.method="fdr"))
+
+FDR_MSupM <- p.adjust(lrt_MSupM$table$PValue, method="fdr")
+sum(FDR_MSupM < 0.05)
 ```
 
 If we sum up all the comparisons results we get 470 DEG
-
-
-
-
