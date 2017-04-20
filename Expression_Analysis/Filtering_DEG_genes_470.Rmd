@@ -78,7 +78,6 @@ male vs sup male
 
 ```{r}
 lrt_MSupM <- glmLRT(fit, contrast=c(0,0,-1,1))
-#lrt_MSupM <- glmQLFit(fit, contrast=c(0,0,-1,1))
 summary(de_MalvsSupMal <- decideTestsDGE(lrt_MSupM, adjust.method="fdr"))
 ```
 
