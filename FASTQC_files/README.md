@@ -1,18 +1,17 @@
-
 # FASTQC_files for inspecting raw RNA sequencing data
 
 *Author: Valeria Velasquez Zapata*
 
-This folder contains a serie of FASTQC analyses that were made in order to show an example of the quality assesing and trimming that the authirs of the paper have done before obtaining the counting data. 
+This folder contains a serie of FASTQC analyses that were made in order to show an example of the quality assesing and trimming that the authors of the paper have done before obtaining the counting data from RSEM. 
 ### Getting data
 
-The data is contained in the NCBI database, so, in order to get it we can download an configure toolkit from ncbi
+The data is contained in the NCBI database, so, in order to get it we can download and configure toolkit from ncbi
 
     $ wget "ftp://ftp-trace.ncbi.nlm.nih.gov/sra/sdk/current/sratoolkit.current-centos_linux64.tar.gz"
 
     $ tar -xzf sratoolkit.current-centos_linux64.tar.gz
 
-After downloading and decompressing it we can get the raw sequences by calling fastq-dump on the SRA experiment number, as we can see in this web [page](https://www.ncbi.nlm.nih.gov/sra?linkname=bioproject_sra_all&from_uid=259909):
+After downloading and decompressing it we can get the raw sequences by calling fastq-dump on the SRA experiment number, as we can see in this web [page](https://www.ncbi.nlm.nih.gov/sra?linkname=bioproject_sra_all&from_uid=259909). For this analysis we are just downloading 2 datapoints, just as an example:
 
 Asparagus officinalis line 2 XX female postmeiotic bud(SRR1642915)
 
@@ -38,7 +37,7 @@ To run [FASTQC](http://wiki.bits.vib.be/index.php/Linux_command_line#Automating_
     $ ./FastQC/fastqc SRR1642915.fastq
     $ ./FastQC/fastqc SRR1639282.fastq
 
-After looking at the results it was possible to see that both dataset need to be trimmed. In order to achieve that we are using CUTADAPT. For the SRR1642915 datset we will perform a quality, kmer and adapter trim, since those were the specific issues that we found after the FASTQC analysis. Then, for the SRR1639282 dataset we will perform a quality and kmer trimming.
+After looking at the results it was possible to see that both datasets need to be trimmed. In order to achieve that we are using CUTADAPT. For the SRR1642915 datset we will perform a quality, kmer and adapter trim, since those were the specific issues that we found after the FASTQC analysis. Then, for the SRR1639282 dataset we will perform a quality and kmer trimming.
 
 ### Installing CUTADAPT
 
@@ -58,10 +57,15 @@ Then we can trim out the kmers, which are localized at the beginning of the sequ
 
     $ cutadapt -u 10 -o SRR1639282_Quali_10bp_trimmed.fastq SRR1639282_trimmed.fastq
 
+After this step we should make sure that the empty and too short reads are removed, and for that purpose we use the -m option to 20 bp
+
+    $ cutadapt -m 20 -o SRR1639282_Quali_10bp_noShortReads_trimmed.fastq  SRR1639282_Quali_10bp_trimmed.fastq 
+
 Each of those files can be analyzed by FASTQC angain, in order to see the read quality improvement:
 
     $ ./FastQC/fastqc SRR1639282_trimmed.fastq
-    $ ./FastQC/fastqc SRR1639282_Quali_10bp_trimmed.fastq
+    $ ./FastQC/fastqc SRR1639282_Quali_10bp_trimmed.fastq 
+	$ ./FastQC/fastqc SRR1639282_Quali_10bp_noShortReads_trimmed.fastq
 
 After looking at the results we could see that the reads were sucessfully cleaned and ready for mapping to the transcriptome data.
 
@@ -75,12 +79,29 @@ Then we can trim them by quality and remove the kmers
     $ cutadapt -q 20 -o SRR1642915_Adapt_Quali_trimmed.fastq SRR1642915_AdapTrimmed2.fastq 
     $ cutadapt -u 9 -o SRR1642915_Adapt_Quali_9bp_trimmed.fastq SRR1642915_Adapt_Quali_9bp_trimmed.fastq
 
+And the too short reads
+
+	$ cutadapt -m 20 -o SRR1642915_Adapt_Quali_9bp_noShortReads_trimmed.fastq  SRR1642915_Adapt_Quali_9bp_trimmed.fastq 
+
+We can see that 3% of the reads were eliminated
+
+=== Summary ===
+
+Total reads processed:              21,213,480
+Reads with adapters:                         0 (0.0%)
+Reads that were too short:             636,509 (3.0%)
+Reads written (passing filters):    20,576,971 (97.0%)
+
+Total basepairs processed: 3,870,371,787 bp
+Total written (filtered):  3,868,445,366 bp (100.0%)
+
 Finally, we re run the FASTQC analysis and we can track the changes of each trimming procedure:
 
-    $ ./fastqc SRR1642915_AdapTrimmed.fastq
-    $ ./fastqc SRR1642915_AdapTrimmed2.fastq
-    $ ./fastqc SRR1642915_Adapt_Quali_trimmed.fastq
-    $ ./fastqc SRR1642915_Adapt_Quali_9bp_trimmed.fastq
+    $ ./FastQC/fastqc SRR1642915_AdapTrimmed.fastq
+    $ ./FastQC/fastqc SRR1642915_AdapTrimmed2.fastq
+    $ ./FastQC/fastqc SRR1642915_Adapt_Quali_trimmed.fastq
+    $ ./FastQC/fastqc SRR1642915_Adapt_Quali_9bp_trimmed.fastq
+	$ ./FastQC/fastqc SRR1642915_Adapt_Quali_9bp_noShortReads_trimmed.fastq
 
 ### Using MUlTIQC to summarize the results
 
