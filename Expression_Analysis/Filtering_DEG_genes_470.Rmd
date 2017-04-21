@@ -17,8 +17,6 @@ library(edgeR)
 Then we read the database 
 
 ```{r}
-setwd("C:/Users/Devin/Documents/GradSchool/IowaState/EEOB_546X/BCB546X-Spring2017_Valerin_final_project")
-getwd()
 counts_data<-read.delim("Asparagus.RSEM_genecounts.txt", check.names=FALSE, stringsAsFactors = FALSE) 
 ```
 
