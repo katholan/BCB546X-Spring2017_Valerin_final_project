@@ -1,0 +1,2967 @@
+rsem-synthesis-reference-transcripts asparagus_ref 0 1 /home/vvelasqz/BCB546_final_project/data/rsem/asparagus_annotation.txt /home/vvelasqz/BCB546_final_project/data/bowtie_analysis/asparagus_transcriptome.fa
+Transcript Information File is generated!
+Group File is generated!
+Extracted Sequences File is generated!
+
+rsem-preref asparagus_ref.transcripts.fa 1 asparagus_ref -l 125
+Refs.makeRefs finished!
+Refs.saveRefs finished!
+asparagus_ref.idx.fa is generated!
+asparagus_ref.n2g.idx.fa is generated!
+
+bowtie2-build -f asparagus_ref.idx.fa asparagus_ref
+Settings:
+  Output files: "asparagus_ref.*.bt2"
+  Line rate: 6 (line is 64 bytes)
+  Lines per side: 1 (side is 64 bytes)
+  Offset rate: 4 (one in 16)
+  FTable chars: 10
+  Strings: unpacked
+  Max bucket size: default
+  Max bucket size, sqrt multiplier: default
+  Max bucket size, len divisor: 4
+  Difference-cover sample period: 1024
+  Endianness: little
+  Actual local endianness: little
+  Sanity checking: disabled
+  Assertions: disabled
+  Random seed: 0
+  Sizeofs: void*:8, int:4, long:8, size_t:8
+Input files DNA, FASTA:
+  asparagus_ref.idx.fa
+Building a SMALL index
+Reading reference sizes
+  Time reading reference sizes: 00:00:04
+Calculating joined length
+Writing header
+Reserving space for joined string
+Joining reference sequences
+  Time to join reference sequences: 00:00:03
+bmax according to bmaxDivN setting: 94459363
+Using parameters --bmax 70844523 --dcv 1024
+  Doing ahead-of-time memory usage test
+  Passed!  Constructing with these parameters: --bmax 70844523 --dcv 1024
+Constructing suffix-array element generator
+Building DifferenceCoverSample
+  Building sPrime
+  Building sPrimeOrder
+  V-Sorting samples
+  V-Sorting samples time: 00:00:33
+  Allocating rank array
+  Ranking v-sort output
+  Ranking v-sort output time: 00:00:04
+  Invoking Larsson-Sadakane on ranks
+  Invoking Larsson-Sadakane on ranks time: 00:00:04
+  Sanity-checking and returning
+Building samples
+Reserving space for 12 sample suffixes
+Generating random suffixes
+QSorting 12 sample offsets, eliminating duplicates
+QSorting sample offsets, eliminating duplicates time: 00:00:00
+Multikey QSorting 12 samples
+  (Using difference cover)
+  Multikey QSorting samples time: 00:00:00
+Calculating bucket sizes
+  Binary sorting into buckets
+  10%
+  20%
+  30%
+  40%
+  50%
+  60%
+  70%
+  80%
+  90%
+  100%
+  Binary sorting into buckets time: 00:00:12
+Splitting and merging
+  Splitting and merging time: 00:00:00
+Avg bucket size: 4.72297e+07 (target: 70844522)
+Converting suffix-array elements to index image
+Allocating ftab, absorbFtab
+Entering Ebwt loop
+Getting block 1 of 8
+  Reserving size (70844523) for bucket
+  Calculating Z arrays
+  Calculating Z arrays time: 00:00:00
+  Entering block accumulator loop:
+  10%
+  20%
+  30%
+  40%
+  50%
+  60%
+  70%
+  80%
+  90%
+  100%
+  Block accumulator loop time: 00:00:04
+  Sorting block of length 45045785
+  (Using difference cover)
+  Sorting block time: 00:02:07
+Returning block of 45045786
+Getting block 2 of 8
+  Reserving size (70844523) for bucket
+  Calculating Z arrays
+  Calculating Z arrays time: 00:00:00
+  Entering block accumulator loop:
+  10%
+  20%
+  30%
+  40%
+  50%
+  60%
+  70%
+  80%
+  90%
+  100%
+  Block accumulator loop time: 00:00:03
+  Sorting block of length 39831282
+  (Using difference cover)
+  Sorting block time: 00:01:38
+Returning block of 39831283
+Getting block 3 of 8
+  Reserving size (70844523) for bucket
+  Calculating Z arrays
+  Calculating Z arrays time: 00:00:00
+  Entering block accumulator loop:
+  10%
+  20%
+  30%
+  40%
+  50%
+  60%
+  70%
+  80%
+  90%
+  100%
+  Block accumulator loop time: 00:00:04
+  Sorting block of length 51012118
+  (Using difference cover)
+  Sorting block time: 00:02:29
+Returning block of 51012119
+Getting block 4 of 8
+  Reserving size (70844523) for bucket
+  Calculating Z arrays
+  Calculating Z arrays time: 00:00:00
+  Entering block accumulator loop:
+  10%
+  20%
+  30%
+  40%
+  50%
+  60%
+  70%
+  80%
+  90%
+  100%
+  Block accumulator loop time: 00:00:04
+  Sorting block of length 30352285
+  (Using difference cover)
+  Sorting block time: 00:01:28
+Returning block of 30352286
+Getting block 5 of 8
+  Reserving size (70844523) for bucket
+  Calculating Z arrays
+  Calculating Z arrays time: 00:00:00
+  Entering block accumulator loop:
+  10%
+  20%
+  30%
+  40%
+  50%
+  60%
+  70%
+  80%
+  90%
+  100%
+  Block accumulator loop time: 00:00:05
+  Sorting block of length 48816778
+  (Using difference cover)
+  Sorting block time: 00:02:30
+Returning block of 48816779
+Getting block 6 of 8
+  Reserving size (70844523) for bucket
+  Calculating Z arrays
+  Calculating Z arrays time: 00:00:00
+  Entering block accumulator loop:
+  10%
+  20%
+  30%
+  40%
+  50%
+  60%
+  70%
+  80%
+  90%
+  100%
+  Block accumulator loop time: 00:00:05
+  Sorting block of length 70745737
+  (Using difference cover)
+  Sorting block time: 00:03:37
+Returning block of 70745738
+Getting block 7 of 8
+  Reserving size (70844523) for bucket
+  Calculating Z arrays
+  Calculating Z arrays time: 00:00:00
+  Entering block accumulator loop:
+  10%
+  20%
+  30%
+  40%
+  50%
+  60%
+  70%
+  80%
+  90%
+  100%
+  Block accumulator loop time: 00:00:06
+  Sorting block of length 38946621
+  (Using difference cover)
+  Sorting block time: 00:02:31
+Returning block of 38946622
+Getting block 8 of 8
+  Reserving size (70844523) for bucket
+  Calculating Z arrays
+  Calculating Z arrays time: 00:00:00
+  Entering block accumulator loop:
+  10%
+  20%
+  30%
+  40%
+  50%
+  60%
+  70%
+  80%
+  90%
+  100%
+  Block accumulator loop time: 00:00:05
+  Sorting block of length 53086839
+  (Using difference cover)
+  Sorting block time: 00:03:29
+Returning block of 53086840
+Exited Ebwt loop
+fchr[A]: 0
+fchr[C]: 113603413
+fchr[G]: 188607211
+fchr[T]: 264440203
+fchr[$]: 377837452
+Exiting Ebwt::buildToDisk()
+Returning from initFromVector
+Wrote 141326715 bytes to primary EBWT file: asparagus_ref.1.bt2
+Wrote 94459368 bytes to secondary EBWT file: asparagus_ref.2.bt2
+Re-opening _in1 and _in2 as input streams
+Returning from Ebwt constructor
+Headers:
+    len: 377837452
+    bwtLen: 377837453
+    sz: 94459363
+    bwtSz: 94459364
+    lineRate: 6
+    offRate: 4
+    offMask: 0xfffffff0
+    ftabChars: 10
+    eftabLen: 20
+    eftabSz: 80
+    ftabLen: 1048577
+    ftabSz: 4194308
+    offsLen: 23614841
+    offsSz: 94459364
+    lineSz: 64
+    sideSz: 64
+    sideBwtSz: 48
+    sideBwtLen: 192
+    numSides: 1967904
+    numLines: 1967904
+    ebwtTotLen: 125945856
+    ebwtTotSz: 125945856
+    color: 0
+    reverse: 0
+Total time for call to driver() for forward index: 00:22:00
+Reading reference sizes
+  Time reading reference sizes: 00:00:03
+Calculating joined length
+Writing header
+Reserving space for joined string
+Joining reference sequences
+  Time to join reference sequences: 00:00:02
+  Time to reverse reference sequence: 00:00:01
+bmax according to bmaxDivN setting: 94459363
+Using parameters --bmax 70844523 --dcv 1024
+  Doing ahead-of-time memory usage test
+  Passed!  Constructing with these parameters: --bmax 70844523 --dcv 1024
+Constructing suffix-array element generator
+Building DifferenceCoverSample
+  Building sPrime
+  Building sPrimeOrder
+  V-Sorting samples
+  V-Sorting samples time: 00:00:48
+  Allocating rank array
+  Ranking v-sort output
+  Ranking v-sort output time: 00:00:06
+  Invoking Larsson-Sadakane on ranks
+  Invoking Larsson-Sadakane on ranks time: 00:00:04
+  Sanity-checking and returning
+Building samples
+Reserving space for 12 sample suffixes
+Generating random suffixes
+QSorting 12 sample offsets, eliminating duplicates
+QSorting sample offsets, eliminating duplicates time: 00:00:00
+Multikey QSorting 12 samples
+  (Using difference cover)
+  Multikey QSorting samples time: 00:00:00
+Calculating bucket sizes
+  Binary sorting into buckets
+  10%
+  20%
+  30%
+  40%
+  50%
+  60%
+  70%
+  80%
+  90%
+  100%
+  Binary sorting into buckets time: 00:00:17
+Splitting and merging
+  Splitting and merging time: 00:00:00
+Split 2, merged 7; iterating...
+  Binary sorting into buckets
+  10%
+  20%
+  30%
+  40%
+  50%
+  60%
+  70%
+  80%
+  90%
+  100%
+  Binary sorting into buckets time: 00:00:13
+Splitting and merging
+  Splitting and merging time: 00:00:00
+Split 1, merged 1; iterating...
+  Binary sorting into buckets
+  10%
+  20%
+  30%
+  40%
+  50%
+  60%
+  70%
+  80%
+  90%
+  100%
+  Binary sorting into buckets time: 00:00:15
+Splitting and merging
+  Splitting and merging time: 00:00:00
+Avg bucket size: 4.72297e+07 (target: 70844522)
+Converting suffix-array elements to index image
+Allocating ftab, absorbFtab
+Entering Ebwt loop
+Getting block 1 of 8
+  Reserving size (70844523) for bucket
+  Calculating Z arrays
+  Calculating Z arrays time: 00:00:00
+  Entering block accumulator loop:
+  10%
+  20%
+  30%
+  40%
+  50%
+  60%
+  70%
+  80%
+  90%
+  100%
+  Block accumulator loop time: 00:00:04
+  Sorting block of length 18872509
+  (Using difference cover)
+  Sorting block time: 00:01:10
+Returning block of 18872510
+Getting block 2 of 8
+  Reserving size (70844523) for bucket
+  Calculating Z arrays
+  Calculating Z arrays time: 00:00:00
+  Entering block accumulator loop:
+  10%
+  20%
+  30%
+  40%
+  50%
+  60%
+  70%
+  80%
+  90%
+  100%
+  Block accumulator loop time: 00:00:06
+  Sorting block of length 53122555
+  (Using difference cover)
+  Sorting block time: 00:03:24
+Returning block of 53122556
+Getting block 3 of 8
+  Reserving size (70844523) for bucket
+  Calculating Z arrays
+  Calculating Z arrays time: 00:00:00
+  Entering block accumulator loop:
+  10%
+  20%
+  30%
+  40%
+  50%
+  60%
+  70%
+  80%
+  90%
+  100%
+  Block accumulator loop time: 00:00:05
+  Sorting block of length 29297158
+  (Using difference cover)
+  Sorting block time: 00:01:58
+Returning block of 29297159
+Getting block 4 of 8
+  Reserving size (70844523) for bucket
+  Calculating Z arrays
+  Calculating Z arrays time: 00:00:00
+  Entering block accumulator loop:
+  10%
+  20%
+  30%
+  40%
+  50%
+  60%
+  70%
+  80%
+  90%
+  100%
+  Block accumulator loop time: 00:00:07
+  Sorting block of length 66954835
+  (Using difference cover)
+  Sorting block time: 00:04:18
+Returning block of 66954836
+Getting block 5 of 8
+  Reserving size (70844523) for bucket
+  Calculating Z arrays
+  Calculating Z arrays time: 00:00:00
+  Entering block accumulator loop:
+  10%
+  20%
+  30%
+  40%
+  50%
+  60%
+  70%
+  80%
+  90%
+  100%
+  Block accumulator loop time: 00:00:06
+  Sorting block of length 69999835
+  (Using difference cover)
+  Sorting block time: 00:04:10
+Returning block of 69999836
+Getting block 6 of 8
+  Reserving size (70844523) for bucket
+  Calculating Z arrays
+  Calculating Z arrays time: 00:00:00
+  Entering block accumulator loop:
+  10%
+  20%
+  30%
+  40%
+  50%
+  60%
+  70%
+  80%
+  90%
+  100%
+  Block accumulator loop time: 00:00:06
+  Sorting block of length 51286377
+  (Using difference cover)
+  Sorting block time: 00:02:19
+Returning block of 51286378
+Getting block 7 of 8
+  Reserving size (70844523) for bucket
+  Calculating Z arrays
+  Calculating Z arrays time: 00:00:00
+  Entering block accumulator loop:
+  10%
+  20%
+  30%
+  40%
+  50%
+  60%
+  70%
+  80%
+  90%
+  100%
+  Block accumulator loop time: 00:00:06
+  Sorting block of length 27333432
+  (Using difference cover)
+  Sorting block time: 00:01:20
+Returning block of 27333433
+Getting block 8 of 8
+  Reserving size (70844523) for bucket
+  Calculating Z arrays
+  Calculating Z arrays time: 00:00:00
+  Entering block accumulator loop:
+  10%
+  20%
+  30%
+  40%
+  50%
+  60%
+  70%
+  80%
+  90%
+  100%
+  Block accumulator loop time: 00:00:03
+  Sorting block of length 60970744
+  (Using difference cover)
+  Sorting block time: 00:03:22
+Returning block of 60970745
+Exited Ebwt loop
+fchr[A]: 0
+fchr[C]: 113603413
+fchr[G]: 188607211
+fchr[T]: 264440203
+fchr[$]: 377837452
+Exiting Ebwt::buildToDisk()
+Returning from initFromVector
+Wrote 141326715 bytes to primary EBWT file: asparagus_ref.rev.1.bt2
+Wrote 94459368 bytes to secondary EBWT file: asparagus_ref.rev.2.bt2
+Re-opening _in1 and _in2 as input streams
+Returning from Ebwt constructor
+Headers:
+    len: 377837452
+    bwtLen: 377837453
+    sz: 94459363
+    bwtSz: 94459364
+    lineRate: 6
+    offRate: 4
+    offMask: 0xfffffff0
+    ftabChars: 10
+    eftabLen: 20
+    eftabSz: 80
+    ftabLen: 1048577
+    ftabSz: 4194308
+    offsLen: 23614841
+    offsSz: 94459364
+    lineSz: 64
+    sideSz: 64
+    sideBwtSz: 48
+    sideBwtLen: 192
+    numSides: 1967904
+    numLines: 1967904
+    ebwtTotLen: 125945856
+    ebwtTotSz: 125945856
+    color: 0
+    reverse: 1
+Total time for backward call to driver() for mirror index: 00:25:09
+
+bowtie2 -q --phred33 --sensitive --dpad 0 --gbar 99999999 --mp 1,1 --np 1 --score-min L,0,-0.1 -p 10 -k 200 -x /home/vvelasqz/BCB546_final_project/data/rsem/asparagus_ref -U /home/vvelasqz/BCB546_final_project/data/trimmed_files/SRR1642915_Adapt_Quali_9bp_noShortReads_trimmed.fastq | samtools view -S -b -o SRR1642915_counting.temp/SRR1642915_counting.bam -
+20576971 reads; of these:
+  20576971 (100.00%) were unpaired; of these:
+    20207000 (98.20%) aligned 0 times
+    153251 (0.74%) aligned exactly 1 time
+    216720 (1.05%) aligned >1 times
+1.80% overall alignment rate
+
+rsem-parse-alignments /home/vvelasqz/BCB546_final_project/data/rsem/asparagus_ref SRR1642915_counting.temp/SRR1642915_counting SRR1642915_counting.stat/SRR1642915_counting SRR1642915_counting.temp/SRR1642915_counting.bam 1 -tag XM
+Parsed 1000000 entries
+Parsed 2000000 entries
+Parsed 3000000 entries
+Parsed 4000000 entries
+Parsed 5000000 entries
+Parsed 6000000 entries
+Parsed 7000000 entries
+Parsed 8000000 entries
+Parsed 9000000 entries
+Parsed 10000000 entries
+Parsed 11000000 entries
+Parsed 12000000 entries
+Parsed 13000000 entries
+Parsed 14000000 entries
+Parsed 15000000 entries
+Parsed 16000000 entries
+Parsed 17000000 entries
+Parsed 18000000 entries
+Parsed 19000000 entries
+Parsed 20000000 entries
+Parsed 21000000 entries
+Done!
+
+rsem-build-read-index 32 1 0 SRR1642915_counting.temp/SRR1642915_counting_alignable.fq
+Build Index SRR1642915_counting.temp/SRR1642915_counting_alignable.fq is Done!
+
+rsem-run-em /home/vvelasqz/BCB546_final_project/data/rsem/asparagus_ref 1 SRR1642915_counting SRR1642915_counting.temp/SRR1642915_counting SRR1642915_counting.stat/SRR1642915_counting -p 10 -b SRR1642915_counting.temp/SRR1642915_counting.bam 0
+Refs.loadRefs finished!
+Thread 0 : N = 37004, NHit = 155142
+Thread 1 : N = 36770, NHit = 155247
+Thread 2 : N = 37429, NHit = 155142
+Thread 3 : N = 36506, NHit = 155143
+Thread 4 : N = 37195, NHit = 155143
+Thread 5 : N = 37181, NHit = 155143
+Thread 6 : N = 37340, NHit = 155144
+Thread 7 : N = 36746, NHit = 155150
+Thread 8 : N = 37274, NHit = 155147
+Thread 9 : N = 36526, NHit = 155019
+Warning: Read SRR1642915.1903 is ignored due to read length (= 23) < seed length (= 25)!
+Warning: Read SRR1642915.2777 is ignored due to read length (= 21) < seed length (= 25)!
+Warning: Read SRR1642915.5076 is ignored due to read length (= 24) < seed length (= 25)!
+Warning: Read SRR1642915.7264 is ignored due to read length (= 20) < seed length (= 25)!
+Warning: Read SRR1642915.7649 is ignored due to read length (= 24) < seed length (= 25)!
+Warning: Read SRR1642915.22477 is ignored due to read length (= 22) < seed length (= 25)!
+Warning: Read SRR1642915.24967 is ignored due to read length (= 21) < seed length (= 25)!
+Warning: Read SRR1642915.27327 is ignored due to read length (= 22) < seed length (= 25)!
+Warning: Read SRR1642915.28989 is ignored due to read length (= 20) < seed length (= 25)!
+Warning: Read SRR1642915.29932 is ignored due to read length (= 23) < seed length (= 25)!
+Warning: Read SRR1642915.30318 is ignored due to read length (= 24) < seed length (= 25)!
+Warning: Read SRR1642915.30855 is ignored due to read length (= 21) < seed length (= 25)!
+Warning: Read SRR1642915.38733 is ignored due to read length (= 23) < seed length (= 25)!
+Warning: Read SRR1642915.38995 is ignored due to read length (= 21) < seed length (= 25)!
+Warning: Read SRR1642915.39852 is ignored due to read length (= 23) < seed length (= 25)!
+Warning: Read SRR1642915.41103 is ignored due to read length (= 20) < seed length (= 25)!
+Warning: Read SRR1642915.41437 is ignored due to read length (= 21) < seed length (= 25)!
+Warning: Read SRR1642915.44363 is ignored due to read length (= 23) < seed length (= 25)!
+Warning: Read SRR1642915.47471 is ignored due to read length (= 22) < seed length (= 25)!
+Warning: Read SRR1642915.50271 is ignored due to read length (= 22) < seed length (= 25)!
+Warning: Read SRR1642915.55401 is ignored due to read length (= 21) < seed length (= 25)!
+Warning: Read SRR1642915.62752 is ignored due to read length (= 20) < seed length (= 25)!
+Warning: Read SRR1642915.64631 is ignored due to read length (= 23) < seed length (= 25)!
+Warning: Read SRR1642915.65749 is ignored due to read length (= 20) < seed length (= 25)!
+Warning: Read SRR1642915.67003 is ignored due to read length (= 21) < seed length (= 25)!
+Warning: Read SRR1642915.71798 is ignored due to read length (= 23) < seed length (= 25)!
+Warning: Read SRR1642915.78058 is ignored due to read length (= 23) < seed length (= 25)!
+Warning: Read SRR1642915.79298 is ignored due to read length (= 24) < seed length (= 25)!
+Warning: Read SRR1642915.80707 is ignored due to read length (= 23) < seed length (= 25)!
+Warning: Read SRR1642915.89851 is ignored due to read length (= 23) < seed length (= 25)!
+Warning: Read SRR1642915.92909 is ignored due to read length (= 23) < seed length (= 25)!
+Warning: Read SRR1642915.96740 is ignored due to read length (= 21) < seed length (= 25)!
+Warning: Read SRR1642915.102992 is ignored due to read length (= 24) < seed length (= 25)!
+Warning: Read SRR1642915.103829 is ignored due to read length (= 23) < seed length (= 25)!
+Warning: Read SRR1642915.106692 is ignored due to read length (= 23) < seed length (= 25)!
+Warning: Read SRR1642915.109543 is ignored due to read length (= 20) < seed length (= 25)!
+Warning: Read SRR1642915.112254 is ignored due to read length (= 21) < seed length (= 25)!
+Warning: Read SRR1642915.113807 is ignored due to read length (= 23) < seed length (= 25)!
+Warning: Read SRR1642915.121404 is ignored due to read length (= 22) < seed length (= 25)!
+Warning: Read SRR1642915.123307 is ignored due to read length (= 22) < seed length (= 25)!
+Warning: Read SRR1642915.123796 is ignored due to read length (= 23) < seed length (= 25)!
+Warning: Read SRR1642915.127805 is ignored due to read length (= 20) < seed length (= 25)!
+Warning: Read SRR1642915.128904 is ignored due to read length (= 22) < seed length (= 25)!
+Warning: Read SRR1642915.130756 is ignored due to read length (= 24) < seed length (= 25)!
+Warning: Read SRR1642915.131621 is ignored due to read length (= 24) < seed length (= 25)!
+Warning: Read SRR1642915.138500 is ignored due to read length (= 20) < seed length (= 25)!
+Warning: Read SRR1642915.143733 is ignored due to read length (= 21) < seed length (= 25)!
+Warning: Read SRR1642915.150248 is ignored due to read length (= 22) < seed length (= 25)!
+Warning: Read SRR1642915.156837 is ignored due to read length (= 21) < seed length (= 25)!
+Warning: Read SRR1642915.157509 is ignored due to read length (= 21) < seed length (= 25)!
+EM_init finished!
+1000000 READS PROCESSED
+2000000 READS PROCESSED
+3000000 READS PROCESSED
+4000000 READS PROCESSED
+5000000 READS PROCESSED
+6000000 READS PROCESSED
+7000000 READS PROCESSED
+8000000 READS PROCESSED
+9000000 READS PROCESSED
+10000000 READS PROCESSED
+11000000 READS PROCESSED
+12000000 READS PROCESSED
+13000000 READS PROCESSED
+14000000 READS PROCESSED
+15000000 READS PROCESSED
+16000000 READS PROCESSED
+17000000 READS PROCESSED
+18000000 READS PROCESSED
+19000000 READS PROCESSED
+20000000 READS PROCESSED
+estimateFromReads, N0 finished.
+estimateFromReads, N1 finished.
+Warning: There are 45357 reads ignored in total.
+ROUND = 1, SUM = 20540595.0000001, bChange = 0.0018479, totNum = 1
+ROUND = 2, SUM = 20540595.0000001, bChange = 1.87204, totNum = 20916
+ROUND = 3, SUM = 20540595.0000001, bChange = 0.98313, totNum = 19670
+ROUND = 4, SUM = 20540595, bChange = 0.67305, totNum = 19118
+ROUND = 5, SUM = 20540595.0000001, bChange = 0.566734, totNum = 18593
+ROUND = 6, SUM = 20540595.0000002, bChange = 0.473264, totNum = 18151
+ROUND = 7, SUM = 20540595.0000001, bChange = 0.432554, totNum = 17666
+ROUND = 8, SUM = 20540594.9999999, bChange = 0.425115, totNum = 17231
+ROUND = 9, SUM = 20540594.9999999, bChange = 0.354137, totNum = 16789
+ROUND = 10, SUM = 20540595, bChange = 0.348305, totNum = 16379
+ROUND = 11, SUM = 20540594.9999999, bChange = 0.350906, totNum = 15959
+ROUND = 12, SUM = 20540594.9999998, bChange = 0.341291, totNum = 15593
+ROUND = 13, SUM = 20540595, bChange = 0.282455, totNum = 15264
+ROUND = 14, SUM = 20540594.9999995, bChange = 0.284431, totNum = 14937
+ROUND = 15, SUM = 20540594.9999996, bChange = 0.256755, totNum = 14589
+ROUND = 16, SUM = 20540594.9999993, bChange = 0.25784, totNum = 14251
+ROUND = 17, SUM = 20540594.9999994, bChange = 0.258564, totNum = 13935
+ROUND = 18, SUM = 20540594.9999998, bChange = 0.25902, totNum = 13625
+ROUND = 19, SUM = 20540594.9999995, bChange = 0.256481, totNum = 13356
+ROUND = 20, SUM = 20540594.9999997, bChange = 0.256532, totNum = 13081
+ROUND = 21, SUM = 20540594.9999993, bChange = 0.218047, totNum = 12848
+ROUND = 22, SUM = 20540594.9999995, bChange = 0.21873, totNum = 12585
+ROUND = 23, SUM = 20540594.9999996, bChange = 0.213076, totNum = 12327
+ROUND = 24, SUM = 20540594.999999, bChange = 0.160288, totNum = 12090
+ROUND = 25, SUM = 20540594.9999992, bChange = 0.147615, totNum = 11856
+ROUND = 26, SUM = 20540594.9999993, bChange = 0.147552, totNum = 11639
+ROUND = 27, SUM = 20540594.9999988, bChange = 0.137747, totNum = 11425
+ROUND = 28, SUM = 20540594.9999993, bChange = 0.118118, totNum = 11203
+ROUND = 29, SUM = 20540594.9999996, bChange = 0.123141, totNum = 10973
+ROUND = 30, SUM = 20540594.999999, bChange = 0.118891, totNum = 10769
+ROUND = 31, SUM = 20540594.9999992, bChange = 0.119211, totNum = 10571
+ROUND = 32, SUM = 20540594.9999995, bChange = 0.119492, totNum = 10380
+ROUND = 33, SUM = 20540594.9999993, bChange = 0.11974, totNum = 10189
+ROUND = 34, SUM = 20540594.9999992, bChange = 0.119958, totNum = 10015
+ROUND = 35, SUM = 20540594.9999994, bChange = 0.105275, totNum = 9814
+ROUND = 36, SUM = 20540594.9999992, bChange = 0.105484, totNum = 9678
+ROUND = 37, SUM = 20540594.9999991, bChange = 0.105671, totNum = 9512
+ROUND = 38, SUM = 20540594.9999995, bChange = 0.10584, totNum = 9360
+ROUND = 39, SUM = 20540594.9999995, bChange = 0.10599, totNum = 9210
+ROUND = 40, SUM = 20540594.9999992, bChange = 0.101702, totNum = 9046
+ROUND = 41, SUM = 20540594.9999994, bChange = 0.101836, totNum = 8858
+ROUND = 42, SUM = 20540594.9999998, bChange = 0.101957, totNum = 8718
+ROUND = 43, SUM = 20540594.9999991, bChange = 0.102065, totNum = 8571
+ROUND = 44, SUM = 20540594.9999989, bChange = 0.102162, totNum = 8469
+ROUND = 45, SUM = 20540594.9999994, bChange = 0.10225, totNum = 8366
+ROUND = 46, SUM = 20540594.9999995, bChange = 0.102328, totNum = 8234
+ROUND = 47, SUM = 20540594.9999995, bChange = 0.102399, totNum = 8108
+ROUND = 48, SUM = 20540594.9999994, bChange = 0.102462, totNum = 7967
+ROUND = 49, SUM = 20540594.9999991, bChange = 0.0785626, totNum = 7832
+ROUND = 50, SUM = 20540594.9999991, bChange = 0.0786404, totNum = 7730
+ROUND = 51, SUM = 20540594.9999991, bChange = 0.0722115, totNum = 7631
+ROUND = 52, SUM = 20540594.9999992, bChange = 0.072322, totNum = 7521
+ROUND = 53, SUM = 20540594.999999, bChange = 0.0692436, totNum = 7400
+ROUND = 54, SUM = 20540594.9999993, bChange = 0.0693453, totNum = 7292
+ROUND = 55, SUM = 20540594.9999992, bChange = 0.0569576, totNum = 7178
+ROUND = 56, SUM = 20540594.9999994, bChange = 0.0548493, totNum = 7074
+ROUND = 57, SUM = 20540594.9999994, bChange = 0.0549626, totNum = 6989
+ROUND = 58, SUM = 20540594.999999, bChange = 0.0550699, totNum = 6871
+ROUND = 59, SUM = 20540594.9999993, bChange = 0.0551714, totNum = 6768
+ROUND = 60, SUM = 20540594.999999, bChange = 0.0552676, totNum = 6678
+ROUND = 61, SUM = 20540594.9999995, bChange = 0.0553585, totNum = 6606
+ROUND = 62, SUM = 20540594.9999996, bChange = 0.0554446, totNum = 6523
+ROUND = 63, SUM = 20540594.9999992, bChange = 0.055526, totNum = 6437
+ROUND = 64, SUM = 20540594.9999991, bChange = 0.0491767, totNum = 6365
+ROUND = 65, SUM = 20540594.999999, bChange = 0.0492149, totNum = 6301
+ROUND = 66, SUM = 20540594.9999994, bChange = 0.0492512, totNum = 6208
+ROUND = 67, SUM = 20540594.9999994, bChange = 0.0492858, totNum = 6140
+ROUND = 68, SUM = 20540594.9999991, bChange = 0.0493187, totNum = 6066
+ROUND = 69, SUM = 20540594.9999995, bChange = 0.0468818, totNum = 5987
+ROUND = 70, SUM = 20540594.9999993, bChange = 0.0469192, totNum = 5939
+ROUND = 71, SUM = 20540594.9999995, bChange = 0.0469548, totNum = 5868
+ROUND = 72, SUM = 20540594.9999991, bChange = 0.0469887, totNum = 5805
+ROUND = 73, SUM = 20540594.9999996, bChange = 0.047021, totNum = 5733
+ROUND = 74, SUM = 20540594.9999995, bChange = 0.0470517, totNum = 5656
+ROUND = 75, SUM = 20540594.9999995, bChange = 0.0471329, totNum = 5586
+ROUND = 76, SUM = 20540594.9999993, bChange = 0.0473103, totNum = 5520
+ROUND = 77, SUM = 20540594.9999996, bChange = 0.0425716, totNum = 5456
+ROUND = 78, SUM = 20540594.9999994, bChange = 0.0425684, totNum = 5406
+ROUND = 79, SUM = 20540594.9999995, bChange = 0.0425653, totNum = 5335
+ROUND = 80, SUM = 20540594.9999996, bChange = 0.0425622, totNum = 5259
+ROUND = 81, SUM = 20540594.9999994, bChange = 0.0425592, totNum = 5197
+ROUND = 82, SUM = 20540594.9999994, bChange = 0.0404328, totNum = 5146
+ROUND = 83, SUM = 20540594.9999995, bChange = 0.0405518, totNum = 5081
+ROUND = 84, SUM = 20540594.9999994, bChange = 0.0406688, totNum = 5012
+ROUND = 85, SUM = 20540594.9999996, bChange = 0.0407836, totNum = 4947
+ROUND = 86, SUM = 20540594.9999996, bChange = 0.0408963, totNum = 4896
+ROUND = 87, SUM = 20540594.9999994, bChange = 0.041007, totNum = 4837
+ROUND = 88, SUM = 20540594.9999997, bChange = 0.0411156, totNum = 4806
+ROUND = 89, SUM = 20540594.9999995, bChange = 0.0412222, totNum = 4753
+ROUND = 90, SUM = 20540594.9999993, bChange = 0.0413268, totNum = 4697
+ROUND = 91, SUM = 20540594.9999994, bChange = 0.0414295, totNum = 4658
+ROUND = 92, SUM = 20540594.9999992, bChange = 0.0415302, totNum = 4624
+ROUND = 93, SUM = 20540594.9999993, bChange = 0.0416291, totNum = 4571
+ROUND = 94, SUM = 20540594.9999992, bChange = 0.0364983, totNum = 4507
+ROUND = 95, SUM = 20540594.9999992, bChange = 0.0365531, totNum = 4449
+ROUND = 96, SUM = 20540594.9999992, bChange = 0.0366068, totNum = 4415
+ROUND = 97, SUM = 20540594.9999993, bChange = 0.0366592, totNum = 4372
+ROUND = 98, SUM = 20540594.9999991, bChange = 0.0367105, totNum = 4328
+ROUND = 99, SUM = 20540594.9999995, bChange = 0.0367607, totNum = 4278
+ROUND = 100, SUM = 20540594.9999994, bChange = 0.0368098, totNum = 4230
+ROUND = 101, SUM = 20540594.9999997, bChange = 0.035542, totNum = 4183
+ROUND = 102, SUM = 20540594.9999994, bChange = 0.0356317, totNum = 4142
+ROUND = 103, SUM = 20540594.9999994, bChange = 0.0357199, totNum = 4099
+ROUND = 104, SUM = 20540594.9999998, bChange = 0.0358066, totNum = 4059
+ROUND = 105, SUM = 20540594.9999994, bChange = 0.0358917, totNum = 4017
+ROUND = 106, SUM = 20540594.9999996, bChange = 0.0359754, totNum = 3968
+ROUND = 107, SUM = 20540594.9999997, bChange = 0.0360575, totNum = 3920
+ROUND = 108, SUM = 20540594.9999995, bChange = 0.0361381, totNum = 3886
+ROUND = 109, SUM = 20540594.9999997, bChange = 0.0362171, totNum = 3849
+ROUND = 110, SUM = 20540594.9999992, bChange = 0.0362947, totNum = 3806
+ROUND = 111, SUM = 20540594.9999996, bChange = 0.0363707, totNum = 3772
+ROUND = 112, SUM = 20540594.9999995, bChange = 0.0364453, totNum = 3731
+ROUND = 113, SUM = 20540594.9999994, bChange = 0.0365183, totNum = 3690
+ROUND = 114, SUM = 20540594.9999995, bChange = 0.0323326, totNum = 3650
+ROUND = 115, SUM = 20540594.9999995, bChange = 0.0323553, totNum = 3615
+ROUND = 116, SUM = 20540594.9999996, bChange = 0.0323773, totNum = 3572
+ROUND = 117, SUM = 20540594.9999995, bChange = 0.0323986, totNum = 3530
+ROUND = 118, SUM = 20540594.9999996, bChange = 0.0324192, totNum = 3498
+ROUND = 119, SUM = 20540594.9999997, bChange = 0.0324392, totNum = 3461
+ROUND = 120, SUM = 20540594.9999997, bChange = 0.0324585, totNum = 3418
+ROUND = 121, SUM = 20540594.9999995, bChange = 0.0324772, totNum = 3385
+ROUND = 122, SUM = 20540594.9999996, bChange = 0.0324953, totNum = 3353
+ROUND = 123, SUM = 20540594.9999995, bChange = 0.0325129, totNum = 3315
+ROUND = 124, SUM = 20540594.9999996, bChange = 0.0266206, totNum = 3277
+ROUND = 125, SUM = 20540594.9999995, bChange = 0.0242894, totNum = 3243
+ROUND = 126, SUM = 20540594.9999996, bChange = 0.0243146, totNum = 3227
+ROUND = 127, SUM = 20540594.9999994, bChange = 0.0243392, totNum = 3202
+ROUND = 128, SUM = 20540594.9999995, bChange = 0.0243632, totNum = 3172
+ROUND = 129, SUM = 20540594.9999995, bChange = 0.0243866, totNum = 3142
+ROUND = 130, SUM = 20540594.9999995, bChange = 0.0244094, totNum = 3121
+ROUND = 131, SUM = 20540594.9999998, bChange = 0.0244316, totNum = 3087
+ROUND = 132, SUM = 20540594.9999996, bChange = 0.0244533, totNum = 3062
+ROUND = 133, SUM = 20540594.9999997, bChange = 0.0244744, totNum = 3027
+ROUND = 134, SUM = 20540594.9999995, bChange = 0.0244951, totNum = 2994
+ROUND = 135, SUM = 20540594.9999995, bChange = 0.0245151, totNum = 2975
+ROUND = 136, SUM = 20540594.9999994, bChange = 0.0245564, totNum = 2948
+ROUND = 137, SUM = 20540594.9999994, bChange = 0.0246005, totNum = 2913
+ROUND = 138, SUM = 20540594.9999997, bChange = 0.0246441, totNum = 2885
+ROUND = 139, SUM = 20540594.9999997, bChange = 0.0246873, totNum = 2853
+ROUND = 140, SUM = 20540594.9999995, bChange = 0.0247301, totNum = 2830
+ROUND = 141, SUM = 20540594.9999996, bChange = 0.0247724, totNum = 2803
+ROUND = 142, SUM = 20540594.9999996, bChange = 0.0248143, totNum = 2782
+ROUND = 143, SUM = 20540594.9999998, bChange = 0.0246588, totNum = 2757
+ROUND = 144, SUM = 20540594.9999997, bChange = 0.0246748, totNum = 2739
+ROUND = 145, SUM = 20540594.9999997, bChange = 0.0246904, totNum = 2712
+ROUND = 146, SUM = 20540594.9999995, bChange = 0.0247056, totNum = 2693
+ROUND = 147, SUM = 20540594.9999993, bChange = 0.0247204, totNum = 2670
+ROUND = 148, SUM = 20540594.9999995, bChange = 0.0247349, totNum = 2643
+ROUND = 149, SUM = 20540594.9999995, bChange = 0.0228649, totNum = 2624
+ROUND = 150, SUM = 20540594.9999994, bChange = 0.022879, totNum = 2592
+ROUND = 151, SUM = 20540594.9999993, bChange = 0.0228928, totNum = 2573
+ROUND = 152, SUM = 20540594.9999994, bChange = 0.0229063, totNum = 2554
+ROUND = 153, SUM = 20540594.9999993, bChange = 0.0229196, totNum = 2534
+ROUND = 154, SUM = 20540594.9999997, bChange = 0.0229325, totNum = 2514
+ROUND = 155, SUM = 20540594.9999993, bChange = 0.0229452, totNum = 2490
+ROUND = 156, SUM = 20540594.9999995, bChange = 0.0229577, totNum = 2469
+ROUND = 157, SUM = 20540594.9999996, bChange = 0.0227309, totNum = 2450
+ROUND = 158, SUM = 20540594.9999996, bChange = 0.0227559, totNum = 2441
+ROUND = 159, SUM = 20540594.9999997, bChange = 0.0227804, totNum = 2428
+ROUND = 160, SUM = 20540594.9999994, bChange = 0.0228044, totNum = 2403
+ROUND = 161, SUM = 20540594.9999995, bChange = 0.0228278, totNum = 2390
+ROUND = 162, SUM = 20540594.9999997, bChange = 0.0228506, totNum = 2365
+ROUND = 163, SUM = 20540594.9999997, bChange = 0.022873, totNum = 2350
+ROUND = 164, SUM = 20540594.9999998, bChange = 0.0228948, totNum = 2328
+ROUND = 165, SUM = 20540594.9999998, bChange = 0.0229162, totNum = 2313
+ROUND = 166, SUM = 20540594.9999994, bChange = 0.022937, totNum = 2290
+ROUND = 167, SUM = 20540594.9999996, bChange = 0.0229574, totNum = 2270
+ROUND = 168, SUM = 20540594.9999996, bChange = 0.0229774, totNum = 2247
+ROUND = 169, SUM = 20540594.9999998, bChange = 0.0229968, totNum = 2225
+ROUND = 170, SUM = 20540594.9999995, bChange = 0.0230158, totNum = 2213
+ROUND = 171, SUM = 20540594.9999998, bChange = 0.0230344, totNum = 2202
+ROUND = 172, SUM = 20540594.9999995, bChange = 0.0230526, totNum = 2186
+ROUND = 173, SUM = 20540594.9999997, bChange = 0.0230703, totNum = 2168
+ROUND = 174, SUM = 20540594.9999999, bChange = 0.0230877, totNum = 2145
+ROUND = 175, SUM = 20540594.9999997, bChange = 0.0231046, totNum = 2121
+ROUND = 176, SUM = 20540594.9999996, bChange = 0.0231212, totNum = 2103
+ROUND = 177, SUM = 20540594.9999994, bChange = 0.0231373, totNum = 2090
+ROUND = 178, SUM = 20540594.9999995, bChange = 0.0231531, totNum = 2072
+ROUND = 179, SUM = 20540594.9999998, bChange = 0.0231686, totNum = 2054
+ROUND = 180, SUM = 20540594.9999999, bChange = 0.0231836, totNum = 2035
+ROUND = 181, SUM = 20540594.9999996, bChange = 0.0231984, totNum = 2024
+ROUND = 182, SUM = 20540594.9999995, bChange = 0.0232128, totNum = 2005
+ROUND = 183, SUM = 20540594.9999997, bChange = 0.0232268, totNum = 1990
+ROUND = 184, SUM = 20540594.9999996, bChange = 0.0232406, totNum = 1973
+ROUND = 185, SUM = 20540594.9999997, bChange = 0.023254, totNum = 1961
+ROUND = 186, SUM = 20540594.9999995, bChange = 0.0232671, totNum = 1945
+ROUND = 187, SUM = 20540594.9999994, bChange = 0.0232799, totNum = 1928
+ROUND = 188, SUM = 20540594.9999996, bChange = 0.0232924, totNum = 1913
+ROUND = 189, SUM = 20540594.9999997, bChange = 0.0233046, totNum = 1896
+ROUND = 190, SUM = 20540594.9999997, bChange = 0.0229351, totNum = 1885
+ROUND = 191, SUM = 20540594.9999998, bChange = 0.0229468, totNum = 1870
+ROUND = 192, SUM = 20540594.9999998, bChange = 0.0229582, totNum = 1853
+ROUND = 193, SUM = 20540594.9999997, bChange = 0.0229693, totNum = 1839
+ROUND = 194, SUM = 20540594.9999995, bChange = 0.0182236, totNum = 1819
+ROUND = 195, SUM = 20540594.9999998, bChange = 0.0182338, totNum = 1794
+ROUND = 196, SUM = 20540594.9999997, bChange = 0.0182439, totNum = 1778
+ROUND = 197, SUM = 20540594.9999997, bChange = 0.0182537, totNum = 1762
+ROUND = 198, SUM = 20540594.9999996, bChange = 0.0182634, totNum = 1748
+ROUND = 199, SUM = 20540594.9999999, bChange = 0.0182729, totNum = 1729
+ROUND = 200, SUM = 20540594.9999995, bChange = 0.0182822, totNum = 1716
+ROUND = 201, SUM = 20540594.9999999, bChange = 0.0182913, totNum = 1702
+ROUND = 202, SUM = 20540594.9999994, bChange = 0.0183002, totNum = 1694
+ROUND = 203, SUM = 20540594.9999996, bChange = 0.0183089, totNum = 1676
+ROUND = 204, SUM = 20540594.9999998, bChange = 0.0183175, totNum = 1663
+ROUND = 205, SUM = 20540594.9999997, bChange = 0.0183259, totNum = 1642
+ROUND = 206, SUM = 20540594.9999995, bChange = 0.0183342, totNum = 1625
+ROUND = 207, SUM = 20540594.9999997, bChange = 0.0183422, totNum = 1612
+ROUND = 208, SUM = 20540594.9999997, bChange = 0.0183502, totNum = 1599
+ROUND = 209, SUM = 20540594.9999996, bChange = 0.0183579, totNum = 1585
+ROUND = 210, SUM = 20540594.9999998, bChange = 0.0183656, totNum = 1573
+ROUND = 211, SUM = 20540594.9999997, bChange = 0.018373, totNum = 1554
+ROUND = 212, SUM = 20540594.9999997, bChange = 0.0183804, totNum = 1537
+ROUND = 213, SUM = 20540594.9999997, bChange = 0.0183876, totNum = 1516
+ROUND = 214, SUM = 20540594.9999996, bChange = 0.0183946, totNum = 1495
+ROUND = 215, SUM = 20540594.9999997, bChange = 0.0184015, totNum = 1484
+ROUND = 216, SUM = 20540594.9999996, bChange = 0.0184083, totNum = 1481
+ROUND = 217, SUM = 20540594.9999996, bChange = 0.0184149, totNum = 1474
+ROUND = 218, SUM = 20540594.9999996, bChange = 0.0184214, totNum = 1460
+ROUND = 219, SUM = 20540594.9999995, bChange = 0.0175154, totNum = 1449
+ROUND = 220, SUM = 20540594.9999997, bChange = 0.0175223, totNum = 1435
+ROUND = 221, SUM = 20540594.9999998, bChange = 0.017529, totNum = 1420
+ROUND = 222, SUM = 20540594.9999998, bChange = 0.0175356, totNum = 1412
+ROUND = 223, SUM = 20540594.9999996, bChange = 0.0175421, totNum = 1400
+ROUND = 224, SUM = 20540594.9999997, bChange = 0.0175484, totNum = 1390
+ROUND = 225, SUM = 20540594.9999997, bChange = 0.0175547, totNum = 1376
+ROUND = 226, SUM = 20540594.9999994, bChange = 0.0175608, totNum = 1372
+ROUND = 227, SUM = 20540594.9999998, bChange = 0.0175668, totNum = 1355
+ROUND = 228, SUM = 20540594.9999997, bChange = 0.0175727, totNum = 1344
+ROUND = 229, SUM = 20540594.9999997, bChange = 0.0175785, totNum = 1333
+ROUND = 230, SUM = 20540594.9999997, bChange = 0.0175842, totNum = 1313
+ROUND = 231, SUM = 20540594.9999997, bChange = 0.013087, totNum = 1296
+ROUND = 232, SUM = 20540594.9999997, bChange = 0.0130942, totNum = 1282
+ROUND = 233, SUM = 20540594.9999997, bChange = 0.0131013, totNum = 1273
+ROUND = 234, SUM = 20540594.9999998, bChange = 0.0131083, totNum = 1262
+ROUND = 235, SUM = 20540594.9999997, bChange = 0.0131152, totNum = 1246
+ROUND = 236, SUM = 20540594.9999995, bChange = 0.0131221, totNum = 1234
+ROUND = 237, SUM = 20540594.9999999, bChange = 0.0131288, totNum = 1222
+ROUND = 238, SUM = 20540594.9999996, bChange = 0.0131355, totNum = 1205
+ROUND = 239, SUM = 20540594.9999997, bChange = 0.0131421, totNum = 1196
+ROUND = 240, SUM = 20540594.9999997, bChange = 0.0131486, totNum = 1178
+ROUND = 241, SUM = 20540594.9999996, bChange = 0.013155, totNum = 1164
+ROUND = 242, SUM = 20540594.9999996, bChange = 0.0131613, totNum = 1140
+ROUND = 243, SUM = 20540594.9999998, bChange = 0.0131675, totNum = 1125
+ROUND = 244, SUM = 20540594.9999997, bChange = 0.0131737, totNum = 1114
+ROUND = 245, SUM = 20540594.9999996, bChange = 0.0131798, totNum = 1102
+ROUND = 246, SUM = 20540594.9999997, bChange = 0.0131858, totNum = 1091
+ROUND = 247, SUM = 20540594.9999998, bChange = 0.0131918, totNum = 1082
+ROUND = 248, SUM = 20540594.9999998, bChange = 0.0131976, totNum = 1068
+ROUND = 249, SUM = 20540594.9999998, bChange = 0.0132034, totNum = 1060
+ROUND = 250, SUM = 20540594.9999998, bChange = 0.0132091, totNum = 1047
+ROUND = 251, SUM = 20540595, bChange = 0.0132148, totNum = 1041
+ROUND = 252, SUM = 20540594.9999999, bChange = 0.0132203, totNum = 1024
+ROUND = 253, SUM = 20540594.9999997, bChange = 0.0132258, totNum = 1006
+ROUND = 254, SUM = 20540594.9999996, bChange = 0.0132312, totNum = 993
+ROUND = 255, SUM = 20540594.9999997, bChange = 0.0132366, totNum = 981
+ROUND = 256, SUM = 20540594.9999998, bChange = 0.0132419, totNum = 967
+ROUND = 257, SUM = 20540594.9999997, bChange = 0.0132471, totNum = 956
+ROUND = 258, SUM = 20540594.9999997, bChange = 0.0132523, totNum = 940
+ROUND = 259, SUM = 20540594.9999997, bChange = 0.0132573, totNum = 928
+ROUND = 260, SUM = 20540594.9999997, bChange = 0.0132624, totNum = 909
+ROUND = 261, SUM = 20540594.9999999, bChange = 0.0130595, totNum = 892
+ROUND = 262, SUM = 20540595, bChange = 0.0130658, totNum = 886
+ROUND = 263, SUM = 20540595, bChange = 0.0130721, totNum = 875
+ROUND = 264, SUM = 20540594.9999998, bChange = 0.0130783, totNum = 864
+ROUND = 265, SUM = 20540594.9999998, bChange = 0.0130844, totNum = 850
+ROUND = 266, SUM = 20540594.9999996, bChange = 0.0130905, totNum = 839
+ROUND = 267, SUM = 20540594.9999997, bChange = 0.0130964, totNum = 826
+ROUND = 268, SUM = 20540594.9999999, bChange = 0.0131022, totNum = 818
+ROUND = 269, SUM = 20540594.9999996, bChange = 0.013108, totNum = 801
+ROUND = 270, SUM = 20540594.9999997, bChange = 0.0131137, totNum = 790
+ROUND = 271, SUM = 20540594.9999996, bChange = 0.0131193, totNum = 777
+ROUND = 272, SUM = 20540594.9999996, bChange = 0.0131248, totNum = 768
+ROUND = 273, SUM = 20540594.9999995, bChange = 0.0131303, totNum = 755
+ROUND = 274, SUM = 20540594.9999997, bChange = 0.0131357, totNum = 743
+ROUND = 275, SUM = 20540594.9999997, bChange = 0.013141, totNum = 731
+ROUND = 276, SUM = 20540594.9999998, bChange = 0.0131462, totNum = 715
+ROUND = 277, SUM = 20540594.9999998, bChange = 0.0131513, totNum = 693
+ROUND = 278, SUM = 20540594.9999999, bChange = 0.0131564, totNum = 664
+ROUND = 279, SUM = 20540594.9999996, bChange = 0.0131614, totNum = 631
+ROUND = 280, SUM = 20540594.9999998, bChange = 0.0131663, totNum = 602
+ROUND = 281, SUM = 20540594.9999998, bChange = 0.0131712, totNum = 591
+ROUND = 282, SUM = 20540594.9999997, bChange = 0.013176, totNum = 585
+ROUND = 283, SUM = 20540595, bChange = 0.0131807, totNum = 578
+ROUND = 284, SUM = 20540594.9999997, bChange = 0.0131854, totNum = 568
+ROUND = 285, SUM = 20540594.9999997, bChange = 0.0131899, totNum = 567
+ROUND = 286, SUM = 20540594.9999998, bChange = 0.0131945, totNum = 565
+ROUND = 287, SUM = 20540594.9999997, bChange = 0.0122034, totNum = 560
+ROUND = 288, SUM = 20540594.9999997, bChange = 0.0122074, totNum = 550
+ROUND = 289, SUM = 20540594.9999998, bChange = 0.0122113, totNum = 546
+ROUND = 290, SUM = 20540594.9999996, bChange = 0.0122152, totNum = 540
+ROUND = 291, SUM = 20540594.9999995, bChange = 0.0122191, totNum = 533
+ROUND = 292, SUM = 20540594.9999997, bChange = 0.0122229, totNum = 527
+ROUND = 293, SUM = 20540595.0000001, bChange = 0.0122266, totNum = 519
+ROUND = 294, SUM = 20540594.9999996, bChange = 0.0122303, totNum = 516
+ROUND = 295, SUM = 20540594.9999997, bChange = 0.012234, totNum = 511
+ROUND = 296, SUM = 20540595, bChange = 0.0122376, totNum = 508
+ROUND = 297, SUM = 20540594.9999998, bChange = 0.0122412, totNum = 505
+ROUND = 298, SUM = 20540594.9999998, bChange = 0.0122448, totNum = 502
+ROUND = 299, SUM = 20540594.9999996, bChange = 0.0122483, totNum = 497
+ROUND = 300, SUM = 20540594.9999998, bChange = 0.0122517, totNum = 492
+ROUND = 301, SUM = 20540594.9999997, bChange = 0.0122551, totNum = 490
+ROUND = 302, SUM = 20540595, bChange = 0.0122585, totNum = 487
+ROUND = 303, SUM = 20540594.9999998, bChange = 0.0122619, totNum = 483
+ROUND = 304, SUM = 20540594.9999997, bChange = 0.0122652, totNum = 480
+ROUND = 305, SUM = 20540594.9999998, bChange = 0.0122684, totNum = 473
+ROUND = 306, SUM = 20540594.9999999, bChange = 0.0122716, totNum = 471
+ROUND = 307, SUM = 20540594.9999998, bChange = 0.0122748, totNum = 467
+ROUND = 308, SUM = 20540594.9999999, bChange = 0.0122779, totNum = 464
+ROUND = 309, SUM = 20540594.9999997, bChange = 0.012281, totNum = 460
+ROUND = 310, SUM = 20540594.9999999, bChange = 0.0122841, totNum = 458
+ROUND = 311, SUM = 20540594.9999998, bChange = 0.0122871, totNum = 457
+ROUND = 312, SUM = 20540594.9999999, bChange = 0.0122901, totNum = 452
+ROUND = 313, SUM = 20540594.9999999, bChange = 0.0122931, totNum = 450
+ROUND = 314, SUM = 20540594.9999997, bChange = 0.012296, totNum = 444
+ROUND = 315, SUM = 20540594.9999998, bChange = 0.0110102, totNum = 441
+ROUND = 316, SUM = 20540594.9999999, bChange = 0.0110136, totNum = 441
+ROUND = 317, SUM = 20540594.9999999, bChange = 0.0110169, totNum = 439
+ROUND = 318, SUM = 20540594.9999998, bChange = 0.0110202, totNum = 437
+ROUND = 319, SUM = 20540594.9999999, bChange = 0.0110235, totNum = 433
+ROUND = 320, SUM = 20540594.9999999, bChange = 0.0110267, totNum = 426
+ROUND = 321, SUM = 20540594.9999998, bChange = 0.0110299, totNum = 420
+ROUND = 322, SUM = 20540594.9999998, bChange = 0.011033, totNum = 415
+ROUND = 323, SUM = 20540594.9999999, bChange = 0.0110361, totNum = 413
+ROUND = 324, SUM = 20540595, bChange = 0.0110392, totNum = 408
+ROUND = 325, SUM = 20540594.9999998, bChange = 0.0110423, totNum = 407
+ROUND = 326, SUM = 20540594.9999999, bChange = 0.0110453, totNum = 406
+ROUND = 327, SUM = 20540594.9999999, bChange = 0.0110483, totNum = 403
+ROUND = 328, SUM = 20540594.9999998, bChange = 0.0110512, totNum = 396
+ROUND = 329, SUM = 20540594.9999998, bChange = 0.0110542, totNum = 394
+ROUND = 330, SUM = 20540594.9999998, bChange = 0.0110571, totNum = 388
+ROUND = 331, SUM = 20540594.9999999, bChange = 0.0110599, totNum = 385
+ROUND = 332, SUM = 20540594.9999997, bChange = 0.0110628, totNum = 381
+ROUND = 333, SUM = 20540594.9999996, bChange = 0.0110656, totNum = 380
+ROUND = 334, SUM = 20540595, bChange = 0.0110683, totNum = 379
+ROUND = 335, SUM = 20540594.9999998, bChange = 0.0110711, totNum = 377
+ROUND = 336, SUM = 20540594.9999997, bChange = 0.0110738, totNum = 377
+ROUND = 337, SUM = 20540594.9999998, bChange = 0.0110764, totNum = 374
+ROUND = 338, SUM = 20540594.9999999, bChange = 0.0110791, totNum = 371
+ROUND = 339, SUM = 20540594.9999999, bChange = 0.0110817, totNum = 368
+ROUND = 340, SUM = 20540595, bChange = 0.0110843, totNum = 364
+ROUND = 341, SUM = 20540595, bChange = 0.0110869, totNum = 364
+ROUND = 342, SUM = 20540595.0000002, bChange = 0.0110894, totNum = 361
+ROUND = 343, SUM = 20540594.9999999, bChange = 0.0110919, totNum = 359
+ROUND = 344, SUM = 20540594.9999998, bChange = 0.0110944, totNum = 359
+ROUND = 345, SUM = 20540594.9999997, bChange = 0.0110969, totNum = 353
+ROUND = 346, SUM = 20540594.9999999, bChange = 0.0110993, totNum = 348
+ROUND = 347, SUM = 20540594.9999997, bChange = 0.0111017, totNum = 347
+ROUND = 348, SUM = 20540594.9999998, bChange = 0.0111041, totNum = 346
+ROUND = 349, SUM = 20540595, bChange = 0.0111064, totNum = 343
+ROUND = 350, SUM = 20540595.0000001, bChange = 0.0111087, totNum = 340
+ROUND = 351, SUM = 20540595, bChange = 0.011111, totNum = 339
+ROUND = 352, SUM = 20540595.0000001, bChange = 0.0111133, totNum = 339
+ROUND = 353, SUM = 20540594.9999998, bChange = 0.0111156, totNum = 339
+ROUND = 354, SUM = 20540594.9999998, bChange = 0.0111178, totNum = 338
+ROUND = 355, SUM = 20540594.9999999, bChange = 0.01112, totNum = 336
+ROUND = 356, SUM = 20540595, bChange = 0.0111222, totNum = 335
+ROUND = 357, SUM = 20540594.9999999, bChange = 0.0111243, totNum = 331
+ROUND = 358, SUM = 20540594.9999997, bChange = 0.0111265, totNum = 329
+ROUND = 359, SUM = 20540594.9999998, bChange = 0.0111286, totNum = 328
+ROUND = 360, SUM = 20540595.0000001, bChange = 0.0111306, totNum = 326
+ROUND = 361, SUM = 20540594.9999998, bChange = 0.0111327, totNum = 322
+ROUND = 362, SUM = 20540594.9999997, bChange = 0.0111347, totNum = 320
+ROUND = 363, SUM = 20540594.9999998, bChange = 0.0111368, totNum = 319
+ROUND = 364, SUM = 20540594.9999997, bChange = 0.0111387, totNum = 319
+ROUND = 365, SUM = 20540594.9999999, bChange = 0.0111407, totNum = 316
+ROUND = 366, SUM = 20540594.9999999, bChange = 0.0111427, totNum = 314
+ROUND = 367, SUM = 20540594.9999996, bChange = 0.0111446, totNum = 315
+ROUND = 368, SUM = 20540594.9999995, bChange = 0.0111465, totNum = 314
+ROUND = 369, SUM = 20540594.9999998, bChange = 0.0111484, totNum = 312
+ROUND = 370, SUM = 20540594.9999999, bChange = 0.0111503, totNum = 312
+ROUND = 371, SUM = 20540595, bChange = 0.0111521, totNum = 311
+ROUND = 372, SUM = 20540594.9999997, bChange = 0.0111539, totNum = 308
+ROUND = 373, SUM = 20540594.9999997, bChange = 0.0111557, totNum = 302
+ROUND = 374, SUM = 20540595, bChange = 0.0111575, totNum = 301
+ROUND = 375, SUM = 20540594.9999998, bChange = 0.0111593, totNum = 301
+ROUND = 376, SUM = 20540594.9999998, bChange = 0.011161, totNum = 298
+ROUND = 377, SUM = 20540594.9999999, bChange = 0.0111627, totNum = 295
+ROUND = 378, SUM = 20540594.9999996, bChange = 0.0111645, totNum = 295
+ROUND = 379, SUM = 20540594.9999999, bChange = 0.0111661, totNum = 294
+ROUND = 380, SUM = 20540594.9999999, bChange = 0.0111678, totNum = 293
+ROUND = 381, SUM = 20540594.9999998, bChange = 0.0111695, totNum = 292
+ROUND = 382, SUM = 20540594.9999999, bChange = 0.0111711, totNum = 290
+ROUND = 383, SUM = 20540594.9999999, bChange = 0.0111727, totNum = 287
+ROUND = 384, SUM = 20540594.9999999, bChange = 0.0111743, totNum = 286
+ROUND = 385, SUM = 20540595, bChange = 0.0111759, totNum = 284
+ROUND = 386, SUM = 20540594.9999997, bChange = 0.0111775, totNum = 281
+ROUND = 387, SUM = 20540594.9999999, bChange = 0.011179, totNum = 279
+ROUND = 388, SUM = 20540594.9999997, bChange = 0.0111805, totNum = 276
+ROUND = 389, SUM = 20540595, bChange = 0.011182, totNum = 274
+ROUND = 390, SUM = 20540595, bChange = 0.0111835, totNum = 272
+ROUND = 391, SUM = 20540594.9999998, bChange = 0.011185, totNum = 268
+ROUND = 392, SUM = 20540594.9999997, bChange = 0.0111865, totNum = 264
+ROUND = 393, SUM = 20540594.9999998, bChange = 0.0111879, totNum = 262
+ROUND = 394, SUM = 20540595, bChange = 0.0111894, totNum = 262
+ROUND = 395, SUM = 20540594.9999998, bChange = 0.0111908, totNum = 261
+ROUND = 396, SUM = 20540594.9999998, bChange = 0.0111922, totNum = 260
+ROUND = 397, SUM = 20540594.9999998, bChange = 0.0111935, totNum = 260
+ROUND = 398, SUM = 20540595.0000001, bChange = 0.0111949, totNum = 258
+ROUND = 399, SUM = 20540594.9999998, bChange = 0.0111963, totNum = 258
+ROUND = 400, SUM = 20540594.9999997, bChange = 0.0111976, totNum = 257
+ROUND = 401, SUM = 20540595, bChange = 0.0111989, totNum = 256
+ROUND = 402, SUM = 20540594.9999999, bChange = 0.0112002, totNum = 254
+ROUND = 403, SUM = 20540594.9999999, bChange = 0.0112015, totNum = 254
+ROUND = 404, SUM = 20540594.9999999, bChange = 0.0112028, totNum = 252
+ROUND = 405, SUM = 20540594.9999997, bChange = 0.0112041, totNum = 250
+ROUND = 406, SUM = 20540594.9999999, bChange = 0.0112053, totNum = 249
+ROUND = 407, SUM = 20540594.9999998, bChange = 0.0112066, totNum = 248
+ROUND = 408, SUM = 20540594.9999998, bChange = 0.00825048, totNum = 243
+ROUND = 409, SUM = 20540595, bChange = 0.00825269, totNum = 241
+ROUND = 410, SUM = 20540595, bChange = 0.00825489, totNum = 239
+ROUND = 411, SUM = 20540594.9999999, bChange = 0.00825707, totNum = 238
+ROUND = 412, SUM = 20540594.9999999, bChange = 0.00825924, totNum = 236
+ROUND = 413, SUM = 20540594.9999997, bChange = 0.00826138, totNum = 237
+ROUND = 414, SUM = 20540594.9999999, bChange = 0.00826351, totNum = 236
+ROUND = 415, SUM = 20540595, bChange = 0.00826563, totNum = 235
+ROUND = 416, SUM = 20540594.9999999, bChange = 0.00826772, totNum = 234
+ROUND = 417, SUM = 20540594.9999998, bChange = 0.0082698, totNum = 234
+ROUND = 418, SUM = 20540595, bChange = 0.00827187, totNum = 234
+ROUND = 419, SUM = 20540594.9999998, bChange = 0.00827391, totNum = 234
+ROUND = 420, SUM = 20540594.9999998, bChange = 0.00827594, totNum = 233
+ROUND = 421, SUM = 20540594.9999999, bChange = 0.00827796, totNum = 234
+ROUND = 422, SUM = 20540594.9999997, bChange = 0.00827996, totNum = 233
+ROUND = 423, SUM = 20540594.9999998, bChange = 0.00828194, totNum = 233
+ROUND = 424, SUM = 20540594.9999999, bChange = 0.0082839, totNum = 232
+ROUND = 425, SUM = 20540594.9999998, bChange = 0.00828585, totNum = 232
+ROUND = 426, SUM = 20540594.9999998, bChange = 0.00828779, totNum = 232
+ROUND = 427, SUM = 20540594.9999999, bChange = 0.00828971, totNum = 229
+ROUND = 428, SUM = 20540595, bChange = 0.00829161, totNum = 227
+ROUND = 429, SUM = 20540595.0000002, bChange = 0.0082935, totNum = 227
+ROUND = 430, SUM = 20540594.9999999, bChange = 0.00829538, totNum = 226
+ROUND = 431, SUM = 20540594.9999998, bChange = 0.00829723, totNum = 226
+ROUND = 432, SUM = 20540595, bChange = 0.00829908, totNum = 224
+ROUND = 433, SUM = 20540594.9999997, bChange = 0.00830091, totNum = 220
+ROUND = 434, SUM = 20540595.0000001, bChange = 0.00830272, totNum = 218
+ROUND = 435, SUM = 20540594.9999996, bChange = 0.00830452, totNum = 217
+ROUND = 436, SUM = 20540595.0000001, bChange = 0.00830631, totNum = 217
+ROUND = 437, SUM = 20540594.9999997, bChange = 0.00830808, totNum = 215
+ROUND = 438, SUM = 20540594.9999998, bChange = 0.00830983, totNum = 215
+ROUND = 439, SUM = 20540595, bChange = 0.00831158, totNum = 215
+ROUND = 440, SUM = 20540595, bChange = 0.00831331, totNum = 216
+ROUND = 441, SUM = 20540595, bChange = 0.00831502, totNum = 215
+ROUND = 442, SUM = 20540594.9999999, bChange = 0.00831672, totNum = 214
+ROUND = 443, SUM = 20540595.0000003, bChange = 0.00831841, totNum = 213
+ROUND = 444, SUM = 20540594.9999999, bChange = 0.00832008, totNum = 210
+ROUND = 445, SUM = 20540595, bChange = 0.00832174, totNum = 208
+ROUND = 446, SUM = 20540594.9999998, bChange = 0.00832339, totNum = 207
+ROUND = 447, SUM = 20540595.0000001, bChange = 0.00832502, totNum = 205
+ROUND = 448, SUM = 20540595.0000001, bChange = 0.00832664, totNum = 206
+ROUND = 449, SUM = 20540595, bChange = 0.00832825, totNum = 204
+ROUND = 450, SUM = 20540594.9999997, bChange = 0.00832985, totNum = 201
+ROUND = 451, SUM = 20540595, bChange = 0.00833143, totNum = 200
+ROUND = 452, SUM = 20540595.0000001, bChange = 0.008333, totNum = 199
+ROUND = 453, SUM = 20540595, bChange = 0.00833455, totNum = 199
+ROUND = 454, SUM = 20540595, bChange = 0.0083361, totNum = 197
+ROUND = 455, SUM = 20540594.9999999, bChange = 0.00833763, totNum = 196
+ROUND = 456, SUM = 20540594.9999999, bChange = 0.00833915, totNum = 196
+ROUND = 457, SUM = 20540595, bChange = 0.00834065, totNum = 194
+ROUND = 458, SUM = 20540595.0000001, bChange = 0.00834215, totNum = 194
+ROUND = 459, SUM = 20540595, bChange = 0.00834363, totNum = 193
+ROUND = 460, SUM = 20540594.9999998, bChange = 0.0083451, totNum = 192
+ROUND = 461, SUM = 20540594.9999998, bChange = 0.00834656, totNum = 192
+ROUND = 462, SUM = 20540594.9999999, bChange = 0.008348, totNum = 191
+ROUND = 463, SUM = 20540595, bChange = 0.00834944, totNum = 190
+ROUND = 464, SUM = 20540594.9999999, bChange = 0.00835086, totNum = 188
+ROUND = 465, SUM = 20540595, bChange = 0.00835227, totNum = 188
+ROUND = 466, SUM = 20540595, bChange = 0.00835367, totNum = 187
+ROUND = 467, SUM = 20540595, bChange = 0.00835506, totNum = 187
+ROUND = 468, SUM = 20540595, bChange = 0.00835644, totNum = 187
+ROUND = 469, SUM = 20540594.9999999, bChange = 0.00835781, totNum = 184
+ROUND = 470, SUM = 20540594.9999997, bChange = 0.00835916, totNum = 182
+ROUND = 471, SUM = 20540594.9999998, bChange = 0.0083605, totNum = 182
+ROUND = 472, SUM = 20540594.9999998, bChange = 0.00836184, totNum = 180
+ROUND = 473, SUM = 20540594.9999999, bChange = 0.00836316, totNum = 179
+ROUND = 474, SUM = 20540594.9999998, bChange = 0.00836447, totNum = 179
+ROUND = 475, SUM = 20540594.9999999, bChange = 0.00836577, totNum = 177
+ROUND = 476, SUM = 20540594.9999998, bChange = 0.00836706, totNum = 175
+ROUND = 477, SUM = 20540594.9999998, bChange = 0.00836834, totNum = 175
+ROUND = 478, SUM = 20540595.0000001, bChange = 0.00836961, totNum = 172
+ROUND = 479, SUM = 20540594.9999999, bChange = 0.00837087, totNum = 172
+ROUND = 480, SUM = 20540594.9999998, bChange = 0.00837212, totNum = 172
+ROUND = 481, SUM = 20540595, bChange = 0.00837336, totNum = 170
+ROUND = 482, SUM = 20540594.9999997, bChange = 0.00837459, totNum = 167
+ROUND = 483, SUM = 20540594.9999999, bChange = 0.00837581, totNum = 166
+ROUND = 484, SUM = 20540595, bChange = 0.00837702, totNum = 164
+ROUND = 485, SUM = 20540595, bChange = 0.00837822, totNum = 164
+ROUND = 486, SUM = 20540595, bChange = 0.00837941, totNum = 163
+ROUND = 487, SUM = 20540594.9999998, bChange = 0.00838059, totNum = 163
+ROUND = 488, SUM = 20540595.0000001, bChange = 0.00779266, totNum = 161
+ROUND = 489, SUM = 20540595, bChange = 0.00779366, totNum = 159
+ROUND = 490, SUM = 20540594.9999998, bChange = 0.00779465, totNum = 157
+ROUND = 491, SUM = 20540594.9999999, bChange = 0.00779563, totNum = 157
+ROUND = 492, SUM = 20540594.9999997, bChange = 0.0077966, totNum = 157
+ROUND = 493, SUM = 20540594.9999999, bChange = 0.00779756, totNum = 157
+ROUND = 494, SUM = 20540595.0000001, bChange = 0.00779852, totNum = 157
+ROUND = 495, SUM = 20540594.9999999, bChange = 0.00779948, totNum = 156
+ROUND = 496, SUM = 20540595, bChange = 0.00780042, totNum = 155
+ROUND = 497, SUM = 20540594.9999998, bChange = 0.00780136, totNum = 154
+ROUND = 498, SUM = 20540594.9999997, bChange = 0.0078023, totNum = 154
+ROUND = 499, SUM = 20540595, bChange = 0.00780322, totNum = 154
+ROUND = 500, SUM = 20540594.9999999, bChange = 0.00780414, totNum = 154
+ROUND = 501, SUM = 20540595, bChange = 0.00780506, totNum = 153
+ROUND = 502, SUM = 20540594.9999998, bChange = 0.00780596, totNum = 152
+ROUND = 503, SUM = 20540594.9999998, bChange = 0.00780686, totNum = 149
+ROUND = 504, SUM = 20540594.9999998, bChange = 0.00780776, totNum = 146
+ROUND = 505, SUM = 20540594.9999998, bChange = 0.00780865, totNum = 141
+ROUND = 506, SUM = 20540594.9999997, bChange = 0.00780953, totNum = 141
+ROUND = 507, SUM = 20540594.9999998, bChange = 0.00781041, totNum = 139
+ROUND = 508, SUM = 20540594.9999999, bChange = 0.00781127, totNum = 137
+ROUND = 509, SUM = 20540594.9999995, bChange = 0.00781214, totNum = 137
+ROUND = 510, SUM = 20540594.9999998, bChange = 0.007813, totNum = 136
+ROUND = 511, SUM = 20540594.9999998, bChange = 0.00781385, totNum = 135
+ROUND = 512, SUM = 20540594.9999999, bChange = 0.00781469, totNum = 135
+ROUND = 513, SUM = 20540595, bChange = 0.00781553, totNum = 134
+ROUND = 514, SUM = 20540594.9999999, bChange = 0.00781637, totNum = 133
+ROUND = 515, SUM = 20540594.9999999, bChange = 0.0078172, totNum = 132
+ROUND = 516, SUM = 20540594.9999999, bChange = 0.00781802, totNum = 132
+ROUND = 517, SUM = 20540594.9999997, bChange = 0.00781884, totNum = 132
+ROUND = 518, SUM = 20540594.9999998, bChange = 0.00781965, totNum = 132
+ROUND = 519, SUM = 20540595.0000001, bChange = 0.00782045, totNum = 131
+ROUND = 520, SUM = 20540594.9999999, bChange = 0.00782125, totNum = 130
+ROUND = 521, SUM = 20540594.9999997, bChange = 0.00782205, totNum = 130
+ROUND = 522, SUM = 20540594.9999998, bChange = 0.00782284, totNum = 130
+ROUND = 523, SUM = 20540594.9999999, bChange = 0.00782362, totNum = 130
+ROUND = 524, SUM = 20540595, bChange = 0.0078244, totNum = 129
+ROUND = 525, SUM = 20540595.0000001, bChange = 0.00782517, totNum = 129
+ROUND = 526, SUM = 20540595, bChange = 0.00782594, totNum = 129
+ROUND = 527, SUM = 20540594.9999999, bChange = 0.0078267, totNum = 127
+ROUND = 528, SUM = 20540594.9999998, bChange = 0.00782745, totNum = 126
+ROUND = 529, SUM = 20540594.9999998, bChange = 0.0078282, totNum = 126
+ROUND = 530, SUM = 20540594.9999999, bChange = 0.00782895, totNum = 125
+ROUND = 531, SUM = 20540594.9999999, bChange = 0.00782969, totNum = 125
+ROUND = 532, SUM = 20540595, bChange = 0.00783043, totNum = 124
+ROUND = 533, SUM = 20540594.9999998, bChange = 0.00783116, totNum = 124
+ROUND = 534, SUM = 20540594.9999998, bChange = 0.00783188, totNum = 122
+ROUND = 535, SUM = 20540595, bChange = 0.0078326, totNum = 120
+ROUND = 536, SUM = 20540595, bChange = 0.00783332, totNum = 120
+ROUND = 537, SUM = 20540594.9999999, bChange = 0.00783403, totNum = 120
+ROUND = 538, SUM = 20540595.0000001, bChange = 0.00783473, totNum = 120
+ROUND = 539, SUM = 20540594.9999999, bChange = 0.00783543, totNum = 117
+ROUND = 540, SUM = 20540595.0000001, bChange = 0.00783613, totNum = 117
+ROUND = 541, SUM = 20540594.9999997, bChange = 0.00783682, totNum = 117
+ROUND = 542, SUM = 20540594.9999998, bChange = 0.00783751, totNum = 117
+ROUND = 543, SUM = 20540594.9999999, bChange = 0.00783819, totNum = 117
+ROUND = 544, SUM = 20540595, bChange = 0.00783886, totNum = 116
+ROUND = 545, SUM = 20540594.9999998, bChange = 0.00783953, totNum = 117
+ROUND = 546, SUM = 20540594.9999999, bChange = 0.0078402, totNum = 118
+ROUND = 547, SUM = 20540594.9999999, bChange = 0.00784086, totNum = 118
+ROUND = 548, SUM = 20540594.9999999, bChange = 0.00784152, totNum = 118
+ROUND = 549, SUM = 20540595, bChange = 0.00784218, totNum = 118
+ROUND = 550, SUM = 20540594.9999997, bChange = 0.00784282, totNum = 118
+ROUND = 551, SUM = 20540594.9999999, bChange = 0.00784347, totNum = 116
+ROUND = 552, SUM = 20540594.9999999, bChange = 0.00784411, totNum = 115
+ROUND = 553, SUM = 20540594.9999999, bChange = 0.00784474, totNum = 114
+ROUND = 554, SUM = 20540594.9999998, bChange = 0.00784537, totNum = 114
+ROUND = 555, SUM = 20540594.9999999, bChange = 0.007846, totNum = 111
+ROUND = 556, SUM = 20540595.0000001, bChange = 0.00784662, totNum = 111
+ROUND = 557, SUM = 20540594.9999998, bChange = 0.00784724, totNum = 110
+ROUND = 558, SUM = 20540595, bChange = 0.00784785, totNum = 110
+ROUND = 559, SUM = 20540594.9999999, bChange = 0.00784846, totNum = 110
+ROUND = 560, SUM = 20540594.9999999, bChange = 0.00784907, totNum = 110
+ROUND = 561, SUM = 20540594.9999999, bChange = 0.00784967, totNum = 110
+ROUND = 562, SUM = 20540594.9999999, bChange = 0.00785027, totNum = 109
+ROUND = 563, SUM = 20540595, bChange = 0.00785086, totNum = 109
+ROUND = 564, SUM = 20540595, bChange = 0.00785145, totNum = 109
+ROUND = 565, SUM = 20540594.9999998, bChange = 0.00785203, totNum = 108
+ROUND = 566, SUM = 20540595.0000002, bChange = 0.00785261, totNum = 108
+ROUND = 567, SUM = 20540595, bChange = 0.00785319, totNum = 108
+ROUND = 568, SUM = 20540594.9999999, bChange = 0.00785376, totNum = 107
+ROUND = 569, SUM = 20540594.9999998, bChange = 0.00785433, totNum = 105
+ROUND = 570, SUM = 20540594.9999999, bChange = 0.00785489, totNum = 105
+ROUND = 571, SUM = 20540595, bChange = 0.00785545, totNum = 105
+ROUND = 572, SUM = 20540595, bChange = 0.00785601, totNum = 104
+ROUND = 573, SUM = 20540595, bChange = 0.00785656, totNum = 104
+ROUND = 574, SUM = 20540595.0000001, bChange = 0.00785711, totNum = 104
+ROUND = 575, SUM = 20540595, bChange = 0.00785766, totNum = 104
+ROUND = 576, SUM = 20540594.9999999, bChange = 0.0078582, totNum = 103
+ROUND = 577, SUM = 20540594.9999998, bChange = 0.00785873, totNum = 102
+ROUND = 578, SUM = 20540595, bChange = 0.00785927, totNum = 102
+ROUND = 579, SUM = 20540595, bChange = 0.0078598, totNum = 102
+ROUND = 580, SUM = 20540594.9999998, bChange = 0.00786032, totNum = 102
+ROUND = 581, SUM = 20540594.9999999, bChange = 0.00786085, totNum = 101
+ROUND = 582, SUM = 20540595, bChange = 0.00786137, totNum = 100
+ROUND = 583, SUM = 20540595, bChange = 0.00786188, totNum = 100
+ROUND = 584, SUM = 20540594.9999998, bChange = 0.00786239, totNum = 100
+ROUND = 585, SUM = 20540594.9999997, bChange = 0.0078629, totNum = 100
+ROUND = 586, SUM = 20540594.9999998, bChange = 0.00786341, totNum = 100
+ROUND = 587, SUM = 20540594.9999999, bChange = 0.00786391, totNum = 101
+ROUND = 588, SUM = 20540594.9999999, bChange = 0.00786441, totNum = 100
+ROUND = 589, SUM = 20540595, bChange = 0.0078649, totNum = 100
+ROUND = 590, SUM = 20540594.9999999, bChange = 0.00786539, totNum = 100
+ROUND = 591, SUM = 20540594.9999999, bChange = 0.00786588, totNum = 100
+ROUND = 592, SUM = 20540594.9999999, bChange = 0.00786636, totNum = 99
+ROUND = 593, SUM = 20540595.0000001, bChange = 0.00786684, totNum = 98
+ROUND = 594, SUM = 20540595, bChange = 0.00786732, totNum = 97
+ROUND = 595, SUM = 20540595, bChange = 0.0078678, totNum = 97
+ROUND = 596, SUM = 20540594.9999998, bChange = 0.00786827, totNum = 97
+ROUND = 597, SUM = 20540594.9999998, bChange = 0.00786874, totNum = 97
+ROUND = 598, SUM = 20540594.9999999, bChange = 0.0078692, totNum = 97
+ROUND = 599, SUM = 20540594.9999998, bChange = 0.00786966, totNum = 97
+ROUND = 600, SUM = 20540595, bChange = 0.00787012, totNum = 96
+ROUND = 601, SUM = 20540594.9999999, bChange = 0.00787057, totNum = 96
+ROUND = 602, SUM = 20540594.9999999, bChange = 0.00787103, totNum = 96
+ROUND = 603, SUM = 20540594.9999996, bChange = 0.00787147, totNum = 95
+ROUND = 604, SUM = 20540594.9999999, bChange = 0.00787192, totNum = 95
+ROUND = 605, SUM = 20540594.9999998, bChange = 0.00787236, totNum = 95
+ROUND = 606, SUM = 20540594.9999998, bChange = 0.0078728, totNum = 95
+ROUND = 607, SUM = 20540595.0000001, bChange = 0.00787324, totNum = 95
+ROUND = 608, SUM = 20540594.9999999, bChange = 0.00787367, totNum = 95
+ROUND = 609, SUM = 20540594.9999999, bChange = 0.0078741, totNum = 94
+ROUND = 610, SUM = 20540595, bChange = 0.00787453, totNum = 94
+ROUND = 611, SUM = 20540595.0000001, bChange = 0.00787495, totNum = 94
+ROUND = 612, SUM = 20540595, bChange = 0.00787538, totNum = 94
+ROUND = 613, SUM = 20540594.9999999, bChange = 0.00787579, totNum = 94
+ROUND = 614, SUM = 20540594.9999999, bChange = 0.00787621, totNum = 94
+ROUND = 615, SUM = 20540594.9999999, bChange = 0.00787662, totNum = 94
+ROUND = 616, SUM = 20540594.9999999, bChange = 0.00787703, totNum = 94
+ROUND = 617, SUM = 20540594.9999999, bChange = 0.00787744, totNum = 94
+ROUND = 618, SUM = 20540594.9999998, bChange = 0.00787784, totNum = 94
+ROUND = 619, SUM = 20540594.9999998, bChange = 0.00787825, totNum = 94
+ROUND = 620, SUM = 20540594.9999999, bChange = 0.00787864, totNum = 94
+ROUND = 621, SUM = 20540594.9999999, bChange = 0.00787904, totNum = 93
+ROUND = 622, SUM = 20540594.9999999, bChange = 0.00787943, totNum = 92
+ROUND = 623, SUM = 20540594.9999998, bChange = 0.00787982, totNum = 92
+ROUND = 624, SUM = 20540594.9999998, bChange = 0.00788021, totNum = 91
+ROUND = 625, SUM = 20540594.9999997, bChange = 0.0078806, totNum = 91
+ROUND = 626, SUM = 20540594.9999998, bChange = 0.00788098, totNum = 91
+ROUND = 627, SUM = 20540594.9999996, bChange = 0.00788136, totNum = 91
+ROUND = 628, SUM = 20540594.9999997, bChange = 0.00788174, totNum = 91
+ROUND = 629, SUM = 20540594.9999999, bChange = 0.00788211, totNum = 91
+ROUND = 630, SUM = 20540595, bChange = 0.00788248, totNum = 90
+ROUND = 631, SUM = 20540594.9999998, bChange = 0.00788285, totNum = 89
+ROUND = 632, SUM = 20540595.0000001, bChange = 0.00788322, totNum = 89
+ROUND = 633, SUM = 20540594.9999999, bChange = 0.00788358, totNum = 88
+ROUND = 634, SUM = 20540594.9999998, bChange = 0.00788395, totNum = 88
+ROUND = 635, SUM = 20540594.9999999, bChange = 0.00788431, totNum = 86
+ROUND = 636, SUM = 20540594.9999999, bChange = 0.00788466, totNum = 86
+ROUND = 637, SUM = 20540594.9999999, bChange = 0.00788502, totNum = 86
+ROUND = 638, SUM = 20540595.0000001, bChange = 0.00788537, totNum = 86
+ROUND = 639, SUM = 20540594.9999998, bChange = 0.00788572, totNum = 86
+ROUND = 640, SUM = 20540594.9999999, bChange = 0.00788607, totNum = 86
+ROUND = 641, SUM = 20540594.9999997, bChange = 0.00788641, totNum = 87
+ROUND = 642, SUM = 20540595, bChange = 0.00788675, totNum = 86
+ROUND = 643, SUM = 20540595.0000001, bChange = 0.00788709, totNum = 86
+ROUND = 644, SUM = 20540594.9999998, bChange = 0.00788743, totNum = 84
+ROUND = 645, SUM = 20540594.9999999, bChange = 0.00788777, totNum = 84
+ROUND = 646, SUM = 20540594.9999997, bChange = 0.0078881, totNum = 84
+ROUND = 647, SUM = 20540595, bChange = 0.00788843, totNum = 82
+ROUND = 648, SUM = 20540594.9999998, bChange = 0.00788876, totNum = 82
+ROUND = 649, SUM = 20540594.9999999, bChange = 0.00788908, totNum = 82
+ROUND = 650, SUM = 20540594.9999998, bChange = 0.00788941, totNum = 82
+ROUND = 651, SUM = 20540594.9999999, bChange = 0.00788973, totNum = 81
+ROUND = 652, SUM = 20540594.9999999, bChange = 0.00789005, totNum = 81
+ROUND = 653, SUM = 20540595, bChange = 0.00789037, totNum = 80
+ROUND = 654, SUM = 20540594.9999998, bChange = 0.00789068, totNum = 80
+ROUND = 655, SUM = 20540594.9999999, bChange = 0.007891, totNum = 80
+ROUND = 656, SUM = 20540594.9999998, bChange = 0.00789131, totNum = 80
+ROUND = 657, SUM = 20540595, bChange = 0.00789161, totNum = 80
+ROUND = 658, SUM = 20540595, bChange = 0.00789192, totNum = 80
+ROUND = 659, SUM = 20540594.9999998, bChange = 0.00789223, totNum = 80
+ROUND = 660, SUM = 20540595.0000001, bChange = 0.00789253, totNum = 79
+ROUND = 661, SUM = 20540595, bChange = 0.00789283, totNum = 78
+ROUND = 662, SUM = 20540595, bChange = 0.00789313, totNum = 78
+ROUND = 663, SUM = 20540595, bChange = 0.00789342, totNum = 78
+ROUND = 664, SUM = 20540595, bChange = 0.00789372, totNum = 78
+ROUND = 665, SUM = 20540594.9999999, bChange = 0.00789401, totNum = 78
+ROUND = 666, SUM = 20540595.0000001, bChange = 0.0078943, totNum = 78
+ROUND = 667, SUM = 20540594.9999998, bChange = 0.00789459, totNum = 78
+ROUND = 668, SUM = 20540594.9999999, bChange = 0.00789487, totNum = 77
+ROUND = 669, SUM = 20540594.9999998, bChange = 0.00789516, totNum = 76
+ROUND = 670, SUM = 20540595, bChange = 0.00789544, totNum = 75
+ROUND = 671, SUM = 20540594.9999999, bChange = 0.00789572, totNum = 75
+ROUND = 672, SUM = 20540595, bChange = 0.007896, totNum = 74
+ROUND = 673, SUM = 20540594.9999998, bChange = 0.00789627, totNum = 74
+ROUND = 674, SUM = 20540594.9999999, bChange = 0.00789655, totNum = 73
+ROUND = 675, SUM = 20540594.9999999, bChange = 0.00789682, totNum = 73
+ROUND = 676, SUM = 20540594.9999998, bChange = 0.00789709, totNum = 73
+ROUND = 677, SUM = 20540595, bChange = 0.00789736, totNum = 73
+ROUND = 678, SUM = 20540595, bChange = 0.00789763, totNum = 73
+ROUND = 679, SUM = 20540594.9999999, bChange = 0.00789789, totNum = 72
+ROUND = 680, SUM = 20540594.9999999, bChange = 0.00789816, totNum = 72
+ROUND = 681, SUM = 20540595.0000001, bChange = 0.00789842, totNum = 72
+ROUND = 682, SUM = 20540595, bChange = 0.00789868, totNum = 72
+ROUND = 683, SUM = 20540595, bChange = 0.00789894, totNum = 71
+ROUND = 684, SUM = 20540595, bChange = 0.00789919, totNum = 71
+ROUND = 685, SUM = 20540595.0000001, bChange = 0.00789945, totNum = 71
+ROUND = 686, SUM = 20540595.0000001, bChange = 0.0078997, totNum = 71
+ROUND = 687, SUM = 20540595.0000001, bChange = 0.00789995, totNum = 70
+ROUND = 688, SUM = 20540595, bChange = 0.0079002, totNum = 70
+ROUND = 689, SUM = 20540595.0000001, bChange = 0.00790045, totNum = 69
+ROUND = 690, SUM = 20540595, bChange = 0.00790069, totNum = 70
+ROUND = 691, SUM = 20540595, bChange = 0.00790094, totNum = 70
+ROUND = 692, SUM = 20540594.9999998, bChange = 0.00790118, totNum = 70
+ROUND = 693, SUM = 20540594.9999999, bChange = 0.00790142, totNum = 70
+ROUND = 694, SUM = 20540595, bChange = 0.00790166, totNum = 70
+ROUND = 695, SUM = 20540594.9999999, bChange = 0.0079019, totNum = 70
+ROUND = 696, SUM = 20540595, bChange = 0.00790213, totNum = 69
+ROUND = 697, SUM = 20540595, bChange = 0.00790237, totNum = 69
+ROUND = 698, SUM = 20540595, bChange = 0.0079026, totNum = 69
+ROUND = 699, SUM = 20540595, bChange = 0.00790283, totNum = 69
+ROUND = 700, SUM = 20540595.0000002, bChange = 0.00790306, totNum = 69
+ROUND = 701, SUM = 20540594.9999999, bChange = 0.00790329, totNum = 69
+ROUND = 702, SUM = 20540594.9999999, bChange = 0.00790351, totNum = 69
+ROUND = 703, SUM = 20540595, bChange = 0.00790374, totNum = 69
+ROUND = 704, SUM = 20540594.9999999, bChange = 0.00790396, totNum = 69
+ROUND = 705, SUM = 20540595, bChange = 0.00790418, totNum = 69
+ROUND = 706, SUM = 20540594.9999999, bChange = 0.0079044, totNum = 69
+ROUND = 707, SUM = 20540594.9999999, bChange = 0.00790462, totNum = 69
+ROUND = 708, SUM = 20540594.9999998, bChange = 0.00790484, totNum = 68
+ROUND = 709, SUM = 20540595.0000001, bChange = 0.00790505, totNum = 69
+ROUND = 710, SUM = 20540595, bChange = 0.00790527, totNum = 69
+ROUND = 711, SUM = 20540594.9999999, bChange = 0.00790548, totNum = 69
+ROUND = 712, SUM = 20540594.9999999, bChange = 0.00790569, totNum = 69
+ROUND = 713, SUM = 20540595, bChange = 0.0079059, totNum = 68
+ROUND = 714, SUM = 20540595, bChange = 0.00790611, totNum = 68
+ROUND = 715, SUM = 20540594.9999999, bChange = 0.00790632, totNum = 65
+ROUND = 716, SUM = 20540594.9999999, bChange = 0.00790652, totNum = 64
+ROUND = 717, SUM = 20540595.0000001, bChange = 0.00790672, totNum = 64
+ROUND = 718, SUM = 20540595, bChange = 0.0066994, totNum = 63
+ROUND = 719, SUM = 20540595, bChange = 0.00669937, totNum = 63
+ROUND = 720, SUM = 20540595, bChange = 0.00669934, totNum = 63
+ROUND = 721, SUM = 20540595, bChange = 0.00669931, totNum = 63
+ROUND = 722, SUM = 20540595.0000001, bChange = 0.00669928, totNum = 62
+ROUND = 723, SUM = 20540594.9999998, bChange = 0.00669924, totNum = 62
+ROUND = 724, SUM = 20540594.9999999, bChange = 0.00669921, totNum = 61
+ROUND = 725, SUM = 20540595.0000001, bChange = 0.00669918, totNum = 61
+ROUND = 726, SUM = 20540595, bChange = 0.00669915, totNum = 61
+ROUND = 727, SUM = 20540595.0000001, bChange = 0.00669912, totNum = 61
+ROUND = 728, SUM = 20540595, bChange = 0.00669909, totNum = 61
+ROUND = 729, SUM = 20540595.0000001, bChange = 0.00669906, totNum = 61
+ROUND = 730, SUM = 20540595, bChange = 0.00669903, totNum = 61
+ROUND = 731, SUM = 20540594.9999998, bChange = 0.006699, totNum = 61
+ROUND = 732, SUM = 20540595.0000001, bChange = 0.00669897, totNum = 61
+ROUND = 733, SUM = 20540595, bChange = 0.00669894, totNum = 61
+ROUND = 734, SUM = 20540594.9999999, bChange = 0.00669891, totNum = 60
+ROUND = 735, SUM = 20540595.0000001, bChange = 0.00669888, totNum = 60
+ROUND = 736, SUM = 20540595, bChange = 0.00669885, totNum = 60
+ROUND = 737, SUM = 20540595, bChange = 0.00669882, totNum = 60
+ROUND = 738, SUM = 20540594.9999999, bChange = 0.00669879, totNum = 59
+ROUND = 739, SUM = 20540595, bChange = 0.00669876, totNum = 59
+ROUND = 740, SUM = 20540595, bChange = 0.00669873, totNum = 59
+ROUND = 741, SUM = 20540594.9999999, bChange = 0.0066987, totNum = 59
+ROUND = 742, SUM = 20540595, bChange = 0.00669867, totNum = 59
+ROUND = 743, SUM = 20540594.9999999, bChange = 0.00669864, totNum = 59
+ROUND = 744, SUM = 20540595.0000001, bChange = 0.00669861, totNum = 59
+ROUND = 745, SUM = 20540595.0000001, bChange = 0.00669858, totNum = 59
+ROUND = 746, SUM = 20540595.0000001, bChange = 0.00669855, totNum = 59
+ROUND = 747, SUM = 20540595.0000001, bChange = 0.00669852, totNum = 59
+ROUND = 748, SUM = 20540594.9999999, bChange = 0.00669848, totNum = 58
+ROUND = 749, SUM = 20540595, bChange = 0.00669845, totNum = 58
+ROUND = 750, SUM = 20540594.9999999, bChange = 0.00669842, totNum = 58
+ROUND = 751, SUM = 20540594.9999999, bChange = 0.00669839, totNum = 58
+ROUND = 752, SUM = 20540595.0000001, bChange = 0.00669836, totNum = 58
+ROUND = 753, SUM = 20540594.9999998, bChange = 0.00669833, totNum = 58
+ROUND = 754, SUM = 20540595, bChange = 0.00669831, totNum = 58
+ROUND = 755, SUM = 20540595.0000001, bChange = 0.00669828, totNum = 59
+ROUND = 756, SUM = 20540595, bChange = 0.00669825, totNum = 59
+ROUND = 757, SUM = 20540595, bChange = 0.00669822, totNum = 58
+ROUND = 758, SUM = 20540595, bChange = 0.00669819, totNum = 58
+ROUND = 759, SUM = 20540594.9999998, bChange = 0.00669816, totNum = 58
+ROUND = 760, SUM = 20540595.0000001, bChange = 0.00669813, totNum = 58
+ROUND = 761, SUM = 20540595.0000001, bChange = 0.0066981, totNum = 58
+ROUND = 762, SUM = 20540595, bChange = 0.00669807, totNum = 58
+ROUND = 763, SUM = 20540595.0000001, bChange = 0.00417638, totNum = 57
+ROUND = 764, SUM = 20540594.9999998, bChange = 0.00417702, totNum = 57
+ROUND = 765, SUM = 20540594.9999999, bChange = 0.00417765, totNum = 57
+ROUND = 766, SUM = 20540595, bChange = 0.00417828, totNum = 57
+ROUND = 767, SUM = 20540594.9999998, bChange = 0.00417891, totNum = 57
+ROUND = 768, SUM = 20540595, bChange = 0.00417954, totNum = 57
+ROUND = 769, SUM = 20540595, bChange = 0.00418016, totNum = 57
+ROUND = 770, SUM = 20540595.0000001, bChange = 0.00418079, totNum = 57
+ROUND = 771, SUM = 20540595.0000001, bChange = 0.00418141, totNum = 57
+ROUND = 772, SUM = 20540594.9999998, bChange = 0.00418202, totNum = 58
+ROUND = 773, SUM = 20540594.9999999, bChange = 0.00418264, totNum = 58
+ROUND = 774, SUM = 20540595, bChange = 0.00418325, totNum = 58
+ROUND = 775, SUM = 20540594.9999999, bChange = 0.00418386, totNum = 58
+ROUND = 776, SUM = 20540595.0000001, bChange = 0.00418446, totNum = 58
+ROUND = 777, SUM = 20540595, bChange = 0.00418507, totNum = 58
+ROUND = 778, SUM = 20540595, bChange = 0.00418567, totNum = 58
+ROUND = 779, SUM = 20540595, bChange = 0.00418627, totNum = 58
+ROUND = 780, SUM = 20540595, bChange = 0.00418687, totNum = 58
+ROUND = 781, SUM = 20540594.9999999, bChange = 0.00418746, totNum = 58
+ROUND = 782, SUM = 20540595.0000001, bChange = 0.00418805, totNum = 58
+ROUND = 783, SUM = 20540594.9999999, bChange = 0.00418864, totNum = 58
+ROUND = 784, SUM = 20540594.9999997, bChange = 0.00418923, totNum = 58
+ROUND = 785, SUM = 20540594.9999998, bChange = 0.00418982, totNum = 58
+ROUND = 786, SUM = 20540594.9999999, bChange = 0.0041904, totNum = 58
+ROUND = 787, SUM = 20540594.9999997, bChange = 0.00419098, totNum = 59
+ROUND = 788, SUM = 20540594.9999999, bChange = 0.00419156, totNum = 59
+ROUND = 789, SUM = 20540594.9999999, bChange = 0.00419213, totNum = 59
+ROUND = 790, SUM = 20540595, bChange = 0.00419271, totNum = 58
+ROUND = 791, SUM = 20540595, bChange = 0.00419328, totNum = 58
+ROUND = 792, SUM = 20540595, bChange = 0.00419385, totNum = 58
+ROUND = 793, SUM = 20540595.0000001, bChange = 0.00419441, totNum = 58
+ROUND = 794, SUM = 20540595, bChange = 0.00419498, totNum = 57
+ROUND = 795, SUM = 20540595, bChange = 0.00419554, totNum = 57
+ROUND = 796, SUM = 20540595.0000001, bChange = 0.0041961, totNum = 57
+ROUND = 797, SUM = 20540594.9999999, bChange = 0.00419666, totNum = 56
+ROUND = 798, SUM = 20540594.9999997, bChange = 0.00419721, totNum = 55
+ROUND = 799, SUM = 20540595, bChange = 0.00419776, totNum = 55
+ROUND = 800, SUM = 20540594.9999999, bChange = 0.00419831, totNum = 53
+ROUND = 801, SUM = 20540594.9999998, bChange = 0.00419886, totNum = 53
+ROUND = 802, SUM = 20540594.9999999, bChange = 0.00419941, totNum = 53
+ROUND = 803, SUM = 20540594.9999999, bChange = 0.00419995, totNum = 53
+ROUND = 804, SUM = 20540595, bChange = 0.00420049, totNum = 53
+ROUND = 805, SUM = 20540594.9999999, bChange = 0.00420103, totNum = 53
+ROUND = 806, SUM = 20540594.9999998, bChange = 0.00420157, totNum = 53
+ROUND = 807, SUM = 20540594.9999999, bChange = 0.00420211, totNum = 53
+ROUND = 808, SUM = 20540594.9999997, bChange = 0.00420264, totNum = 52
+ROUND = 809, SUM = 20540594.9999999, bChange = 0.00420317, totNum = 51
+ROUND = 810, SUM = 20540594.9999998, bChange = 0.0042037, totNum = 51
+ROUND = 811, SUM = 20540594.9999999, bChange = 0.00420422, totNum = 52
+ROUND = 812, SUM = 20540595, bChange = 0.00420475, totNum = 52
+ROUND = 813, SUM = 20540594.9999999, bChange = 0.00420527, totNum = 52
+ROUND = 814, SUM = 20540594.9999999, bChange = 0.00420579, totNum = 52
+ROUND = 815, SUM = 20540595, bChange = 0.00420631, totNum = 52
+ROUND = 816, SUM = 20540595, bChange = 0.00420682, totNum = 52
+ROUND = 817, SUM = 20540595, bChange = 0.00420734, totNum = 51
+ROUND = 818, SUM = 20540595, bChange = 0.00420785, totNum = 51
+ROUND = 819, SUM = 20540594.9999998, bChange = 0.00420836, totNum = 51
+ROUND = 820, SUM = 20540595, bChange = 0.00420886, totNum = 51
+ROUND = 821, SUM = 20540595, bChange = 0.00420937, totNum = 51
+ROUND = 822, SUM = 20540594.9999999, bChange = 0.00420987, totNum = 51
+ROUND = 823, SUM = 20540595.0000001, bChange = 0.00421037, totNum = 51
+ROUND = 824, SUM = 20540595, bChange = 0.00421087, totNum = 51
+ROUND = 825, SUM = 20540595, bChange = 0.00421137, totNum = 51
+ROUND = 826, SUM = 20540594.9999999, bChange = 0.00421186, totNum = 51
+ROUND = 827, SUM = 20540594.9999999, bChange = 0.00421236, totNum = 51
+ROUND = 828, SUM = 20540594.9999999, bChange = 0.00421285, totNum = 51
+ROUND = 829, SUM = 20540595, bChange = 0.00421334, totNum = 51
+ROUND = 830, SUM = 20540595.0000001, bChange = 0.00421382, totNum = 51
+ROUND = 831, SUM = 20540595.0000001, bChange = 0.00421431, totNum = 51
+ROUND = 832, SUM = 20540594.9999999, bChange = 0.00421479, totNum = 51
+ROUND = 833, SUM = 20540595.0000001, bChange = 0.00421527, totNum = 51
+ROUND = 834, SUM = 20540595, bChange = 0.00421575, totNum = 51
+ROUND = 835, SUM = 20540595, bChange = 0.00421623, totNum = 51
+ROUND = 836, SUM = 20540595, bChange = 0.0042167, totNum = 51
+ROUND = 837, SUM = 20540595.0000001, bChange = 0.00421718, totNum = 51
+ROUND = 838, SUM = 20540595, bChange = 0.00421765, totNum = 51
+ROUND = 839, SUM = 20540595, bChange = 0.00421812, totNum = 51
+ROUND = 840, SUM = 20540595, bChange = 0.00421858, totNum = 51
+ROUND = 841, SUM = 20540594.9999999, bChange = 0.00421905, totNum = 51
+ROUND = 842, SUM = 20540595, bChange = 0.00421951, totNum = 51
+ROUND = 843, SUM = 20540595.0000002, bChange = 0.00421997, totNum = 51
+ROUND = 844, SUM = 20540594.9999999, bChange = 0.00422043, totNum = 51
+ROUND = 845, SUM = 20540595, bChange = 0.00422089, totNum = 51
+ROUND = 846, SUM = 20540594.9999999, bChange = 0.00422135, totNum = 51
+ROUND = 847, SUM = 20540595, bChange = 0.0042218, totNum = 51
+ROUND = 848, SUM = 20540594.9999999, bChange = 0.00422225, totNum = 51
+ROUND = 849, SUM = 20540594.9999999, bChange = 0.0042227, totNum = 51
+ROUND = 850, SUM = 20540595.0000001, bChange = 0.00422315, totNum = 51
+ROUND = 851, SUM = 20540595.0000001, bChange = 0.0042236, totNum = 51
+ROUND = 852, SUM = 20540594.9999998, bChange = 0.00422404, totNum = 51
+ROUND = 853, SUM = 20540594.9999999, bChange = 0.00422449, totNum = 50
+ROUND = 854, SUM = 20540594.9999999, bChange = 0.00422493, totNum = 50
+ROUND = 855, SUM = 20540594.9999999, bChange = 0.00422537, totNum = 50
+ROUND = 856, SUM = 20540595, bChange = 0.0042258, totNum = 50
+ROUND = 857, SUM = 20540595, bChange = 0.00422624, totNum = 50
+ROUND = 858, SUM = 20540594.9999999, bChange = 0.00422667, totNum = 50
+ROUND = 859, SUM = 20540595, bChange = 0.0042271, totNum = 50
+ROUND = 860, SUM = 20540595, bChange = 0.00422753, totNum = 50
+ROUND = 861, SUM = 20540594.9999999, bChange = 0.00422796, totNum = 50
+ROUND = 862, SUM = 20540595, bChange = 0.00422839, totNum = 50
+ROUND = 863, SUM = 20540594.9999999, bChange = 0.00422881, totNum = 50
+ROUND = 864, SUM = 20540595, bChange = 0.00422924, totNum = 50
+ROUND = 865, SUM = 20540595, bChange = 0.00422966, totNum = 50
+ROUND = 866, SUM = 20540594.9999999, bChange = 0.00423008, totNum = 50
+ROUND = 867, SUM = 20540594.9999999, bChange = 0.0042305, totNum = 50
+ROUND = 868, SUM = 20540595, bChange = 0.00386039, totNum = 49
+ROUND = 869, SUM = 20540594.9999999, bChange = 0.00386086, totNum = 49
+ROUND = 870, SUM = 20540594.9999997, bChange = 0.00386133, totNum = 49
+ROUND = 871, SUM = 20540594.9999999, bChange = 0.00386179, totNum = 49
+ROUND = 872, SUM = 20540594.9999998, bChange = 0.00386225, totNum = 49
+ROUND = 873, SUM = 20540594.9999999, bChange = 0.00386271, totNum = 49
+ROUND = 874, SUM = 20540595, bChange = 0.00386317, totNum = 49
+ROUND = 875, SUM = 20540595, bChange = 0.00386363, totNum = 49
+ROUND = 876, SUM = 20540595, bChange = 0.00386408, totNum = 49
+ROUND = 877, SUM = 20540594.9999999, bChange = 0.00386454, totNum = 48
+ROUND = 878, SUM = 20540595.0000001, bChange = 0.00386499, totNum = 48
+ROUND = 879, SUM = 20540594.9999999, bChange = 0.00386544, totNum = 48
+ROUND = 880, SUM = 20540595, bChange = 0.00386589, totNum = 47
+ROUND = 881, SUM = 20540595.0000001, bChange = 0.00386633, totNum = 47
+ROUND = 882, SUM = 20540595.0000001, bChange = 0.00386678, totNum = 46
+ROUND = 883, SUM = 20540595, bChange = 0.00386722, totNum = 46
+ROUND = 884, SUM = 20540595.0000001, bChange = 0.00386766, totNum = 46
+ROUND = 885, SUM = 20540595.0000001, bChange = 0.0038681, totNum = 46
+ROUND = 886, SUM = 20540594.9999999, bChange = 0.00386854, totNum = 46
+ROUND = 887, SUM = 20540595, bChange = 0.00386898, totNum = 46
+ROUND = 888, SUM = 20540595, bChange = 0.00386941, totNum = 45
+ROUND = 889, SUM = 20540594.9999999, bChange = 0.00386985, totNum = 45
+ROUND = 890, SUM = 20540594.9999998, bChange = 0.00387028, totNum = 45
+ROUND = 891, SUM = 20540595.0000001, bChange = 0.00387071, totNum = 45
+ROUND = 892, SUM = 20540595.0000001, bChange = 0.00387114, totNum = 45
+ROUND = 893, SUM = 20540595.0000002, bChange = 0.00387156, totNum = 45
+ROUND = 894, SUM = 20540595.0000001, bChange = 0.00387199, totNum = 45
+ROUND = 895, SUM = 20540594.9999999, bChange = 0.00387241, totNum = 45
+ROUND = 896, SUM = 20540595.0000001, bChange = 0.00387283, totNum = 44
+ROUND = 897, SUM = 20540594.9999999, bChange = 0.00387325, totNum = 44
+ROUND = 898, SUM = 20540594.9999999, bChange = 0.00387367, totNum = 44
+ROUND = 899, SUM = 20540595.0000001, bChange = 0.00387409, totNum = 44
+ROUND = 900, SUM = 20540595.0000001, bChange = 0.00387451, totNum = 44
+ROUND = 901, SUM = 20540594.9999999, bChange = 0.00387492, totNum = 43
+ROUND = 902, SUM = 20540595, bChange = 0.00387533, totNum = 43
+ROUND = 903, SUM = 20540595, bChange = 0.00387574, totNum = 43
+ROUND = 904, SUM = 20540594.9999998, bChange = 0.00387615, totNum = 43
+ROUND = 905, SUM = 20540595, bChange = 0.00387656, totNum = 43
+ROUND = 906, SUM = 20540594.9999999, bChange = 0.00387697, totNum = 43
+ROUND = 907, SUM = 20540594.9999998, bChange = 0.00387737, totNum = 43
+ROUND = 908, SUM = 20540594.9999999, bChange = 0.00387778, totNum = 43
+ROUND = 909, SUM = 20540595, bChange = 0.00387818, totNum = 43
+ROUND = 910, SUM = 20540594.9999999, bChange = 0.00387858, totNum = 43
+ROUND = 911, SUM = 20540595, bChange = 0.00387898, totNum = 43
+ROUND = 912, SUM = 20540594.9999998, bChange = 0.00387937, totNum = 43
+ROUND = 913, SUM = 20540594.9999999, bChange = 0.00387977, totNum = 43
+ROUND = 914, SUM = 20540594.9999999, bChange = 0.00388016, totNum = 43
+ROUND = 915, SUM = 20540595, bChange = 0.00388056, totNum = 42
+ROUND = 916, SUM = 20540594.9999999, bChange = 0.00388095, totNum = 41
+ROUND = 917, SUM = 20540594.9999999, bChange = 0.00388134, totNum = 41
+ROUND = 918, SUM = 20540594.9999998, bChange = 0.00388173, totNum = 41
+ROUND = 919, SUM = 20540594.9999999, bChange = 0.00388211, totNum = 40
+ROUND = 920, SUM = 20540595, bChange = 0.0038825, totNum = 40
+ROUND = 921, SUM = 20540594.9999999, bChange = 0.00388288, totNum = 40
+ROUND = 922, SUM = 20540595, bChange = 0.00388327, totNum = 40
+ROUND = 923, SUM = 20540595, bChange = 0.00388365, totNum = 40
+ROUND = 924, SUM = 20540594.9999999, bChange = 0.00388403, totNum = 40
+ROUND = 925, SUM = 20540594.9999998, bChange = 0.0038844, totNum = 40
+ROUND = 926, SUM = 20540595.0000001, bChange = 0.00388478, totNum = 40
+ROUND = 927, SUM = 20540594.9999998, bChange = 0.00388516, totNum = 40
+ROUND = 928, SUM = 20540595, bChange = 0.00388553, totNum = 39
+ROUND = 929, SUM = 20540594.9999999, bChange = 0.0038859, totNum = 39
+ROUND = 930, SUM = 20540595, bChange = 0.00388627, totNum = 38
+ROUND = 931, SUM = 20540595, bChange = 0.00388664, totNum = 38
+ROUND = 932, SUM = 20540594.9999999, bChange = 0.00388701, totNum = 38
+ROUND = 933, SUM = 20540595, bChange = 0.00388738, totNum = 37
+ROUND = 934, SUM = 20540595.0000001, bChange = 0.00388774, totNum = 37
+ROUND = 935, SUM = 20540595, bChange = 0.00388811, totNum = 37
+ROUND = 936, SUM = 20540595, bChange = 0.00388847, totNum = 37
+ROUND = 937, SUM = 20540594.9999999, bChange = 0.00388883, totNum = 37
+ROUND = 938, SUM = 20540595, bChange = 0.00388919, totNum = 37
+ROUND = 939, SUM = 20540594.9999999, bChange = 0.00388955, totNum = 36
+ROUND = 940, SUM = 20540595, bChange = 0.00388991, totNum = 36
+ROUND = 941, SUM = 20540595, bChange = 0.00389026, totNum = 36
+ROUND = 942, SUM = 20540595, bChange = 0.00389062, totNum = 36
+ROUND = 943, SUM = 20540595.0000002, bChange = 0.00389097, totNum = 35
+ROUND = 944, SUM = 20540595.0000001, bChange = 0.00389132, totNum = 35
+ROUND = 945, SUM = 20540595, bChange = 0.00389167, totNum = 35
+ROUND = 946, SUM = 20540595, bChange = 0.00389202, totNum = 34
+ROUND = 947, SUM = 20540595.0000001, bChange = 0.00389237, totNum = 34
+ROUND = 948, SUM = 20540595.0000001, bChange = 0.00389272, totNum = 34
+ROUND = 949, SUM = 20540595.0000001, bChange = 0.00389306, totNum = 34
+ROUND = 950, SUM = 20540595.0000001, bChange = 0.00389341, totNum = 34
+ROUND = 951, SUM = 20540595, bChange = 0.00389375, totNum = 34
+ROUND = 952, SUM = 20540594.9999999, bChange = 0.00389409, totNum = 33
+ROUND = 953, SUM = 20540595.0000001, bChange = 0.00389443, totNum = 33
+ROUND = 954, SUM = 20540595, bChange = 0.00389477, totNum = 33
+ROUND = 955, SUM = 20540595.0000001, bChange = 0.00389511, totNum = 32
+ROUND = 956, SUM = 20540595, bChange = 0.00389544, totNum = 32
+ROUND = 957, SUM = 20540594.9999999, bChange = 0.00389578, totNum = 32
+ROUND = 958, SUM = 20540595.0000001, bChange = 0.00389611, totNum = 32
+ROUND = 959, SUM = 20540595, bChange = 0.00389644, totNum = 32
+ROUND = 960, SUM = 20540595, bChange = 0.00389678, totNum = 32
+ROUND = 961, SUM = 20540595, bChange = 0.00389711, totNum = 32
+ROUND = 962, SUM = 20540595, bChange = 0.00389743, totNum = 32
+ROUND = 963, SUM = 20540595, bChange = 0.00389776, totNum = 32
+ROUND = 964, SUM = 20540594.9999999, bChange = 0.00389809, totNum = 32
+ROUND = 965, SUM = 20540594.9999999, bChange = 0.00389841, totNum = 32
+ROUND = 966, SUM = 20540594.9999999, bChange = 0.00389874, totNum = 32
+ROUND = 967, SUM = 20540594.9999999, bChange = 0.00389906, totNum = 32
+ROUND = 968, SUM = 20540595, bChange = 0.00389938, totNum = 32
+ROUND = 969, SUM = 20540594.9999999, bChange = 0.0038997, totNum = 32
+ROUND = 970, SUM = 20540595, bChange = 0.00390002, totNum = 32
+ROUND = 971, SUM = 20540594.9999999, bChange = 0.00390033, totNum = 32
+ROUND = 972, SUM = 20540594.9999999, bChange = 0.00390065, totNum = 32
+ROUND = 973, SUM = 20540594.9999999, bChange = 0.00390097, totNum = 32
+ROUND = 974, SUM = 20540594.9999999, bChange = 0.00390128, totNum = 32
+ROUND = 975, SUM = 20540595.0000001, bChange = 0.00390159, totNum = 32
+ROUND = 976, SUM = 20540595, bChange = 0.0039019, totNum = 32
+ROUND = 977, SUM = 20540594.9999999, bChange = 0.00390221, totNum = 32
+ROUND = 978, SUM = 20540594.9999999, bChange = 0.00390252, totNum = 32
+ROUND = 979, SUM = 20540595, bChange = 0.00390283, totNum = 32
+ROUND = 980, SUM = 20540595, bChange = 0.00390314, totNum = 32
+ROUND = 981, SUM = 20540595, bChange = 0.00390344, totNum = 32
+ROUND = 982, SUM = 20540595, bChange = 0.00390375, totNum = 32
+ROUND = 983, SUM = 20540594.9999999, bChange = 0.00390405, totNum = 32
+ROUND = 984, SUM = 20540595.0000001, bChange = 0.00390435, totNum = 32
+ROUND = 985, SUM = 20540594.9999999, bChange = 0.00390465, totNum = 32
+ROUND = 986, SUM = 20540595, bChange = 0.00390495, totNum = 32
+ROUND = 987, SUM = 20540595, bChange = 0.00390525, totNum = 32
+ROUND = 988, SUM = 20540595, bChange = 0.00390555, totNum = 32
+ROUND = 989, SUM = 20540595, bChange = 0.00390584, totNum = 32
+ROUND = 990, SUM = 20540594.9999998, bChange = 0.00390614, totNum = 32
+ROUND = 991, SUM = 20540595.0000002, bChange = 0.00390643, totNum = 32
+ROUND = 992, SUM = 20540595.0000001, bChange = 0.00390673, totNum = 32
+ROUND = 993, SUM = 20540595.0000001, bChange = 0.00390702, totNum = 32
+ROUND = 994, SUM = 20540595, bChange = 0.00390731, totNum = 32
+ROUND = 995, SUM = 20540595.0000002, bChange = 0.0039076, totNum = 32
+ROUND = 996, SUM = 20540595.0000001, bChange = 0.00390789, totNum = 32
+ROUND = 997, SUM = 20540595.0000001, bChange = 0.00390817, totNum = 32
+ROUND = 998, SUM = 20540595, bChange = 0.00390846, totNum = 31
+ROUND = 999, SUM = 20540595, bChange = 0.00390875, totNum = 31
+ROUND = 1000, SUM = 20540595, bChange = 0.00390903, totNum = 31
+ROUND = 1001, SUM = 20540595, bChange = 0.00390931, totNum = 31
+ROUND = 1002, SUM = 20540595.0000001, bChange = 0.00390959, totNum = 31
+ROUND = 1003, SUM = 20540595.0000001, bChange = 0.00390987, totNum = 31
+ROUND = 1004, SUM = 20540595.0000001, bChange = 0.00391015, totNum = 31
+ROUND = 1005, SUM = 20540595.0000001, bChange = 0.00391043, totNum = 31
+ROUND = 1006, SUM = 20540595, bChange = 0.00391071, totNum = 30
+ROUND = 1007, SUM = 20540595, bChange = 0.00391099, totNum = 30
+ROUND = 1008, SUM = 20540595, bChange = 0.00391126, totNum = 30
+ROUND = 1009, SUM = 20540595.0000001, bChange = 0.00391154, totNum = 30
+ROUND = 1010, SUM = 20540594.9999999, bChange = 0.00391181, totNum = 30
+ROUND = 1011, SUM = 20540595.0000001, bChange = 0.00391208, totNum = 31
+ROUND = 1012, SUM = 20540595, bChange = 0.00391235, totNum = 31
+ROUND = 1013, SUM = 20540595, bChange = 0.00391262, totNum = 31
+ROUND = 1014, SUM = 20540595.0000001, bChange = 0.00391289, totNum = 31
+ROUND = 1015, SUM = 20540594.9999999, bChange = 0.00391316, totNum = 31
+ROUND = 1016, SUM = 20540595, bChange = 0.00391343, totNum = 31
+ROUND = 1017, SUM = 20540595, bChange = 0.00391369, totNum = 31
+ROUND = 1018, SUM = 20540595, bChange = 0.00391396, totNum = 31
+ROUND = 1019, SUM = 20540595, bChange = 0.00391422, totNum = 32
+ROUND = 1020, SUM = 20540595, bChange = 0.00391449, totNum = 32
+ROUND = 1021, SUM = 20540594.9999999, bChange = 0.00391475, totNum = 32
+ROUND = 1022, SUM = 20540594.9999999, bChange = 0.00391501, totNum = 32
+ROUND = 1023, SUM = 20540595, bChange = 0.00391527, totNum = 32
+ROUND = 1024, SUM = 20540595.0000001, bChange = 0.00391553, totNum = 32
+ROUND = 1025, SUM = 20540595, bChange = 0.00391578, totNum = 32
+ROUND = 1026, SUM = 20540594.9999999, bChange = 0.00391604, totNum = 32
+ROUND = 1027, SUM = 20540595, bChange = 0.0039163, totNum = 32
+ROUND = 1028, SUM = 20540594.9999999, bChange = 0.00391655, totNum = 32
+ROUND = 1029, SUM = 20540594.9999999, bChange = 0.00391681, totNum = 31
+ROUND = 1030, SUM = 20540595, bChange = 0.00391706, totNum = 31
+ROUND = 1031, SUM = 20540595.0000001, bChange = 0.00391731, totNum = 31
+ROUND = 1032, SUM = 20540595, bChange = 0.00391756, totNum = 31
+ROUND = 1033, SUM = 20540594.9999999, bChange = 0.00391781, totNum = 31
+ROUND = 1034, SUM = 20540594.9999999, bChange = 0.00391806, totNum = 31
+ROUND = 1035, SUM = 20540595.0000001, bChange = 0.00391831, totNum = 31
+ROUND = 1036, SUM = 20540594.9999999, bChange = 0.00391856, totNum = 31
+ROUND = 1037, SUM = 20540595, bChange = 0.0039188, totNum = 31
+ROUND = 1038, SUM = 20540594.9999999, bChange = 0.00391905, totNum = 31
+ROUND = 1039, SUM = 20540595, bChange = 0.00391929, totNum = 31
+ROUND = 1040, SUM = 20540595, bChange = 0.00391954, totNum = 30
+ROUND = 1041, SUM = 20540594.9999999, bChange = 0.00391978, totNum = 30
+ROUND = 1042, SUM = 20540595, bChange = 0.00392002, totNum = 30
+ROUND = 1043, SUM = 20540595.0000001, bChange = 0.00392026, totNum = 30
+ROUND = 1044, SUM = 20540595, bChange = 0.0039205, totNum = 30
+ROUND = 1045, SUM = 20540595, bChange = 0.00392074, totNum = 30
+ROUND = 1046, SUM = 20540594.9999999, bChange = 0.00392098, totNum = 30
+ROUND = 1047, SUM = 20540595, bChange = 0.00392121, totNum = 30
+ROUND = 1048, SUM = 20540594.9999999, bChange = 0.00392145, totNum = 30
+ROUND = 1049, SUM = 20540594.9999999, bChange = 0.00392169, totNum = 30
+ROUND = 1050, SUM = 20540595, bChange = 0.00392192, totNum = 30
+ROUND = 1051, SUM = 20540594.9999998, bChange = 0.00392215, totNum = 30
+ROUND = 1052, SUM = 20540595, bChange = 0.00392238, totNum = 30
+ROUND = 1053, SUM = 20540594.9999999, bChange = 0.00392262, totNum = 30
+ROUND = 1054, SUM = 20540594.9999999, bChange = 0.00392285, totNum = 30
+ROUND = 1055, SUM = 20540595, bChange = 0.00392308, totNum = 30
+ROUND = 1056, SUM = 20540594.9999999, bChange = 0.00392331, totNum = 30
+ROUND = 1057, SUM = 20540595, bChange = 0.00392353, totNum = 30
+ROUND = 1058, SUM = 20540595, bChange = 0.00392376, totNum = 30
+ROUND = 1059, SUM = 20540594.9999999, bChange = 0.00392399, totNum = 30
+ROUND = 1060, SUM = 20540595, bChange = 0.00392421, totNum = 30
+ROUND = 1061, SUM = 20540595.0000001, bChange = 0.00392444, totNum = 30
+ROUND = 1062, SUM = 20540595, bChange = 0.00392466, totNum = 30
+ROUND = 1063, SUM = 20540594.9999999, bChange = 0.00392488, totNum = 30
+ROUND = 1064, SUM = 20540594.9999999, bChange = 0.0039251, totNum = 30
+ROUND = 1065, SUM = 20540594.9999999, bChange = 0.00392533, totNum = 30
+ROUND = 1066, SUM = 20540594.9999999, bChange = 0.00392555, totNum = 30
+ROUND = 1067, SUM = 20540595.0000001, bChange = 0.00392576, totNum = 30
+ROUND = 1068, SUM = 20540594.9999998, bChange = 0.00392598, totNum = 30
+ROUND = 1069, SUM = 20540595, bChange = 0.0039262, totNum = 30
+ROUND = 1070, SUM = 20540595, bChange = 0.00392642, totNum = 30
+ROUND = 1071, SUM = 20540594.9999999, bChange = 0.00392663, totNum = 30
+ROUND = 1072, SUM = 20540594.9999999, bChange = 0.00392685, totNum = 30
+ROUND = 1073, SUM = 20540594.9999999, bChange = 0.00392706, totNum = 30
+ROUND = 1074, SUM = 20540595.0000001, bChange = 0.00392728, totNum = 30
+ROUND = 1075, SUM = 20540595, bChange = 0.00392749, totNum = 30
+ROUND = 1076, SUM = 20540594.9999999, bChange = 0.0039277, totNum = 30
+ROUND = 1077, SUM = 20540595.0000001, bChange = 0.00392791, totNum = 30
+ROUND = 1078, SUM = 20540594.9999999, bChange = 0.00392812, totNum = 30
+ROUND = 1079, SUM = 20540594.9999998, bChange = 0.00392833, totNum = 30
+ROUND = 1080, SUM = 20540595, bChange = 0.00392854, totNum = 30
+ROUND = 1081, SUM = 20540594.9999999, bChange = 0.00392875, totNum = 30
+ROUND = 1082, SUM = 20540595, bChange = 0.00392895, totNum = 30
+ROUND = 1083, SUM = 20540594.9999999, bChange = 0.00392916, totNum = 29
+ROUND = 1084, SUM = 20540594.9999999, bChange = 0.00392936, totNum = 29
+ROUND = 1085, SUM = 20540595, bChange = 0.00392957, totNum = 29
+ROUND = 1086, SUM = 20540595.0000001, bChange = 0.00392977, totNum = 29
+ROUND = 1087, SUM = 20540595, bChange = 0.00392998, totNum = 28
+ROUND = 1088, SUM = 20540595, bChange = 0.00393018, totNum = 28
+ROUND = 1089, SUM = 20540595, bChange = 0.00393038, totNum = 28
+ROUND = 1090, SUM = 20540595, bChange = 0.00393058, totNum = 28
+ROUND = 1091, SUM = 20540595, bChange = 0.00393078, totNum = 27
+ROUND = 1092, SUM = 20540595, bChange = 0.00393098, totNum = 27
+ROUND = 1093, SUM = 20540595, bChange = 0.00393118, totNum = 27
+ROUND = 1094, SUM = 20540594.9999999, bChange = 0.00393137, totNum = 27
+ROUND = 1095, SUM = 20540594.9999999, bChange = 0.00393157, totNum = 27
+ROUND = 1096, SUM = 20540594.9999999, bChange = 0.00393177, totNum = 27
+ROUND = 1097, SUM = 20540595.0000001, bChange = 0.00393196, totNum = 27
+ROUND = 1098, SUM = 20540595.0000001, bChange = 0.00393216, totNum = 27
+ROUND = 1099, SUM = 20540595, bChange = 0.00393235, totNum = 27
+ROUND = 1100, SUM = 20540594.9999999, bChange = 0.00393254, totNum = 27
+ROUND = 1101, SUM = 20540594.9999999, bChange = 0.00393273, totNum = 27
+ROUND = 1102, SUM = 20540595, bChange = 0.00393293, totNum = 27
+ROUND = 1103, SUM = 20540594.9999999, bChange = 0.00393312, totNum = 27
+ROUND = 1104, SUM = 20540595, bChange = 0.00393331, totNum = 27
+ROUND = 1105, SUM = 20540595.0000001, bChange = 0.0039335, totNum = 26
+ROUND = 1106, SUM = 20540595.0000001, bChange = 0.00393368, totNum = 26
+ROUND = 1107, SUM = 20540594.9999999, bChange = 0.00393387, totNum = 26
+ROUND = 1108, SUM = 20540594.9999999, bChange = 0.00393406, totNum = 26
+ROUND = 1109, SUM = 20540595, bChange = 0.00393424, totNum = 26
+ROUND = 1110, SUM = 20540595.0000001, bChange = 0.00393443, totNum = 26
+ROUND = 1111, SUM = 20540594.9999999, bChange = 0.00393461, totNum = 25
+ROUND = 1112, SUM = 20540595, bChange = 0.0039348, totNum = 25
+ROUND = 1113, SUM = 20540594.9999999, bChange = 0.00393498, totNum = 25
+ROUND = 1114, SUM = 20540595.0000001, bChange = 0.00393516, totNum = 25
+ROUND = 1115, SUM = 20540595, bChange = 0.00393535, totNum = 25
+ROUND = 1116, SUM = 20540595.0000001, bChange = 0.00393553, totNum = 25
+ROUND = 1117, SUM = 20540595.0000001, bChange = 0.00393571, totNum = 25
+ROUND = 1118, SUM = 20540595, bChange = 0.00393589, totNum = 25
+ROUND = 1119, SUM = 20540595.0000001, bChange = 0.00393607, totNum = 25
+ROUND = 1120, SUM = 20540595.0000002, bChange = 0.00393625, totNum = 25
+ROUND = 1121, SUM = 20540595.0000001, bChange = 0.00393642, totNum = 24
+ROUND = 1122, SUM = 20540595, bChange = 0.0039366, totNum = 24
+ROUND = 1123, SUM = 20540595.0000002, bChange = 0.00393678, totNum = 24
+ROUND = 1124, SUM = 20540595.0000001, bChange = 0.00393695, totNum = 24
+ROUND = 1125, SUM = 20540595, bChange = 0.00393713, totNum = 24
+ROUND = 1126, SUM = 20540595, bChange = 0.0039373, totNum = 24
+ROUND = 1127, SUM = 20540595, bChange = 0.00393748, totNum = 24
+ROUND = 1128, SUM = 20540595.0000001, bChange = 0.00393765, totNum = 23
+ROUND = 1129, SUM = 20540595.0000001, bChange = 0.00393782, totNum = 23
+ROUND = 1130, SUM = 20540595.0000001, bChange = 0.00393799, totNum = 23
+ROUND = 1131, SUM = 20540595.0000002, bChange = 0.00393816, totNum = 23
+ROUND = 1132, SUM = 20540594.9999999, bChange = 0.00393833, totNum = 23
+ROUND = 1133, SUM = 20540595, bChange = 0.0039385, totNum = 23
+ROUND = 1134, SUM = 20540595, bChange = 0.00393867, totNum = 22
+ROUND = 1135, SUM = 20540595.0000001, bChange = 0.00393884, totNum = 22
+ROUND = 1136, SUM = 20540595.0000001, bChange = 0.00393901, totNum = 22
+ROUND = 1137, SUM = 20540594.9999999, bChange = 0.00393917, totNum = 22
+ROUND = 1138, SUM = 20540595, bChange = 0.00393934, totNum = 22
+ROUND = 1139, SUM = 20540595, bChange = 0.00393951, totNum = 22
+ROUND = 1140, SUM = 20540595, bChange = 0.00393967, totNum = 22
+ROUND = 1141, SUM = 20540595, bChange = 0.00393984, totNum = 22
+ROUND = 1142, SUM = 20540595.0000001, bChange = 0.00394, totNum = 22
+ROUND = 1143, SUM = 20540595.0000001, bChange = 0.00394016, totNum = 22
+ROUND = 1144, SUM = 20540595.0000001, bChange = 0.00394033, totNum = 22
+ROUND = 1145, SUM = 20540594.9999999, bChange = 0.00394049, totNum = 22
+ROUND = 1146, SUM = 20540594.9999999, bChange = 0.00394065, totNum = 21
+ROUND = 1147, SUM = 20540595, bChange = 0.00394081, totNum = 21
+ROUND = 1148, SUM = 20540594.9999999, bChange = 0.00394097, totNum = 21
+ROUND = 1149, SUM = 20540595, bChange = 0.00394113, totNum = 21
+ROUND = 1150, SUM = 20540594.9999999, bChange = 0.00394129, totNum = 21
+ROUND = 1151, SUM = 20540594.9999998, bChange = 0.00394144, totNum = 21
+ROUND = 1152, SUM = 20540594.9999998, bChange = 0.0039416, totNum = 21
+ROUND = 1153, SUM = 20540594.9999999, bChange = 0.00394176, totNum = 21
+ROUND = 1154, SUM = 20540595, bChange = 0.00394192, totNum = 20
+ROUND = 1155, SUM = 20540595, bChange = 0.00394207, totNum = 20
+ROUND = 1156, SUM = 20540594.9999999, bChange = 0.00394223, totNum = 20
+ROUND = 1157, SUM = 20540595.0000001, bChange = 0.00394238, totNum = 20
+ROUND = 1158, SUM = 20540595, bChange = 0.00394253, totNum = 20
+ROUND = 1159, SUM = 20540595, bChange = 0.00394269, totNum = 20
+ROUND = 1160, SUM = 20540595, bChange = 0.00394284, totNum = 20
+ROUND = 1161, SUM = 20540595.0000001, bChange = 0.00394299, totNum = 20
+ROUND = 1162, SUM = 20540594.9999999, bChange = 0.00394314, totNum = 20
+ROUND = 1163, SUM = 20540595, bChange = 0.00394329, totNum = 20
+ROUND = 1164, SUM = 20540594.9999999, bChange = 0.00394344, totNum = 20
+ROUND = 1165, SUM = 20540595.0000001, bChange = 0.00394359, totNum = 20
+ROUND = 1166, SUM = 20540595.0000001, bChange = 0.00394374, totNum = 20
+ROUND = 1167, SUM = 20540595, bChange = 0.00394389, totNum = 19
+ROUND = 1168, SUM = 20540594.9999999, bChange = 0.00394404, totNum = 19
+ROUND = 1169, SUM = 20540595, bChange = 0.00394419, totNum = 19
+ROUND = 1170, SUM = 20540594.9999999, bChange = 0.00394433, totNum = 19
+ROUND = 1171, SUM = 20540595, bChange = 0.00394448, totNum = 19
+ROUND = 1172, SUM = 20540595, bChange = 0.00394463, totNum = 19
+ROUND = 1173, SUM = 20540594.9999999, bChange = 0.00394477, totNum = 19
+ROUND = 1174, SUM = 20540595, bChange = 0.00394492, totNum = 19
+ROUND = 1175, SUM = 20540594.9999999, bChange = 0.00394506, totNum = 18
+ROUND = 1176, SUM = 20540594.9999999, bChange = 0.0039452, totNum = 17
+ROUND = 1177, SUM = 20540595.0000001, bChange = 0.00394535, totNum = 17
+ROUND = 1178, SUM = 20540595, bChange = 0.00394549, totNum = 17
+ROUND = 1179, SUM = 20540595, bChange = 0.00394563, totNum = 17
+ROUND = 1180, SUM = 20540595, bChange = 0.00394577, totNum = 17
+ROUND = 1181, SUM = 20540594.9999998, bChange = 0.00394591, totNum = 17
+ROUND = 1182, SUM = 20540595.0000001, bChange = 0.00394605, totNum = 17
+ROUND = 1183, SUM = 20540594.9999998, bChange = 0.00394619, totNum = 17
+ROUND = 1184, SUM = 20540595.0000001, bChange = 0.00394633, totNum = 17
+ROUND = 1185, SUM = 20540595.0000001, bChange = 0.00394647, totNum = 17
+ROUND = 1186, SUM = 20540595, bChange = 0.00394661, totNum = 17
+ROUND = 1187, SUM = 20540595, bChange = 0.00394674, totNum = 17
+ROUND = 1188, SUM = 20540595.0000002, bChange = 0.00394688, totNum = 17
+ROUND = 1189, SUM = 20540595, bChange = 0.00394702, totNum = 17
+ROUND = 1190, SUM = 20540594.9999999, bChange = 0.00394715, totNum = 17
+ROUND = 1191, SUM = 20540595, bChange = 0.00394729, totNum = 17
+ROUND = 1192, SUM = 20540595, bChange = 0.00394742, totNum = 17
+ROUND = 1193, SUM = 20540594.9999999, bChange = 0.00394756, totNum = 17
+ROUND = 1194, SUM = 20540595, bChange = 0.00394769, totNum = 17
+ROUND = 1195, SUM = 20540595.0000001, bChange = 0.00394782, totNum = 17
+ROUND = 1196, SUM = 20540595.0000002, bChange = 0.00394795, totNum = 17
+ROUND = 1197, SUM = 20540595, bChange = 0.00394809, totNum = 17
+ROUND = 1198, SUM = 20540595, bChange = 0.00394822, totNum = 17
+ROUND = 1199, SUM = 20540595, bChange = 0.00394835, totNum = 17
+ROUND = 1200, SUM = 20540595, bChange = 0.00394848, totNum = 17
+ROUND = 1201, SUM = 20540595, bChange = 0.00394861, totNum = 17
+ROUND = 1202, SUM = 20540595, bChange = 0.00394874, totNum = 17
+ROUND = 1203, SUM = 20540595, bChange = 0.00394887, totNum = 17
+ROUND = 1204, SUM = 20540594.9999999, bChange = 0.003949, totNum = 17
+ROUND = 1205, SUM = 20540594.9999999, bChange = 0.00394912, totNum = 17
+ROUND = 1206, SUM = 20540595, bChange = 0.00394925, totNum = 17
+ROUND = 1207, SUM = 20540594.9999999, bChange = 0.00394938, totNum = 17
+ROUND = 1208, SUM = 20540594.9999999, bChange = 0.0039495, totNum = 18
+ROUND = 1209, SUM = 20540595, bChange = 0.00394963, totNum = 18
+ROUND = 1210, SUM = 20540594.9999999, bChange = 0.00394976, totNum = 18
+ROUND = 1211, SUM = 20540595, bChange = 0.00394988, totNum = 18
+ROUND = 1212, SUM = 20540595.0000001, bChange = 0.00395001, totNum = 18
+ROUND = 1213, SUM = 20540595, bChange = 0.00395013, totNum = 18
+ROUND = 1214, SUM = 20540594.9999999, bChange = 0.00395025, totNum = 18
+ROUND = 1215, SUM = 20540595, bChange = 0.00395038, totNum = 18
+ROUND = 1216, SUM = 20540594.9999999, bChange = 0.0039505, totNum = 17
+ROUND = 1217, SUM = 20540595, bChange = 0.00395062, totNum = 17
+ROUND = 1218, SUM = 20540594.9999999, bChange = 0.00395074, totNum = 17
+ROUND = 1219, SUM = 20540595, bChange = 0.00395086, totNum = 17
+ROUND = 1220, SUM = 20540595, bChange = 0.00395098, totNum = 16
+ROUND = 1221, SUM = 20540595, bChange = 0.0039511, totNum = 16
+ROUND = 1222, SUM = 20540594.9999999, bChange = 0.00395122, totNum = 16
+ROUND = 1223, SUM = 20540594.9999998, bChange = 0.00395134, totNum = 16
+ROUND = 1224, SUM = 20540594.9999999, bChange = 0.00395146, totNum = 16
+ROUND = 1225, SUM = 20540595, bChange = 0.00395158, totNum = 16
+ROUND = 1226, SUM = 20540595.0000001, bChange = 0.0039517, totNum = 16
+ROUND = 1227, SUM = 20540595, bChange = 0.00395182, totNum = 16
+ROUND = 1228, SUM = 20540595.0000001, bChange = 0.00395193, totNum = 16
+ROUND = 1229, SUM = 20540594.9999999, bChange = 0.00395205, totNum = 16
+ROUND = 1230, SUM = 20540595, bChange = 0.00395216, totNum = 16
+ROUND = 1231, SUM = 20540595, bChange = 0.00395228, totNum = 16
+ROUND = 1232, SUM = 20540595, bChange = 0.0039524, totNum = 16
+ROUND = 1233, SUM = 20540594.9999999, bChange = 0.00395251, totNum = 16
+ROUND = 1234, SUM = 20540595.0000001, bChange = 0.00395262, totNum = 16
+ROUND = 1235, SUM = 20540595, bChange = 0.00395274, totNum = 16
+ROUND = 1236, SUM = 20540595, bChange = 0.00395285, totNum = 16
+ROUND = 1237, SUM = 20540595, bChange = 0.00395296, totNum = 16
+ROUND = 1238, SUM = 20540594.9999999, bChange = 0.00395308, totNum = 16
+ROUND = 1239, SUM = 20540595, bChange = 0.00395319, totNum = 16
+ROUND = 1240, SUM = 20540595, bChange = 0.0039533, totNum = 16
+ROUND = 1241, SUM = 20540595, bChange = 0.00395341, totNum = 16
+ROUND = 1242, SUM = 20540594.9999999, bChange = 0.00395352, totNum = 16
+ROUND = 1243, SUM = 20540595, bChange = 0.00395363, totNum = 16
+ROUND = 1244, SUM = 20540595, bChange = 0.00395374, totNum = 15
+ROUND = 1245, SUM = 20540594.9999999, bChange = 0.00395385, totNum = 15
+ROUND = 1246, SUM = 20540595, bChange = 0.00395396, totNum = 15
+ROUND = 1247, SUM = 20540595.0000001, bChange = 0.00395407, totNum = 15
+ROUND = 1248, SUM = 20540595, bChange = 0.00395418, totNum = 16
+ROUND = 1249, SUM = 20540595.0000001, bChange = 0.00395428, totNum = 15
+ROUND = 1250, SUM = 20540595.0000001, bChange = 0.00395439, totNum = 15
+ROUND = 1251, SUM = 20540595, bChange = 0.0039545, totNum = 15
+ROUND = 1252, SUM = 20540595.0000001, bChange = 0.0039546, totNum = 15
+ROUND = 1253, SUM = 20540595, bChange = 0.00395471, totNum = 15
+ROUND = 1254, SUM = 20540594.9999999, bChange = 0.00395482, totNum = 15
+ROUND = 1255, SUM = 20540595, bChange = 0.00395492, totNum = 15
+ROUND = 1256, SUM = 20540595.0000001, bChange = 0.00395503, totNum = 15
+ROUND = 1257, SUM = 20540595, bChange = 0.00395513, totNum = 15
+ROUND = 1258, SUM = 20540595, bChange = 0.00395523, totNum = 15
+ROUND = 1259, SUM = 20540594.9999999, bChange = 0.00395534, totNum = 15
+ROUND = 1260, SUM = 20540594.9999999, bChange = 0.00395544, totNum = 15
+ROUND = 1261, SUM = 20540595.0000001, bChange = 0.00395554, totNum = 15
+ROUND = 1262, SUM = 20540594.9999999, bChange = 0.00395564, totNum = 15
+ROUND = 1263, SUM = 20540595, bChange = 0.00395575, totNum = 15
+ROUND = 1264, SUM = 20540595, bChange = 0.00395585, totNum = 15
+ROUND = 1265, SUM = 20540595, bChange = 0.00395595, totNum = 15
+ROUND = 1266, SUM = 20540595, bChange = 0.00395605, totNum = 15
+ROUND = 1267, SUM = 20540595, bChange = 0.00395615, totNum = 15
+ROUND = 1268, SUM = 20540594.9999999, bChange = 0.00395625, totNum = 15
+ROUND = 1269, SUM = 20540595.0000001, bChange = 0.00395635, totNum = 15
+ROUND = 1270, SUM = 20540595, bChange = 0.00395645, totNum = 15
+ROUND = 1271, SUM = 20540595, bChange = 0.00395655, totNum = 15
+ROUND = 1272, SUM = 20540594.9999998, bChange = 0.00395665, totNum = 15
+ROUND = 1273, SUM = 20540594.9999999, bChange = 0.00395674, totNum = 15
+ROUND = 1274, SUM = 20540595, bChange = 0.00395684, totNum = 15
+ROUND = 1275, SUM = 20540595.0000001, bChange = 0.00395694, totNum = 15
+ROUND = 1276, SUM = 20540595.0000001, bChange = 0.00395703, totNum = 15
+ROUND = 1277, SUM = 20540594.9999999, bChange = 0.00395713, totNum = 15
+ROUND = 1278, SUM = 20540595.0000001, bChange = 0.00395723, totNum = 15
+ROUND = 1279, SUM = 20540595, bChange = 0.00395732, totNum = 15
+ROUND = 1280, SUM = 20540595, bChange = 0.00395742, totNum = 15
+ROUND = 1281, SUM = 20540594.9999998, bChange = 0.00395751, totNum = 15
+ROUND = 1282, SUM = 20540594.9999999, bChange = 0.00395761, totNum = 15
+ROUND = 1283, SUM = 20540595, bChange = 0.0039577, totNum = 15
+ROUND = 1284, SUM = 20540594.9999998, bChange = 0.0039578, totNum = 15
+ROUND = 1285, SUM = 20540594.9999999, bChange = 0.00395789, totNum = 15
+ROUND = 1286, SUM = 20540594.9999999, bChange = 0.00395798, totNum = 15
+ROUND = 1287, SUM = 20540595.0000001, bChange = 0.00395807, totNum = 15
+ROUND = 1288, SUM = 20540594.9999999, bChange = 0.00395817, totNum = 15
+ROUND = 1289, SUM = 20540595, bChange = 0.00395826, totNum = 15
+ROUND = 1290, SUM = 20540594.9999998, bChange = 0.00395835, totNum = 15
+ROUND = 1291, SUM = 20540595.0000001, bChange = 0.00395844, totNum = 14
+ROUND = 1292, SUM = 20540595, bChange = 0.00395853, totNum = 14
+ROUND = 1293, SUM = 20540595.0000001, bChange = 0.00395862, totNum = 14
+ROUND = 1294, SUM = 20540594.9999999, bChange = 0.00395871, totNum = 14
+ROUND = 1295, SUM = 20540594.9999998, bChange = 0.0039588, totNum = 14
+ROUND = 1296, SUM = 20540594.9999999, bChange = 0.00395889, totNum = 14
+ROUND = 1297, SUM = 20540595.0000001, bChange = 0.00395898, totNum = 14
+ROUND = 1298, SUM = 20540594.9999999, bChange = 0.00395907, totNum = 14
+ROUND = 1299, SUM = 20540594.9999999, bChange = 0.00395916, totNum = 14
+ROUND = 1300, SUM = 20540595.0000001, bChange = 0.00395925, totNum = 14
+ROUND = 1301, SUM = 20540594.9999999, bChange = 0.00395933, totNum = 14
+ROUND = 1302, SUM = 20540594.9999999, bChange = 0.00395942, totNum = 14
+ROUND = 1303, SUM = 20540594.9999999, bChange = 0.00395951, totNum = 13
+ROUND = 1304, SUM = 20540594.9999999, bChange = 0.0039596, totNum = 13
+ROUND = 1305, SUM = 20540595, bChange = 0.00395968, totNum = 13
+ROUND = 1306, SUM = 20540595.0000001, bChange = 0.00395977, totNum = 13
+ROUND = 1307, SUM = 20540595.0000001, bChange = 0.00395985, totNum = 13
+ROUND = 1308, SUM = 20540594.9999999, bChange = 0.00395994, totNum = 13
+ROUND = 1309, SUM = 20540595, bChange = 0.00396002, totNum = 13
+ROUND = 1310, SUM = 20540594.9999999, bChange = 0.00396011, totNum = 13
+ROUND = 1311, SUM = 20540594.9999999, bChange = 0.00396019, totNum = 13
+ROUND = 1312, SUM = 20540595, bChange = 0.00396028, totNum = 13
+ROUND = 1313, SUM = 20540595, bChange = 0.00396036, totNum = 13
+ROUND = 1314, SUM = 20540595, bChange = 0.00396044, totNum = 13
+ROUND = 1315, SUM = 20540595, bChange = 0.00396053, totNum = 13
+ROUND = 1316, SUM = 20540595, bChange = 0.00396061, totNum = 12
+ROUND = 1317, SUM = 20540595.0000001, bChange = 0.00396069, totNum = 12
+ROUND = 1318, SUM = 20540595, bChange = 0.00396077, totNum = 12
+ROUND = 1319, SUM = 20540595, bChange = 0.00134505, totNum = 11
+ROUND = 1320, SUM = 20540594.9999999, bChange = 0.00134529, totNum = 11
+ROUND = 1321, SUM = 20540595, bChange = 0.00134553, totNum = 11
+ROUND = 1322, SUM = 20540595.0000001, bChange = 0.00134577, totNum = 11
+ROUND = 1323, SUM = 20540594.9999999, bChange = 0.00134601, totNum = 11
+ROUND = 1324, SUM = 20540595, bChange = 0.00134625, totNum = 11
+ROUND = 1325, SUM = 20540594.9999998, bChange = 0.00134649, totNum = 11
+ROUND = 1326, SUM = 20540594.9999999, bChange = 0.00134673, totNum = 11
+ROUND = 1327, SUM = 20540594.9999999, bChange = 0.00134697, totNum = 11
+ROUND = 1328, SUM = 20540595, bChange = 0.00134721, totNum = 11
+ROUND = 1329, SUM = 20540595, bChange = 0.00134745, totNum = 11
+ROUND = 1330, SUM = 20540595.0000001, bChange = 0.00134769, totNum = 11
+ROUND = 1331, SUM = 20540595, bChange = 0.00134793, totNum = 11
+ROUND = 1332, SUM = 20540595, bChange = 0.00134817, totNum = 11
+ROUND = 1333, SUM = 20540595.0000001, bChange = 0.00134841, totNum = 11
+ROUND = 1334, SUM = 20540595, bChange = 0.00134865, totNum = 11
+ROUND = 1335, SUM = 20540595, bChange = 0.00134888, totNum = 11
+ROUND = 1336, SUM = 20540595, bChange = 0.00134912, totNum = 11
+ROUND = 1337, SUM = 20540595, bChange = 0.00134936, totNum = 11
+ROUND = 1338, SUM = 20540595.0000002, bChange = 0.00134959, totNum = 11
+ROUND = 1339, SUM = 20540595.0000001, bChange = 0.00134983, totNum = 11
+ROUND = 1340, SUM = 20540594.9999999, bChange = 0.00135007, totNum = 11
+ROUND = 1341, SUM = 20540595, bChange = 0.0013503, totNum = 11
+ROUND = 1342, SUM = 20540595.0000001, bChange = 0.00135054, totNum = 11
+ROUND = 1343, SUM = 20540595.0000002, bChange = 0.00135077, totNum = 11
+ROUND = 1344, SUM = 20540595.0000001, bChange = 0.00135101, totNum = 11
+ROUND = 1345, SUM = 20540595.0000002, bChange = 0.00135124, totNum = 11
+ROUND = 1346, SUM = 20540595, bChange = 0.00135148, totNum = 11
+ROUND = 1347, SUM = 20540595.0000001, bChange = 0.00135171, totNum = 11
+ROUND = 1348, SUM = 20540595.0000001, bChange = 0.00135195, totNum = 10
+ROUND = 1349, SUM = 20540594.9999999, bChange = 0.00135218, totNum = 10
+ROUND = 1350, SUM = 20540595.0000001, bChange = 0.00135241, totNum = 10
+ROUND = 1351, SUM = 20540595, bChange = 0.00135265, totNum = 10
+ROUND = 1352, SUM = 20540595.0000001, bChange = 0.00135288, totNum = 10
+ROUND = 1353, SUM = 20540595.0000001, bChange = 0.00135311, totNum = 10
+ROUND = 1354, SUM = 20540595, bChange = 0.00135334, totNum = 10
+ROUND = 1355, SUM = 20540595, bChange = 0.00135358, totNum = 10
+ROUND = 1356, SUM = 20540594.9999999, bChange = 0.00135381, totNum = 10
+ROUND = 1357, SUM = 20540594.9999999, bChange = 0.00135404, totNum = 10
+ROUND = 1358, SUM = 20540595.0000002, bChange = 0.00135427, totNum = 10
+ROUND = 1359, SUM = 20540595, bChange = 0.0013545, totNum = 10
+ROUND = 1360, SUM = 20540595, bChange = 0.00135473, totNum = 10
+ROUND = 1361, SUM = 20540595, bChange = 0.00135496, totNum = 10
+ROUND = 1362, SUM = 20540595, bChange = 0.00135519, totNum = 10
+ROUND = 1363, SUM = 20540595, bChange = 0.00135542, totNum = 10
+ROUND = 1364, SUM = 20540595, bChange = 0.00135565, totNum = 9
+ROUND = 1365, SUM = 20540595.0000001, bChange = 0.00135588, totNum = 9
+ROUND = 1366, SUM = 20540594.9999998, bChange = 0.00135611, totNum = 9
+ROUND = 1367, SUM = 20540595, bChange = 0.00135634, totNum = 9
+ROUND = 1368, SUM = 20540595.0000002, bChange = 0.00135657, totNum = 9
+ROUND = 1369, SUM = 20540595, bChange = 0.0013568, totNum = 9
+ROUND = 1370, SUM = 20540594.9999999, bChange = 0.00135703, totNum = 9
+ROUND = 1371, SUM = 20540595, bChange = 0.00135725, totNum = 9
+ROUND = 1372, SUM = 20540595, bChange = 0.00135748, totNum = 9
+ROUND = 1373, SUM = 20540595.0000001, bChange = 0.00135771, totNum = 9
+ROUND = 1374, SUM = 20540595, bChange = 0.00135793, totNum = 9
+ROUND = 1375, SUM = 20540595.0000003, bChange = 0.00135816, totNum = 9
+ROUND = 1376, SUM = 20540595, bChange = 0.00135839, totNum = 9
+ROUND = 1377, SUM = 20540594.9999999, bChange = 0.00135861, totNum = 9
+ROUND = 1378, SUM = 20540594.9999999, bChange = 0.00135884, totNum = 9
+ROUND = 1379, SUM = 20540595, bChange = 0.00135907, totNum = 9
+ROUND = 1380, SUM = 20540595, bChange = 0.00135929, totNum = 9
+ROUND = 1381, SUM = 20540595, bChange = 0.00135952, totNum = 9
+ROUND = 1382, SUM = 20540594.9999999, bChange = 0.00135974, totNum = 9
+ROUND = 1383, SUM = 20540595, bChange = 0.00135996, totNum = 9
+ROUND = 1384, SUM = 20540595.0000001, bChange = 0.00136019, totNum = 9
+ROUND = 1385, SUM = 20540595, bChange = 0.00136041, totNum = 9
+ROUND = 1386, SUM = 20540595, bChange = 0.00136064, totNum = 9
+ROUND = 1387, SUM = 20540595, bChange = 0.00136086, totNum = 9
+ROUND = 1388, SUM = 20540595, bChange = 0.00136108, totNum = 9
+ROUND = 1389, SUM = 20540595, bChange = 0.00136131, totNum = 9
+ROUND = 1390, SUM = 20540595, bChange = 0.00136153, totNum = 9
+ROUND = 1391, SUM = 20540594.9999999, bChange = 0.00136175, totNum = 9
+ROUND = 1392, SUM = 20540594.9999999, bChange = 0.00136197, totNum = 9
+ROUND = 1393, SUM = 20540595.0000001, bChange = 0.00136219, totNum = 9
+ROUND = 1394, SUM = 20540595, bChange = 0.00136242, totNum = 9
+ROUND = 1395, SUM = 20540595, bChange = 0.00136264, totNum = 9
+ROUND = 1396, SUM = 20540594.9999999, bChange = 0.00136286, totNum = 9
+ROUND = 1397, SUM = 20540595, bChange = 0.00136309, totNum = 9
+ROUND = 1398, SUM = 20540595.0000001, bChange = 0.00136333, totNum = 9
+ROUND = 1399, SUM = 20540595, bChange = 0.00136358, totNum = 9
+ROUND = 1400, SUM = 20540594.9999999, bChange = 0.00136383, totNum = 9
+ROUND = 1401, SUM = 20540595.0000001, bChange = 0.00136407, totNum = 8
+ROUND = 1402, SUM = 20540595.0000003, bChange = 0.00136432, totNum = 8
+ROUND = 1403, SUM = 20540595, bChange = 0.00136456, totNum = 8
+ROUND = 1404, SUM = 20540595, bChange = 0.0013648, totNum = 8
+ROUND = 1405, SUM = 20540595.0000001, bChange = 0.00136505, totNum = 8
+ROUND = 1406, SUM = 20540595, bChange = 0.00136529, totNum = 8
+ROUND = 1407, SUM = 20540595.0000001, bChange = 0.00136553, totNum = 8
+ROUND = 1408, SUM = 20540595.0000001, bChange = 0.00136578, totNum = 8
+ROUND = 1409, SUM = 20540595.0000001, bChange = 0.00136602, totNum = 8
+ROUND = 1410, SUM = 20540594.9999999, bChange = 0.00136626, totNum = 8
+ROUND = 1411, SUM = 20540594.9999999, bChange = 0.0013665, totNum = 8
+ROUND = 1412, SUM = 20540594.9999999, bChange = 0.00136674, totNum = 8
+ROUND = 1413, SUM = 20540594.9999999, bChange = 0.00136699, totNum = 8
+ROUND = 1414, SUM = 20540595, bChange = 0.00136723, totNum = 8
+ROUND = 1415, SUM = 20540595, bChange = 0.00136747, totNum = 8
+ROUND = 1416, SUM = 20540594.9999999, bChange = 0.00136771, totNum = 8
+ROUND = 1417, SUM = 20540595.0000001, bChange = 0.00136795, totNum = 8
+ROUND = 1418, SUM = 20540594.9999999, bChange = 0.00136819, totNum = 8
+ROUND = 1419, SUM = 20540595, bChange = 0.00136843, totNum = 8
+ROUND = 1420, SUM = 20540595, bChange = 0.00136866, totNum = 8
+ROUND = 1421, SUM = 20540595.0000003, bChange = 0.0013689, totNum = 8
+ROUND = 1422, SUM = 20540595, bChange = 0.00136914, totNum = 8
+ROUND = 1423, SUM = 20540595, bChange = 0.00136938, totNum = 8
+ROUND = 1424, SUM = 20540595.0000001, bChange = 0.00136962, totNum = 8
+ROUND = 1425, SUM = 20540595.0000001, bChange = 0.00136985, totNum = 8
+ROUND = 1426, SUM = 20540595, bChange = 0.00137009, totNum = 8
+ROUND = 1427, SUM = 20540595, bChange = 0.00137033, totNum = 8
+ROUND = 1428, SUM = 20540595, bChange = 0.00137056, totNum = 8
+ROUND = 1429, SUM = 20540595, bChange = 0.0013708, totNum = 7
+ROUND = 1430, SUM = 20540595.0000001, bChange = 0.00137103, totNum = 7
+ROUND = 1431, SUM = 20540595, bChange = 0.00137127, totNum = 7
+ROUND = 1432, SUM = 20540595, bChange = 0.0013715, totNum = 7
+ROUND = 1433, SUM = 20540595, bChange = 0.00137174, totNum = 7
+ROUND = 1434, SUM = 20540595, bChange = 0.00137197, totNum = 7
+ROUND = 1435, SUM = 20540595.0000001, bChange = 0.00137221, totNum = 7
+ROUND = 1436, SUM = 20540595, bChange = 0.00137244, totNum = 7
+ROUND = 1437, SUM = 20540595, bChange = 0.00137267, totNum = 7
+ROUND = 1438, SUM = 20540595, bChange = 0.00137291, totNum = 7
+ROUND = 1439, SUM = 20540595, bChange = 0.00137314, totNum = 7
+ROUND = 1440, SUM = 20540594.9999999, bChange = 0.00137337, totNum = 7
+ROUND = 1441, SUM = 20540594.9999999, bChange = 0.0013736, totNum = 7
+ROUND = 1442, SUM = 20540595, bChange = 0.00137384, totNum = 6
+ROUND = 1443, SUM = 20540594.9999999, bChange = 0.00137407, totNum = 6
+ROUND = 1444, SUM = 20540595.0000001, bChange = 0.0013743, totNum = 6
+ROUND = 1445, SUM = 20540595, bChange = 0.00137453, totNum = 6
+ROUND = 1446, SUM = 20540595, bChange = 0.00137476, totNum = 6
+ROUND = 1447, SUM = 20540595, bChange = 0.00137499, totNum = 6
+ROUND = 1448, SUM = 20540595.0000001, bChange = 0.00137522, totNum = 6
+ROUND = 1449, SUM = 20540595, bChange = 0.00137545, totNum = 6
+ROUND = 1450, SUM = 20540595, bChange = 0.00137568, totNum = 6
+ROUND = 1451, SUM = 20540595, bChange = 0.00137591, totNum = 6
+ROUND = 1452, SUM = 20540594.9999999, bChange = 0.00137614, totNum = 6
+ROUND = 1453, SUM = 20540595, bChange = 0.00137636, totNum = 6
+ROUND = 1454, SUM = 20540595, bChange = 0.00137659, totNum = 6
+ROUND = 1455, SUM = 20540595, bChange = 0.00137682, totNum = 6
+ROUND = 1456, SUM = 20540595, bChange = 0.00137705, totNum = 6
+ROUND = 1457, SUM = 20540595, bChange = 0.00137727, totNum = 6
+ROUND = 1458, SUM = 20540595, bChange = 0.0013775, totNum = 6
+ROUND = 1459, SUM = 20540595.0000001, bChange = 0.00137773, totNum = 6
+ROUND = 1460, SUM = 20540595, bChange = 0.00137795, totNum = 6
+ROUND = 1461, SUM = 20540595.0000001, bChange = 0.00137818, totNum = 6
+ROUND = 1462, SUM = 20540595, bChange = 0.0013784, totNum = 6
+ROUND = 1463, SUM = 20540595, bChange = 0.00137863, totNum = 6
+ROUND = 1464, SUM = 20540594.9999999, bChange = 0.00137885, totNum = 6
+ROUND = 1465, SUM = 20540594.9999999, bChange = 0.00137908, totNum = 6
+ROUND = 1466, SUM = 20540595.0000002, bChange = 0.0013793, totNum = 6
+ROUND = 1467, SUM = 20540594.9999998, bChange = 0.00137953, totNum = 6
+ROUND = 1468, SUM = 20540595, bChange = 0.00137975, totNum = 6
+ROUND = 1469, SUM = 20540595, bChange = 0.00137997, totNum = 6
+ROUND = 1470, SUM = 20540595, bChange = 0.0013802, totNum = 6
+ROUND = 1471, SUM = 20540595, bChange = 0.00138042, totNum = 6
+ROUND = 1472, SUM = 20540594.9999999, bChange = 0.00138064, totNum = 6
+ROUND = 1473, SUM = 20540595, bChange = 0.00138086, totNum = 6
+ROUND = 1474, SUM = 20540595, bChange = 0.00138108, totNum = 6
+ROUND = 1475, SUM = 20540594.9999999, bChange = 0.00138131, totNum = 6
+ROUND = 1476, SUM = 20540595.0000001, bChange = 0.00138153, totNum = 6
+ROUND = 1477, SUM = 20540595, bChange = 0.00138175, totNum = 6
+ROUND = 1478, SUM = 20540594.9999999, bChange = 0.00138197, totNum = 6
+ROUND = 1479, SUM = 20540595, bChange = 0.00138219, totNum = 6
+ROUND = 1480, SUM = 20540595.0000001, bChange = 0.00138241, totNum = 6
+ROUND = 1481, SUM = 20540595, bChange = 0.00138263, totNum = 6
+ROUND = 1482, SUM = 20540595, bChange = 0.00138285, totNum = 6
+ROUND = 1483, SUM = 20540595.0000002, bChange = 0.00138307, totNum = 6
+ROUND = 1484, SUM = 20540595, bChange = 0.00138328, totNum = 6
+ROUND = 1485, SUM = 20540595, bChange = 0.0013835, totNum = 6
+ROUND = 1486, SUM = 20540595, bChange = 0.00138372, totNum = 6
+ROUND = 1487, SUM = 20540594.9999999, bChange = 0.00138394, totNum = 6
+ROUND = 1488, SUM = 20540595, bChange = 0.00138416, totNum = 6
+ROUND = 1489, SUM = 20540595, bChange = 0.00138437, totNum = 6
+ROUND = 1490, SUM = 20540595.0000001, bChange = 0.00138459, totNum = 6
+ROUND = 1491, SUM = 20540595.0000001, bChange = 0.00138481, totNum = 6
+ROUND = 1492, SUM = 20540595.0000001, bChange = 0.00138502, totNum = 6
+ROUND = 1493, SUM = 20540595, bChange = 0.00138524, totNum = 6
+ROUND = 1494, SUM = 20540595.0000002, bChange = 0.00138545, totNum = 6
+ROUND = 1495, SUM = 20540594.9999999, bChange = 0.00138567, totNum = 6
+ROUND = 1496, SUM = 20540595, bChange = 0.00138588, totNum = 6
+ROUND = 1497, SUM = 20540595.0000001, bChange = 0.0013861, totNum = 6
+ROUND = 1498, SUM = 20540594.9999999, bChange = 0.00138631, totNum = 6
+ROUND = 1499, SUM = 20540595, bChange = 0.00138653, totNum = 6
+ROUND = 1500, SUM = 20540595, bChange = 0.00138674, totNum = 6
+ROUND = 1501, SUM = 20540595, bChange = 0.00138696, totNum = 6
+ROUND = 1502, SUM = 20540594.9999999, bChange = 0.00138717, totNum = 6
+ROUND = 1503, SUM = 20540595, bChange = 0.00138738, totNum = 6
+ROUND = 1504, SUM = 20540595, bChange = 0.00138759, totNum = 6
+ROUND = 1505, SUM = 20540595, bChange = 0.00138781, totNum = 6
+ROUND = 1506, SUM = 20540594.9999999, bChange = 0.00138802, totNum = 6
+ROUND = 1507, SUM = 20540595, bChange = 0.00138823, totNum = 6
+ROUND = 1508, SUM = 20540595, bChange = 0.00138844, totNum = 6
+ROUND = 1509, SUM = 20540595, bChange = 0.00138865, totNum = 6
+ROUND = 1510, SUM = 20540595, bChange = 0.00138886, totNum = 6
+ROUND = 1511, SUM = 20540594.9999999, bChange = 0.00138908, totNum = 6
+ROUND = 1512, SUM = 20540595, bChange = 0.00138929, totNum = 6
+ROUND = 1513, SUM = 20540595.0000001, bChange = 0.0013895, totNum = 6
+ROUND = 1514, SUM = 20540595.0000001, bChange = 0.00138971, totNum = 6
+ROUND = 1515, SUM = 20540595.0000001, bChange = 0.00138991, totNum = 6
+ROUND = 1516, SUM = 20540595, bChange = 0.00139012, totNum = 6
+ROUND = 1517, SUM = 20540595.0000001, bChange = 0.00139033, totNum = 6
+ROUND = 1518, SUM = 20540595.0000001, bChange = 0.00139054, totNum = 6
+ROUND = 1519, SUM = 20540595, bChange = 0.00139075, totNum = 6
+ROUND = 1520, SUM = 20540595, bChange = 0.00139096, totNum = 6
+ROUND = 1521, SUM = 20540595.0000001, bChange = 0.00139117, totNum = 6
+ROUND = 1522, SUM = 20540595, bChange = 0.00139137, totNum = 6
+ROUND = 1523, SUM = 20540595.0000001, bChange = 0.00139158, totNum = 6
+ROUND = 1524, SUM = 20540595, bChange = 0.00139179, totNum = 6
+ROUND = 1525, SUM = 20540595, bChange = 0.00139199, totNum = 6
+ROUND = 1526, SUM = 20540595, bChange = 0.0013922, totNum = 6
+ROUND = 1527, SUM = 20540595, bChange = 0.00139241, totNum = 6
+ROUND = 1528, SUM = 20540594.9999999, bChange = 0.00139261, totNum = 6
+ROUND = 1529, SUM = 20540595.0000002, bChange = 0.00139282, totNum = 6
+ROUND = 1530, SUM = 20540595.0000001, bChange = 0.00139302, totNum = 6
+ROUND = 1531, SUM = 20540595, bChange = 0.00139323, totNum = 6
+ROUND = 1532, SUM = 20540594.9999999, bChange = 0.00139343, totNum = 6
+ROUND = 1533, SUM = 20540595.0000002, bChange = 0.00139364, totNum = 6
+ROUND = 1534, SUM = 20540595, bChange = 0.00139384, totNum = 6
+ROUND = 1535, SUM = 20540595, bChange = 0.00139404, totNum = 6
+ROUND = 1536, SUM = 20540595.0000001, bChange = 0.00139425, totNum = 6
+ROUND = 1537, SUM = 20540595.0000001, bChange = 0.00139445, totNum = 6
+ROUND = 1538, SUM = 20540595.0000001, bChange = 0.00139465, totNum = 6
+ROUND = 1539, SUM = 20540595, bChange = 0.00139486, totNum = 6
+ROUND = 1540, SUM = 20540595.0000002, bChange = 0.00139506, totNum = 6
+ROUND = 1541, SUM = 20540595, bChange = 0.00139526, totNum = 6
+ROUND = 1542, SUM = 20540595.0000001, bChange = 0.00139546, totNum = 6
+ROUND = 1543, SUM = 20540595, bChange = 0.00139566, totNum = 6
+ROUND = 1544, SUM = 20540595, bChange = 0.00139587, totNum = 6
+ROUND = 1545, SUM = 20540595, bChange = 0.00139607, totNum = 6
+ROUND = 1546, SUM = 20540595, bChange = 0.00139627, totNum = 6
+ROUND = 1547, SUM = 20540594.9999999, bChange = 0.00139647, totNum = 6
+ROUND = 1548, SUM = 20540595.0000001, bChange = 0.00139667, totNum = 6
+ROUND = 1549, SUM = 20540595, bChange = 0.00139687, totNum = 6
+ROUND = 1550, SUM = 20540594.9999999, bChange = 0.00139707, totNum = 6
+ROUND = 1551, SUM = 20540594.9999999, bChange = 0.00139727, totNum = 6
+ROUND = 1552, SUM = 20540595.0000001, bChange = 0.00139747, totNum = 6
+ROUND = 1553, SUM = 20540595, bChange = 0.00139766, totNum = 6
+ROUND = 1554, SUM = 20540595, bChange = 0.00139786, totNum = 6
+ROUND = 1555, SUM = 20540594.9999999, bChange = 0.00139806, totNum = 6
+ROUND = 1556, SUM = 20540595.0000001, bChange = 0.00139826, totNum = 6
+ROUND = 1557, SUM = 20540595, bChange = 0.00139846, totNum = 6
+ROUND = 1558, SUM = 20540595, bChange = 0.00139865, totNum = 6
+ROUND = 1559, SUM = 20540595.0000001, bChange = 0.00139885, totNum = 6
+ROUND = 1560, SUM = 20540595, bChange = 0.00139905, totNum = 6
+ROUND = 1561, SUM = 20540595, bChange = 0.00139924, totNum = 6
+ROUND = 1562, SUM = 20540595, bChange = 0.00139944, totNum = 6
+ROUND = 1563, SUM = 20540595.0000001, bChange = 0.00139964, totNum = 6
+ROUND = 1564, SUM = 20540595, bChange = 0.00139983, totNum = 6
+ROUND = 1565, SUM = 20540595.0000001, bChange = 0.00140003, totNum = 6
+ROUND = 1566, SUM = 20540595, bChange = 0.00140022, totNum = 6
+ROUND = 1567, SUM = 20540595, bChange = 0.00140042, totNum = 6
+ROUND = 1568, SUM = 20540595, bChange = 0.00140061, totNum = 6
+ROUND = 1569, SUM = 20540595, bChange = 0.00140081, totNum = 6
+ROUND = 1570, SUM = 20540595, bChange = 0.001401, totNum = 6
+ROUND = 1571, SUM = 20540595.0000001, bChange = 0.00140119, totNum = 6
+ROUND = 1572, SUM = 20540595, bChange = 0.00140139, totNum = 6
+ROUND = 1573, SUM = 20540595, bChange = 0.00140158, totNum = 6
+ROUND = 1574, SUM = 20540595.0000001, bChange = 0.00140177, totNum = 6
+ROUND = 1575, SUM = 20540595.0000001, bChange = 0.00140197, totNum = 6
+ROUND = 1576, SUM = 20540595, bChange = 0.00140216, totNum = 6
+ROUND = 1577, SUM = 20540595, bChange = 0.00140235, totNum = 6
+ROUND = 1578, SUM = 20540594.9999999, bChange = 0.00140254, totNum = 6
+ROUND = 1579, SUM = 20540595, bChange = 0.00140273, totNum = 6
+ROUND = 1580, SUM = 20540595, bChange = 0.00140293, totNum = 6
+ROUND = 1581, SUM = 20540595.0000001, bChange = 0.00140312, totNum = 6
+ROUND = 1582, SUM = 20540595, bChange = 0.00140331, totNum = 6
+ROUND = 1583, SUM = 20540595.0000001, bChange = 0.0014035, totNum = 6
+ROUND = 1584, SUM = 20540595.0000002, bChange = 0.00140369, totNum = 6
+ROUND = 1585, SUM = 20540595, bChange = 0.00140388, totNum = 6
+ROUND = 1586, SUM = 20540595, bChange = 0.00140407, totNum = 6
+ROUND = 1587, SUM = 20540595.0000001, bChange = 0.00140426, totNum = 6
+ROUND = 1588, SUM = 20540595, bChange = 0.00140445, totNum = 6
+ROUND = 1589, SUM = 20540594.9999999, bChange = 0.00140464, totNum = 6
+ROUND = 1590, SUM = 20540594.9999999, bChange = 0.00140482, totNum = 6
+ROUND = 1591, SUM = 20540595, bChange = 0.00140501, totNum = 6
+ROUND = 1592, SUM = 20540595.0000001, bChange = 0.0014052, totNum = 6
+ROUND = 1593, SUM = 20540594.9999999, bChange = 0.00140539, totNum = 6
+ROUND = 1594, SUM = 20540595.0000001, bChange = 0.00140558, totNum = 6
+ROUND = 1595, SUM = 20540595, bChange = 0.00140576, totNum = 5
+ROUND = 1596, SUM = 20540595, bChange = 0.00140595, totNum = 5
+ROUND = 1597, SUM = 20540595, bChange = 0.00140614, totNum = 5
+ROUND = 1598, SUM = 20540595, bChange = 0.00140633, totNum = 5
+ROUND = 1599, SUM = 20540595, bChange = 0.00140651, totNum = 5
+ROUND = 1600, SUM = 20540595, bChange = 0.0014067, totNum = 5
+ROUND = 1601, SUM = 20540595, bChange = 0.00140688, totNum = 5
+ROUND = 1602, SUM = 20540595, bChange = 0.00140707, totNum = 5
+ROUND = 1603, SUM = 20540594.9999999, bChange = 0.00140725, totNum = 5
+ROUND = 1604, SUM = 20540595.0000001, bChange = 0.00140744, totNum = 5
+ROUND = 1605, SUM = 20540595, bChange = 0.00140762, totNum = 5
+ROUND = 1606, SUM = 20540595, bChange = 0.00140781, totNum = 5
+ROUND = 1607, SUM = 20540595.0000002, bChange = 0.00140799, totNum = 5
+ROUND = 1608, SUM = 20540595, bChange = 0.00140818, totNum = 5
+ROUND = 1609, SUM = 20540595.0000001, bChange = 0.00140836, totNum = 5
+ROUND = 1610, SUM = 20540595.0000001, bChange = 0.00140854, totNum = 5
+ROUND = 1611, SUM = 20540595, bChange = 0.00140873, totNum = 5
+ROUND = 1612, SUM = 20540595.0000002, bChange = 0.00140891, totNum = 5
+ROUND = 1613, SUM = 20540595.0000001, bChange = 0.00140909, totNum = 5
+ROUND = 1614, SUM = 20540595, bChange = 0.00140928, totNum = 5
+ROUND = 1615, SUM = 20540594.9999999, bChange = 0.00140946, totNum = 5
+ROUND = 1616, SUM = 20540595, bChange = 0.00140964, totNum = 5
+ROUND = 1617, SUM = 20540595, bChange = 0.00140982, totNum = 5
+ROUND = 1618, SUM = 20540595.0000001, bChange = 0.00141, totNum = 5
+ROUND = 1619, SUM = 20540594.9999999, bChange = 0.00141018, totNum = 5
+ROUND = 1620, SUM = 20540595.0000001, bChange = 0.00141037, totNum = 5
+ROUND = 1621, SUM = 20540595.0000001, bChange = 0.00141055, totNum = 5
+ROUND = 1622, SUM = 20540595, bChange = 0.00141073, totNum = 5
+ROUND = 1623, SUM = 20540595.0000001, bChange = 0.00141091, totNum = 5
+ROUND = 1624, SUM = 20540595.0000001, bChange = 0.00141109, totNum = 5
+ROUND = 1625, SUM = 20540595, bChange = 0.00141127, totNum = 5
+ROUND = 1626, SUM = 20540594.9999998, bChange = 0.00141145, totNum = 5
+ROUND = 1627, SUM = 20540595, bChange = 0.00141163, totNum = 5
+ROUND = 1628, SUM = 20540595, bChange = 0.0014118, totNum = 5
+ROUND = 1629, SUM = 20540595.0000001, bChange = 0.00141198, totNum = 5
+ROUND = 1630, SUM = 20540595, bChange = 0.00141216, totNum = 5
+ROUND = 1631, SUM = 20540595, bChange = 0.00141234, totNum = 5
+ROUND = 1632, SUM = 20540595.0000001, bChange = 0.00141252, totNum = 5
+ROUND = 1633, SUM = 20540595, bChange = 0.0014127, totNum = 5
+ROUND = 1634, SUM = 20540595, bChange = 0.00141287, totNum = 5
+ROUND = 1635, SUM = 20540595.0000001, bChange = 0.00141305, totNum = 5
+ROUND = 1636, SUM = 20540595.0000001, bChange = 0.00141323, totNum = 5
+ROUND = 1637, SUM = 20540595.0000001, bChange = 0.0014134, totNum = 5
+ROUND = 1638, SUM = 20540595, bChange = 0.00141358, totNum = 5
+ROUND = 1639, SUM = 20540595, bChange = 0.00141376, totNum = 5
+ROUND = 1640, SUM = 20540595.0000002, bChange = 0.00141393, totNum = 5
+ROUND = 1641, SUM = 20540595.0000002, bChange = 0.00141411, totNum = 5
+ROUND = 1642, SUM = 20540594.9999999, bChange = 0.00141428, totNum = 5
+ROUND = 1643, SUM = 20540595, bChange = 0.00141446, totNum = 5
+ROUND = 1644, SUM = 20540595, bChange = 0.00141463, totNum = 5
+ROUND = 1645, SUM = 20540595.0000001, bChange = 0.00141481, totNum = 5
+ROUND = 1646, SUM = 20540595, bChange = 0.00141498, totNum = 5
+ROUND = 1647, SUM = 20540595.0000001, bChange = 0.00141516, totNum = 5
+ROUND = 1648, SUM = 20540595, bChange = 0.00141533, totNum = 5
+ROUND = 1649, SUM = 20540594.9999999, bChange = 0.0014155, totNum = 5
+ROUND = 1650, SUM = 20540595, bChange = 0.00141568, totNum = 5
+ROUND = 1651, SUM = 20540594.9999999, bChange = 0.00141585, totNum = 5
+ROUND = 1652, SUM = 20540594.9999999, bChange = 0.00141602, totNum = 5
+ROUND = 1653, SUM = 20540594.9999999, bChange = 0.0014162, totNum = 5
+ROUND = 1654, SUM = 20540595, bChange = 0.00141637, totNum = 5
+ROUND = 1655, SUM = 20540595.0000001, bChange = 0.00141654, totNum = 5
+ROUND = 1656, SUM = 20540595, bChange = 0.00141671, totNum = 5
+ROUND = 1657, SUM = 20540595.0000001, bChange = 0.00141689, totNum = 5
+ROUND = 1658, SUM = 20540595, bChange = 0.00141706, totNum = 5
+ROUND = 1659, SUM = 20540595.0000002, bChange = 0.00141723, totNum = 5
+ROUND = 1660, SUM = 20540595, bChange = 0.0014174, totNum = 5
+ROUND = 1661, SUM = 20540595, bChange = 0.00141757, totNum = 5
+ROUND = 1662, SUM = 20540595, bChange = 0.00141774, totNum = 5
+ROUND = 1663, SUM = 20540595.0000002, bChange = 0.00141791, totNum = 5
+ROUND = 1664, SUM = 20540595, bChange = 0.00141808, totNum = 5
+ROUND = 1665, SUM = 20540594.9999999, bChange = 0.00141825, totNum = 5
+ROUND = 1666, SUM = 20540595, bChange = 0.00141842, totNum = 5
+ROUND = 1667, SUM = 20540595, bChange = 0.00141859, totNum = 5
+ROUND = 1668, SUM = 20540594.9999998, bChange = 0.00141876, totNum = 5
+ROUND = 1669, SUM = 20540595, bChange = 0.00141893, totNum = 5
+ROUND = 1670, SUM = 20540595.0000001, bChange = 0.0014191, totNum = 5
+ROUND = 1671, SUM = 20540595, bChange = 0.00141927, totNum = 5
+ROUND = 1672, SUM = 20540595.0000001, bChange = 0.00141943, totNum = 5
+ROUND = 1673, SUM = 20540595.0000001, bChange = 0.0014196, totNum = 5
+ROUND = 1674, SUM = 20540595, bChange = 0.00141977, totNum = 5
+ROUND = 1675, SUM = 20540594.9999999, bChange = 0.00141994, totNum = 5
+ROUND = 1676, SUM = 20540595.0000001, bChange = 0.0014201, totNum = 5
+ROUND = 1677, SUM = 20540595, bChange = 0.00142027, totNum = 5
+ROUND = 1678, SUM = 20540594.9999999, bChange = 0.00142044, totNum = 5
+ROUND = 1679, SUM = 20540595, bChange = 0.00142061, totNum = 5
+ROUND = 1680, SUM = 20540595, bChange = 0.00142077, totNum = 5
+ROUND = 1681, SUM = 20540594.9999998, bChange = 0.00142094, totNum = 5
+ROUND = 1682, SUM = 20540595.0000001, bChange = 0.0014211, totNum = 5
+ROUND = 1683, SUM = 20540595, bChange = 0.00142127, totNum = 5
+ROUND = 1684, SUM = 20540595.0000001, bChange = 0.00142143, totNum = 5
+ROUND = 1685, SUM = 20540595.0000001, bChange = 0.0014216, totNum = 5
+ROUND = 1686, SUM = 20540595.0000001, bChange = 0.00142176, totNum = 5
+ROUND = 1687, SUM = 20540595, bChange = 0.00142193, totNum = 5
+ROUND = 1688, SUM = 20540595.0000001, bChange = 0.00142209, totNum = 5
+ROUND = 1689, SUM = 20540595.0000001, bChange = 0.00142226, totNum = 5
+ROUND = 1690, SUM = 20540595, bChange = 0.00142242, totNum = 5
+ROUND = 1691, SUM = 20540595.0000001, bChange = 0.00142259, totNum = 5
+ROUND = 1692, SUM = 20540595, bChange = 0.00142275, totNum = 5
+ROUND = 1693, SUM = 20540594.9999998, bChange = 0.00142291, totNum = 5
+ROUND = 1694, SUM = 20540595.0000001, bChange = 0.00142308, totNum = 5
+ROUND = 1695, SUM = 20540595.0000001, bChange = 0.00142324, totNum = 5
+ROUND = 1696, SUM = 20540595.0000001, bChange = 0.0014234, totNum = 5
+ROUND = 1697, SUM = 20540595, bChange = 0.00142356, totNum = 5
+ROUND = 1698, SUM = 20540595.0000001, bChange = 0.00142373, totNum = 5
+ROUND = 1699, SUM = 20540595.0000001, bChange = 0.00142389, totNum = 5
+ROUND = 1700, SUM = 20540595.0000001, bChange = 0.00142405, totNum = 5
+ROUND = 1701, SUM = 20540595, bChange = 0.00142421, totNum = 5
+ROUND = 1702, SUM = 20540595, bChange = 0.00142437, totNum = 5
+ROUND = 1703, SUM = 20540595, bChange = 0.00142453, totNum = 5
+ROUND = 1704, SUM = 20540595.0000001, bChange = 0.00142469, totNum = 5
+ROUND = 1705, SUM = 20540595, bChange = 0.00142485, totNum = 5
+ROUND = 1706, SUM = 20540595, bChange = 0.00142501, totNum = 5
+ROUND = 1707, SUM = 20540595, bChange = 0.00142517, totNum = 5
+ROUND = 1708, SUM = 20540595.0000001, bChange = 0.00142533, totNum = 5
+ROUND = 1709, SUM = 20540595, bChange = 0.00142549, totNum = 5
+ROUND = 1710, SUM = 20540595, bChange = 0.00142565, totNum = 5
+ROUND = 1711, SUM = 20540595, bChange = 0.00142581, totNum = 5
+ROUND = 1712, SUM = 20540595.0000001, bChange = 0.00142597, totNum = 5
+ROUND = 1713, SUM = 20540595.0000001, bChange = 0.00142613, totNum = 5
+ROUND = 1714, SUM = 20540595, bChange = 0.00142629, totNum = 5
+ROUND = 1715, SUM = 20540595, bChange = 0.00142645, totNum = 5
+ROUND = 1716, SUM = 20540595.0000001, bChange = 0.00142661, totNum = 5
+ROUND = 1717, SUM = 20540595.0000001, bChange = 0.00142676, totNum = 5
+ROUND = 1718, SUM = 20540595, bChange = 0.00142692, totNum = 5
+ROUND = 1719, SUM = 20540594.9999999, bChange = 0.00142708, totNum = 5
+ROUND = 1720, SUM = 20540595, bChange = 0.00142724, totNum = 5
+ROUND = 1721, SUM = 20540595, bChange = 0.00142739, totNum = 5
+ROUND = 1722, SUM = 20540595, bChange = 0.00142755, totNum = 5
+ROUND = 1723, SUM = 20540595, bChange = 0.00142771, totNum = 5
+ROUND = 1724, SUM = 20540595, bChange = 0.00142786, totNum = 5
+ROUND = 1725, SUM = 20540595, bChange = 0.00142802, totNum = 5
+ROUND = 1726, SUM = 20540595, bChange = 0.00142817, totNum = 5
+ROUND = 1727, SUM = 20540595.0000002, bChange = 0.00142833, totNum = 5
+ROUND = 1728, SUM = 20540595.0000001, bChange = 0.00142848, totNum = 5
+ROUND = 1729, SUM = 20540595.0000001, bChange = 0.00142864, totNum = 5
+ROUND = 1730, SUM = 20540595.0000001, bChange = 0.00142879, totNum = 5
+ROUND = 1731, SUM = 20540595, bChange = 0.00142895, totNum = 5
+ROUND = 1732, SUM = 20540595.0000001, bChange = 0.0014291, totNum = 5
+ROUND = 1733, SUM = 20540595.0000001, bChange = 0.00142926, totNum = 5
+ROUND = 1734, SUM = 20540595, bChange = 0.00142941, totNum = 5
+ROUND = 1735, SUM = 20540595, bChange = 0.00142957, totNum = 5
+ROUND = 1736, SUM = 20540595, bChange = 0.00142972, totNum = 5
+ROUND = 1737, SUM = 20540595.0000001, bChange = 0.00142987, totNum = 5
+ROUND = 1738, SUM = 20540595.0000002, bChange = 0.00143003, totNum = 4
+ROUND = 1739, SUM = 20540595.0000001, bChange = 0.00143018, totNum = 4
+ROUND = 1740, SUM = 20540595.0000001, bChange = 0.00143033, totNum = 4
+ROUND = 1741, SUM = 20540594.9999999, bChange = 0.00143048, totNum = 4
+ROUND = 1742, SUM = 20540595.0000001, bChange = 0.00143064, totNum = 4
+ROUND = 1743, SUM = 20540595.0000001, bChange = 0.00143079, totNum = 4
+ROUND = 1744, SUM = 20540595.0000001, bChange = 0.00143094, totNum = 4
+ROUND = 1745, SUM = 20540595.0000001, bChange = 0.00143109, totNum = 4
+ROUND = 1746, SUM = 20540595.0000001, bChange = 0.00143124, totNum = 4
+ROUND = 1747, SUM = 20540595, bChange = 0.0014314, totNum = 4
+ROUND = 1748, SUM = 20540595, bChange = 0.00143155, totNum = 4
+ROUND = 1749, SUM = 20540595.0000001, bChange = 0.0014317, totNum = 4
+ROUND = 1750, SUM = 20540595.0000001, bChange = 0.00143185, totNum = 4
+ROUND = 1751, SUM = 20540595.0000002, bChange = 0.001432, totNum = 4
+ROUND = 1752, SUM = 20540595, bChange = 0.00143215, totNum = 4
+ROUND = 1753, SUM = 20540594.9999999, bChange = 0.0014323, totNum = 4
+ROUND = 1754, SUM = 20540594.9999999, bChange = 0.00143245, totNum = 4
+ROUND = 1755, SUM = 20540595, bChange = 0.0014326, totNum = 4
+ROUND = 1756, SUM = 20540594.9999999, bChange = 0.00143275, totNum = 4
+ROUND = 1757, SUM = 20540594.9999999, bChange = 0.0014329, totNum = 4
+ROUND = 1758, SUM = 20540595.0000001, bChange = 0.00143305, totNum = 4
+ROUND = 1759, SUM = 20540595.0000002, bChange = 0.00143319, totNum = 4
+ROUND = 1760, SUM = 20540594.9999999, bChange = 0.00143334, totNum = 4
+ROUND = 1761, SUM = 20540595, bChange = 0.00143349, totNum = 4
+ROUND = 1762, SUM = 20540595, bChange = 0.00143364, totNum = 4
+ROUND = 1763, SUM = 20540594.9999999, bChange = 0.00143379, totNum = 4
+ROUND = 1764, SUM = 20540595.0000002, bChange = 0.00143393, totNum = 4
+ROUND = 1765, SUM = 20540594.9999999, bChange = 0.00143408, totNum = 4
+ROUND = 1766, SUM = 20540595, bChange = 0.00143423, totNum = 4
+ROUND = 1767, SUM = 20540595.0000001, bChange = 0.00143438, totNum = 4
+ROUND = 1768, SUM = 20540595.0000001, bChange = 0.00143452, totNum = 4
+ROUND = 1769, SUM = 20540594.9999999, bChange = 0.00143467, totNum = 4
+ROUND = 1770, SUM = 20540595.0000001, bChange = 0.00143482, totNum = 4
+ROUND = 1771, SUM = 20540595, bChange = 0.00143496, totNum = 4
+ROUND = 1772, SUM = 20540595.0000001, bChange = 0.00143511, totNum = 4
+ROUND = 1773, SUM = 20540595.0000001, bChange = 0.00143525, totNum = 4
+ROUND = 1774, SUM = 20540595, bChange = 0.0014354, totNum = 4
+ROUND = 1775, SUM = 20540595.0000001, bChange = 0.00143555, totNum = 4
+ROUND = 1776, SUM = 20540595.0000001, bChange = 0.00143592, totNum = 4
+ROUND = 1777, SUM = 20540595.0000001, bChange = 0.00143634, totNum = 4
+ROUND = 1778, SUM = 20540595, bChange = 0.00143675, totNum = 4
+ROUND = 1779, SUM = 20540595, bChange = 0.00143717, totNum = 4
+ROUND = 1780, SUM = 20540595, bChange = 0.00143758, totNum = 4
+ROUND = 1781, SUM = 20540595, bChange = 0.001438, totNum = 4
+ROUND = 1782, SUM = 20540595, bChange = 0.00143841, totNum = 4
+ROUND = 1783, SUM = 20540595.0000002, bChange = 0.00143883, totNum = 4
+ROUND = 1784, SUM = 20540595, bChange = 0.00143924, totNum = 4
+ROUND = 1785, SUM = 20540595.0000001, bChange = 0.00143966, totNum = 4
+ROUND = 1786, SUM = 20540595.0000001, bChange = 0.00144007, totNum = 4
+ROUND = 1787, SUM = 20540594.9999999, bChange = 0.00144048, totNum = 4
+ROUND = 1788, SUM = 20540595, bChange = 0.0014409, totNum = 4
+ROUND = 1789, SUM = 20540594.9999998, bChange = 0.00144131, totNum = 4
+ROUND = 1790, SUM = 20540595, bChange = 0.00144173, totNum = 4
+ROUND = 1791, SUM = 20540595, bChange = 0.00144214, totNum = 4
+ROUND = 1792, SUM = 20540595.0000001, bChange = 0.00144255, totNum = 4
+ROUND = 1793, SUM = 20540595.0000001, bChange = 0.00144297, totNum = 4
+ROUND = 1794, SUM = 20540595, bChange = 0.00144338, totNum = 4
+ROUND = 1795, SUM = 20540595, bChange = 0.00144379, totNum = 4
+ROUND = 1796, SUM = 20540595, bChange = 0.00144421, totNum = 4
+ROUND = 1797, SUM = 20540595.0000001, bChange = 0.00144462, totNum = 4
+ROUND = 1798, SUM = 20540595.0000001, bChange = 0.00144503, totNum = 4
+ROUND = 1799, SUM = 20540595, bChange = 0.00144544, totNum = 4
+ROUND = 1800, SUM = 20540595, bChange = 0.00144585, totNum = 4
+ROUND = 1801, SUM = 20540595, bChange = 0.00144627, totNum = 4
+ROUND = 1802, SUM = 20540595.0000001, bChange = 0.00144668, totNum = 4
+ROUND = 1803, SUM = 20540595, bChange = 0.00144709, totNum = 4
+ROUND = 1804, SUM = 20540595.0000001, bChange = 0.00143967, totNum = 3
+ROUND = 1805, SUM = 20540595.0000001, bChange = 0.00143981, totNum = 3
+ROUND = 1806, SUM = 20540595, bChange = 0.00143995, totNum = 3
+ROUND = 1807, SUM = 20540595, bChange = 0.00144009, totNum = 3
+ROUND = 1808, SUM = 20540595, bChange = 0.00144023, totNum = 3
+ROUND = 1809, SUM = 20540594.9999999, bChange = 0.00144037, totNum = 3
+ROUND = 1810, SUM = 20540595, bChange = 0.0014405, totNum = 3
+ROUND = 1811, SUM = 20540595.0000001, bChange = 0.00144064, totNum = 3
+ROUND = 1812, SUM = 20540595.0000002, bChange = 0.00144078, totNum = 3
+ROUND = 1813, SUM = 20540594.9999999, bChange = 0.00144092, totNum = 3
+ROUND = 1814, SUM = 20540595, bChange = 0.00144106, totNum = 3
+ROUND = 1815, SUM = 20540595.0000002, bChange = 0.00144119, totNum = 3
+ROUND = 1816, SUM = 20540595, bChange = 0.00144133, totNum = 3
+ROUND = 1817, SUM = 20540595, bChange = 0.00144147, totNum = 3
+ROUND = 1818, SUM = 20540595.0000001, bChange = 0.0014416, totNum = 3
+ROUND = 1819, SUM = 20540595.0000001, bChange = 0.00144174, totNum = 3
+ROUND = 1820, SUM = 20540594.9999999, bChange = 0.00144188, totNum = 3
+ROUND = 1821, SUM = 20540595.0000001, bChange = 0.00144201, totNum = 3
+ROUND = 1822, SUM = 20540594.9999999, bChange = 0.00144215, totNum = 3
+ROUND = 1823, SUM = 20540595.0000001, bChange = 0.00144228, totNum = 3
+ROUND = 1824, SUM = 20540595, bChange = 0.00144242, totNum = 3
+ROUND = 1825, SUM = 20540595.0000001, bChange = 0.00144255, totNum = 3
+ROUND = 1826, SUM = 20540595.0000001, bChange = 0.00144269, totNum = 3
+ROUND = 1827, SUM = 20540595, bChange = 0.00144282, totNum = 3
+ROUND = 1828, SUM = 20540595, bChange = 0.00144296, totNum = 3
+ROUND = 1829, SUM = 20540595.0000001, bChange = 0.00144309, totNum = 3
+ROUND = 1830, SUM = 20540595.0000001, bChange = 0.00144323, totNum = 3
+ROUND = 1831, SUM = 20540595, bChange = 0.00144336, totNum = 3
+ROUND = 1832, SUM = 20540595, bChange = 0.0014435, totNum = 3
+ROUND = 1833, SUM = 20540595.0000001, bChange = 0.00144363, totNum = 3
+ROUND = 1834, SUM = 20540595.0000001, bChange = 0.00144376, totNum = 3
+ROUND = 1835, SUM = 20540595, bChange = 0.0014439, totNum = 3
+ROUND = 1836, SUM = 20540595, bChange = 0.00144403, totNum = 3
+ROUND = 1837, SUM = 20540595, bChange = 0.00144416, totNum = 3
+ROUND = 1838, SUM = 20540595, bChange = 0.0014443, totNum = 3
+ROUND = 1839, SUM = 20540595, bChange = 0.00144443, totNum = 3
+ROUND = 1840, SUM = 20540595.0000001, bChange = 0.00144456, totNum = 3
+ROUND = 1841, SUM = 20540595.0000001, bChange = 0.00144469, totNum = 3
+ROUND = 1842, SUM = 20540595, bChange = 0.00144483, totNum = 3
+ROUND = 1843, SUM = 20540595.0000001, bChange = 0.00144496, totNum = 3
+ROUND = 1844, SUM = 20540595.0000001, bChange = 0.00144509, totNum = 3
+ROUND = 1845, SUM = 20540595.0000001, bChange = 0.00144522, totNum = 3
+ROUND = 1846, SUM = 20540595, bChange = 0.00144535, totNum = 3
+ROUND = 1847, SUM = 20540595, bChange = 0.00144548, totNum = 3
+ROUND = 1848, SUM = 20540595.0000002, bChange = 0.00144561, totNum = 3
+ROUND = 1849, SUM = 20540595, bChange = 0.00144575, totNum = 3
+ROUND = 1850, SUM = 20540594.9999999, bChange = 0.00144588, totNum = 3
+ROUND = 1851, SUM = 20540595, bChange = 0.00144601, totNum = 3
+ROUND = 1852, SUM = 20540595.0000001, bChange = 0.00144614, totNum = 3
+ROUND = 1853, SUM = 20540595, bChange = 0.00144627, totNum = 3
+ROUND = 1854, SUM = 20540595.0000001, bChange = 0.0014464, totNum = 3
+ROUND = 1855, SUM = 20540595, bChange = 0.00144653, totNum = 3
+ROUND = 1856, SUM = 20540595, bChange = 0.00144666, totNum = 3
+ROUND = 1857, SUM = 20540594.9999999, bChange = 0.00144678, totNum = 3
+ROUND = 1858, SUM = 20540594.9999999, bChange = 0.00144691, totNum = 3
+ROUND = 1859, SUM = 20540595, bChange = 0.00144704, totNum = 3
+ROUND = 1860, SUM = 20540595.0000001, bChange = 0.00144717, totNum = 3
+ROUND = 1861, SUM = 20540595, bChange = 0.0014473, totNum = 3
+ROUND = 1862, SUM = 20540595, bChange = 0.00144743, totNum = 3
+ROUND = 1863, SUM = 20540595.0000002, bChange = 0.00144756, totNum = 3
+ROUND = 1864, SUM = 20540595.0000001, bChange = 0.00144768, totNum = 3
+ROUND = 1865, SUM = 20540595, bChange = 0.00144781, totNum = 3
+ROUND = 1866, SUM = 20540595, bChange = 0.00144794, totNum = 3
+ROUND = 1867, SUM = 20540595.0000002, bChange = 0.00144807, totNum = 3
+ROUND = 1868, SUM = 20540595.0000001, bChange = 0.00144819, totNum = 3
+ROUND = 1869, SUM = 20540595.0000001, bChange = 0.00144832, totNum = 3
+ROUND = 1870, SUM = 20540595.0000001, bChange = 0.00144845, totNum = 3
+ROUND = 1871, SUM = 20540595, bChange = 0.00144857, totNum = 3
+ROUND = 1872, SUM = 20540595, bChange = 0.0014487, totNum = 3
+ROUND = 1873, SUM = 20540595, bChange = 0.00144883, totNum = 3
+ROUND = 1874, SUM = 20540595.0000001, bChange = 0.00144895, totNum = 3
+ROUND = 1875, SUM = 20540595, bChange = 0.00144908, totNum = 3
+ROUND = 1876, SUM = 20540595, bChange = 0.00144921, totNum = 3
+ROUND = 1877, SUM = 20540595, bChange = 0.00144933, totNum = 3
+ROUND = 1878, SUM = 20540595, bChange = 0.00144946, totNum = 3
+ROUND = 1879, SUM = 20540595.0000001, bChange = 0.00144958, totNum = 3
+ROUND = 1880, SUM = 20540595, bChange = 0.00144971, totNum = 3
+ROUND = 1881, SUM = 20540595, bChange = 0.00144983, totNum = 3
+ROUND = 1882, SUM = 20540595, bChange = 0.00144996, totNum = 3
+ROUND = 1883, SUM = 20540595, bChange = 0.00145008, totNum = 3
+ROUND = 1884, SUM = 20540595.0000001, bChange = 0.00145021, totNum = 3
+ROUND = 1885, SUM = 20540595, bChange = 0.00145033, totNum = 3
+ROUND = 1886, SUM = 20540595, bChange = 0.00145045, totNum = 3
+ROUND = 1887, SUM = 20540595, bChange = 0.00145058, totNum = 3
+ROUND = 1888, SUM = 20540595, bChange = 0.0014507, totNum = 3
+ROUND = 1889, SUM = 20540594.9999999, bChange = 0.00145082, totNum = 3
+ROUND = 1890, SUM = 20540595, bChange = 0.00145095, totNum = 3
+ROUND = 1891, SUM = 20540595, bChange = 0.00145107, totNum = 3
+ROUND = 1892, SUM = 20540594.9999999, bChange = 0.00145119, totNum = 3
+ROUND = 1893, SUM = 20540595, bChange = 0.00145132, totNum = 3
+ROUND = 1894, SUM = 20540595, bChange = 0.00145144, totNum = 3
+ROUND = 1895, SUM = 20540594.9999999, bChange = 0.00145156, totNum = 3
+ROUND = 1896, SUM = 20540595, bChange = 0.00145168, totNum = 3
+ROUND = 1897, SUM = 20540595.0000002, bChange = 0.00145181, totNum = 3
+ROUND = 1898, SUM = 20540595.0000001, bChange = 0.00145193, totNum = 3
+ROUND = 1899, SUM = 20540595, bChange = 0.00145205, totNum = 3
+ROUND = 1900, SUM = 20540595, bChange = 0.00145217, totNum = 3
+ROUND = 1901, SUM = 20540595, bChange = 0.00145229, totNum = 3
+ROUND = 1902, SUM = 20540595, bChange = 0.00145241, totNum = 3
+ROUND = 1903, SUM = 20540595, bChange = 0.00145253, totNum = 3
+ROUND = 1904, SUM = 20540595, bChange = 0.00145265, totNum = 3
+ROUND = 1905, SUM = 20540595.0000001, bChange = 0.00145278, totNum = 3
+ROUND = 1906, SUM = 20540595, bChange = 0.0014529, totNum = 3
+ROUND = 1907, SUM = 20540595.0000002, bChange = 0.00145302, totNum = 3
+ROUND = 1908, SUM = 20540595.0000001, bChange = 0.00145314, totNum = 3
+ROUND = 1909, SUM = 20540595, bChange = 0.00145326, totNum = 3
+ROUND = 1910, SUM = 20540595.0000001, bChange = 0.00145338, totNum = 3
+ROUND = 1911, SUM = 20540595.0000001, bChange = 0.0014535, totNum = 3
+ROUND = 1912, SUM = 20540595, bChange = 0.00145362, totNum = 3
+ROUND = 1913, SUM = 20540595, bChange = 0.00145373, totNum = 3
+ROUND = 1914, SUM = 20540595, bChange = 0.00145385, totNum = 3
+ROUND = 1915, SUM = 20540595, bChange = 0.00145397, totNum = 3
+ROUND = 1916, SUM = 20540595.0000001, bChange = 0.00145409, totNum = 3
+ROUND = 1917, SUM = 20540595.0000001, bChange = 0.00145421, totNum = 3
+ROUND = 1918, SUM = 20540595, bChange = 0.00145433, totNum = 3
+ROUND = 1919, SUM = 20540595, bChange = 0.00145445, totNum = 3
+ROUND = 1920, SUM = 20540594.9999999, bChange = 0.00145456, totNum = 3
+ROUND = 1921, SUM = 20540595, bChange = 0.00145468, totNum = 3
+ROUND = 1922, SUM = 20540595.0000001, bChange = 0.0014548, totNum = 3
+ROUND = 1923, SUM = 20540595.0000001, bChange = 0.00145492, totNum = 3
+ROUND = 1924, SUM = 20540594.9999999, bChange = 0.00145503, totNum = 3
+ROUND = 1925, SUM = 20540594.9999999, bChange = 0.00145515, totNum = 3
+ROUND = 1926, SUM = 20540594.9999999, bChange = 0.00145527, totNum = 3
+ROUND = 1927, SUM = 20540595, bChange = 0.00145539, totNum = 3
+ROUND = 1928, SUM = 20540595.0000001, bChange = 0.0014555, totNum = 3
+ROUND = 1929, SUM = 20540595, bChange = 0.00145562, totNum = 3
+ROUND = 1930, SUM = 20540594.9999999, bChange = 0.00145574, totNum = 3
+ROUND = 1931, SUM = 20540594.9999999, bChange = 0.00145585, totNum = 3
+ROUND = 1932, SUM = 20540595, bChange = 0.00145597, totNum = 3
+ROUND = 1933, SUM = 20540595, bChange = 0.00145608, totNum = 3
+ROUND = 1934, SUM = 20540595.0000001, bChange = 0.0014562, totNum = 3
+ROUND = 1935, SUM = 20540594.9999999, bChange = 0.00145631, totNum = 3
+ROUND = 1936, SUM = 20540594.9999999, bChange = 0.00145643, totNum = 3
+ROUND = 1937, SUM = 20540594.9999999, bChange = 0.00145655, totNum = 3
+ROUND = 1938, SUM = 20540595, bChange = 0.00145666, totNum = 3
+ROUND = 1939, SUM = 20540594.9999999, bChange = 0.00145678, totNum = 3
+ROUND = 1940, SUM = 20540595.0000001, bChange = 0.00145689, totNum = 3
+ROUND = 1941, SUM = 20540595, bChange = 0.001457, totNum = 3
+ROUND = 1942, SUM = 20540595, bChange = 0.00145712, totNum = 3
+ROUND = 1943, SUM = 20540594.9999999, bChange = 0.00145723, totNum = 3
+ROUND = 1944, SUM = 20540595, bChange = 0.00145735, totNum = 3
+ROUND = 1945, SUM = 20540595, bChange = 0.00145746, totNum = 3
+ROUND = 1946, SUM = 20540595, bChange = 0.00145757, totNum = 3
+ROUND = 1947, SUM = 20540595.0000001, bChange = 0.00145769, totNum = 3
+ROUND = 1948, SUM = 20540595, bChange = 0.0014578, totNum = 3
+ROUND = 1949, SUM = 20540595, bChange = 0.00145791, totNum = 3
+ROUND = 1950, SUM = 20540595, bChange = 0.00145803, totNum = 3
+ROUND = 1951, SUM = 20540595, bChange = 0.00145814, totNum = 3
+ROUND = 1952, SUM = 20540595, bChange = 0.00145825, totNum = 3
+ROUND = 1953, SUM = 20540595.0000001, bChange = 0.00145837, totNum = 3
+ROUND = 1954, SUM = 20540594.9999998, bChange = 0.00145848, totNum = 3
+ROUND = 1955, SUM = 20540595, bChange = 0.00145859, totNum = 3
+ROUND = 1956, SUM = 20540594.9999999, bChange = 0.0014587, totNum = 3
+ROUND = 1957, SUM = 20540595.0000001, bChange = 0.00145881, totNum = 3
+ROUND = 1958, SUM = 20540595, bChange = 0.00145893, totNum = 3
+ROUND = 1959, SUM = 20540595.0000001, bChange = 0.00145904, totNum = 3
+ROUND = 1960, SUM = 20540595, bChange = 0.00145915, totNum = 3
+ROUND = 1961, SUM = 20540595, bChange = 0.00145926, totNum = 3
+ROUND = 1962, SUM = 20540595, bChange = 0.00145937, totNum = 3
+ROUND = 1963, SUM = 20540595.0000001, bChange = 0.00145948, totNum = 3
+ROUND = 1964, SUM = 20540594.9999999, bChange = 0.00145959, totNum = 3
+ROUND = 1965, SUM = 20540595, bChange = 0.0014597, totNum = 3
+ROUND = 1966, SUM = 20540595, bChange = 0.00145981, totNum = 3
+ROUND = 1967, SUM = 20540595.0000002, bChange = 0.00145992, totNum = 3
+ROUND = 1968, SUM = 20540595.0000001, bChange = 0.00146003, totNum = 3
+ROUND = 1969, SUM = 20540595, bChange = 0.00146014, totNum = 3
+ROUND = 1970, SUM = 20540595.0000001, bChange = 0.00146025, totNum = 3
+ROUND = 1971, SUM = 20540595.0000001, bChange = 0.00146036, totNum = 3
+ROUND = 1972, SUM = 20540595, bChange = 0.00146047, totNum = 3
+ROUND = 1973, SUM = 20540594.9999999, bChange = 0.00146058, totNum = 3
+ROUND = 1974, SUM = 20540595, bChange = 0.00146069, totNum = 3
+ROUND = 1975, SUM = 20540594.9999999, bChange = 0.0014608, totNum = 3
+ROUND = 1976, SUM = 20540595, bChange = 0.00146091, totNum = 3
+ROUND = 1977, SUM = 20540594.9999999, bChange = 0.00146102, totNum = 3
+ROUND = 1978, SUM = 20540595, bChange = 0.00146113, totNum = 3
+ROUND = 1979, SUM = 20540595, bChange = 0.00146124, totNum = 3
+ROUND = 1980, SUM = 20540594.9999999, bChange = 0.00146134, totNum = 3
+ROUND = 1981, SUM = 20540595, bChange = 0.00146145, totNum = 3
+ROUND = 1982, SUM = 20540595.0000001, bChange = 0.00146156, totNum = 3
+ROUND = 1983, SUM = 20540595, bChange = 0.00146167, totNum = 3
+ROUND = 1984, SUM = 20540594.9999999, bChange = 0.00146177, totNum = 3
+ROUND = 1985, SUM = 20540595, bChange = 0.00146188, totNum = 3
+ROUND = 1986, SUM = 20540595.0000001, bChange = 0.00146199, totNum = 3
+ROUND = 1987, SUM = 20540594.9999999, bChange = 0.0014621, totNum = 3
+ROUND = 1988, SUM = 20540595.0000002, bChange = 0.0014622, totNum = 3
+ROUND = 1989, SUM = 20540595, bChange = 0.00146231, totNum = 3
+ROUND = 1990, SUM = 20540595, bChange = 0.00146242, totNum = 3
+ROUND = 1991, SUM = 20540595.0000001, bChange = 0.00146252, totNum = 3
+ROUND = 1992, SUM = 20540595.0000001, bChange = 0.00146263, totNum = 3
+ROUND = 1993, SUM = 20540595, bChange = 0.00146274, totNum = 3
+ROUND = 1994, SUM = 20540595, bChange = 0.00146284, totNum = 3
+ROUND = 1995, SUM = 20540595, bChange = 0.00146295, totNum = 3
+ROUND = 1996, SUM = 20540594.9999999, bChange = 0.00146305, totNum = 3
+ROUND = 1997, SUM = 20540594.9999999, bChange = 0.00146316, totNum = 3
+ROUND = 1998, SUM = 20540595, bChange = 0.00146326, totNum = 3
+ROUND = 1999, SUM = 20540595, bChange = 0.00146337, totNum = 3
+ROUND = 2000, SUM = 20540594.9999999, bChange = 0.00146348, totNum = 3
+ROUND = 2001, SUM = 20540594.9999999, bChange = 0.00146358, totNum = 3
+ROUND = 2002, SUM = 20540594.9999999, bChange = 0.00146368, totNum = 3
+ROUND = 2003, SUM = 20540595.0000001, bChange = 0.00146379, totNum = 3
+ROUND = 2004, SUM = 20540594.9999999, bChange = 0.00146389, totNum = 3
+ROUND = 2005, SUM = 20540595, bChange = 0.001464, totNum = 3
+ROUND = 2006, SUM = 20540595, bChange = 0.0014641, totNum = 3
+ROUND = 2007, SUM = 20540595.0000001, bChange = 0.00146421, totNum = 3
+ROUND = 2008, SUM = 20540595, bChange = 0.00146431, totNum = 3
+ROUND = 2009, SUM = 20540595.0000001, bChange = 0.00146441, totNum = 3
+ROUND = 2010, SUM = 20540595.0000001, bChange = 0.00146452, totNum = 3
+ROUND = 2011, SUM = 20540595, bChange = 0.00146462, totNum = 3
+ROUND = 2012, SUM = 20540595.0000001, bChange = 0.00146472, totNum = 3
+ROUND = 2013, SUM = 20540594.9999999, bChange = 0.00146483, totNum = 3
+ROUND = 2014, SUM = 20540595.0000001, bChange = 0.00146493, totNum = 3
+ROUND = 2015, SUM = 20540595, bChange = 0.00146503, totNum = 3
+ROUND = 2016, SUM = 20540595, bChange = 0.00146514, totNum = 3
+ROUND = 2017, SUM = 20540595, bChange = 0.00146524, totNum = 3
+ROUND = 2018, SUM = 20540594.9999999, bChange = 0.00146534, totNum = 3
+ROUND = 2019, SUM = 20540594.9999999, bChange = 0.00146544, totNum = 3
+ROUND = 2020, SUM = 20540595, bChange = 0.00146555, totNum = 3
+ROUND = 2021, SUM = 20540595.0000001, bChange = 0.00146565, totNum = 3
+ROUND = 2022, SUM = 20540594.9999999, bChange = 0.00146575, totNum = 3
+ROUND = 2023, SUM = 20540595, bChange = 0.00146585, totNum = 3
+ROUND = 2024, SUM = 20540594.9999999, bChange = 0.00146595, totNum = 3
+ROUND = 2025, SUM = 20540595, bChange = 0.00146605, totNum = 3
+ROUND = 2026, SUM = 20540595, bChange = 0.00146616, totNum = 3
+ROUND = 2027, SUM = 20540595, bChange = 0.00146626, totNum = 3
+ROUND = 2028, SUM = 20540595, bChange = 0.00146636, totNum = 3
+ROUND = 2029, SUM = 20540595, bChange = 0.00146646, totNum = 3
+ROUND = 2030, SUM = 20540595, bChange = 0.00146656, totNum = 2
+ROUND = 2031, SUM = 20540595, bChange = 0.00146666, totNum = 2
+ROUND = 2032, SUM = 20540595, bChange = 0.00146676, totNum = 2
+ROUND = 2033, SUM = 20540595, bChange = 0.00146686, totNum = 2
+ROUND = 2034, SUM = 20540595, bChange = 0.00146696, totNum = 2
+ROUND = 2035, SUM = 20540595, bChange = 0.00146706, totNum = 2
+ROUND = 2036, SUM = 20540595, bChange = 0.00146716, totNum = 2
+ROUND = 2037, SUM = 20540595, bChange = 0.00146726, totNum = 2
+ROUND = 2038, SUM = 20540594.9999999, bChange = 0.00146736, totNum = 2
+ROUND = 2039, SUM = 20540595, bChange = 0.00146746, totNum = 2
+ROUND = 2040, SUM = 20540595, bChange = 0.00146756, totNum = 2
+ROUND = 2041, SUM = 20540595, bChange = 0.00146766, totNum = 2
+ROUND = 2042, SUM = 20540595.0000001, bChange = 0.00146775, totNum = 2
+ROUND = 2043, SUM = 20540595, bChange = 0.00146785, totNum = 2
+ROUND = 2044, SUM = 20540595.0000001, bChange = 0.00146795, totNum = 3
+ROUND = 2045, SUM = 20540595.0000001, bChange = 0.00146805, totNum = 3
+ROUND = 2046, SUM = 20540595.0000001, bChange = 0.00146815, totNum = 3
+ROUND = 2047, SUM = 20540595.0000002, bChange = 0.00146825, totNum = 3
+ROUND = 2048, SUM = 20540595.0000001, bChange = 0.00146834, totNum = 3
+ROUND = 2049, SUM = 20540595.0000001, bChange = 0.00146844, totNum = 3
+ROUND = 2050, SUM = 20540595, bChange = 0.00146854, totNum = 3
+ROUND = 2051, SUM = 20540595, bChange = 0.00146864, totNum = 3
+ROUND = 2052, SUM = 20540595.0000001, bChange = 0.00146874, totNum = 3
+ROUND = 2053, SUM = 20540595.0000002, bChange = 0.00146883, totNum = 3
+ROUND = 2054, SUM = 20540595, bChange = 0.00146893, totNum = 3
+ROUND = 2055, SUM = 20540595.0000001, bChange = 0.00146903, totNum = 3
+ROUND = 2056, SUM = 20540595, bChange = 0.00146912, totNum = 3
+ROUND = 2057, SUM = 20540594.9999999, bChange = 0.00146922, totNum = 3
+ROUND = 2058, SUM = 20540594.9999999, bChange = 0.00146932, totNum = 3
+ROUND = 2059, SUM = 20540595.0000001, bChange = 0.00146941, totNum = 3
+ROUND = 2060, SUM = 20540595, bChange = 0.00146951, totNum = 3
+ROUND = 2061, SUM = 20540595, bChange = 0.00146961, totNum = 3
+ROUND = 2062, SUM = 20540595.0000001, bChange = 0.0014697, totNum = 3
+ROUND = 2063, SUM = 20540595.0000001, bChange = 0.0014698, totNum = 3
+ROUND = 2064, SUM = 20540595.0000001, bChange = 0.00146989, totNum = 3
+ROUND = 2065, SUM = 20540595.0000001, bChange = 0.00146999, totNum = 3
+ROUND = 2066, SUM = 20540595, bChange = 0.00147008, totNum = 3
+ROUND = 2067, SUM = 20540595.0000001, bChange = 0.00147018, totNum = 3
+ROUND = 2068, SUM = 20540594.9999999, bChange = 0.00147028, totNum = 3
+ROUND = 2069, SUM = 20540595, bChange = 0.00147037, totNum = 3
+ROUND = 2070, SUM = 20540595, bChange = 0.00147047, totNum = 3
+ROUND = 2071, SUM = 20540595, bChange = 0.00147056, totNum = 3
+ROUND = 2072, SUM = 20540595, bChange = 0.00147065, totNum = 3
+ROUND = 2073, SUM = 20540594.9999999, bChange = 0.00147075, totNum = 3
+ROUND = 2074, SUM = 20540595, bChange = 0.00147084, totNum = 3
+ROUND = 2075, SUM = 20540595.0000001, bChange = 0.00147094, totNum = 3
+ROUND = 2076, SUM = 20540595.0000001, bChange = 0.00147103, totNum = 3
+ROUND = 2077, SUM = 20540595.0000001, bChange = 0.00147113, totNum = 3
+ROUND = 2078, SUM = 20540594.9999999, bChange = 0.00147122, totNum = 3
+ROUND = 2079, SUM = 20540595, bChange = 0.00147131, totNum = 3
+ROUND = 2080, SUM = 20540595.0000001, bChange = 0.00147141, totNum = 3
+ROUND = 2081, SUM = 20540594.9999999, bChange = 0.0014715, totNum = 3
+ROUND = 2082, SUM = 20540594.9999999, bChange = 0.00147159, totNum = 3
+ROUND = 2083, SUM = 20540595, bChange = 0.00147169, totNum = 3
+ROUND = 2084, SUM = 20540595.0000001, bChange = 0.00147178, totNum = 3
+ROUND = 2085, SUM = 20540594.9999999, bChange = 0.00147187, totNum = 3
+ROUND = 2086, SUM = 20540594.9999998, bChange = 0.00147197, totNum = 3
+ROUND = 2087, SUM = 20540595, bChange = 0.00147206, totNum = 3
+ROUND = 2088, SUM = 20540594.9999999, bChange = 0.00147215, totNum = 3
+ROUND = 2089, SUM = 20540594.9999999, bChange = 0.00147224, totNum = 3
+ROUND = 2090, SUM = 20540595, bChange = 0.00147233, totNum = 3
+ROUND = 2091, SUM = 20540595, bChange = 0.00147243, totNum = 3
+ROUND = 2092, SUM = 20540595.0000001, bChange = 0.00147252, totNum = 3
+ROUND = 2093, SUM = 20540594.9999999, bChange = 0.00147261, totNum = 3
+ROUND = 2094, SUM = 20540595, bChange = 0.0014727, totNum = 3
+ROUND = 2095, SUM = 20540595.0000001, bChange = 0.00147279, totNum = 3
+ROUND = 2096, SUM = 20540594.9999999, bChange = 0.00147289, totNum = 3
+ROUND = 2097, SUM = 20540595.0000001, bChange = 0.00147298, totNum = 3
+ROUND = 2098, SUM = 20540595, bChange = 0.00147307, totNum = 3
+ROUND = 2099, SUM = 20540594.9999998, bChange = 0.00147316, totNum = 3
+ROUND = 2100, SUM = 20540594.9999999, bChange = 0.00147325, totNum = 3
+ROUND = 2101, SUM = 20540595, bChange = 0.00147334, totNum = 3
+ROUND = 2102, SUM = 20540595, bChange = 0.00147343, totNum = 3
+ROUND = 2103, SUM = 20540595.0000001, bChange = 0.00147352, totNum = 3
+ROUND = 2104, SUM = 20540595.0000001, bChange = 0.00147361, totNum = 3
+ROUND = 2105, SUM = 20540594.9999999, bChange = 0.0014737, totNum = 3
+ROUND = 2106, SUM = 20540595, bChange = 0.00147379, totNum = 3
+ROUND = 2107, SUM = 20540595.0000001, bChange = 0.00147388, totNum = 3
+ROUND = 2108, SUM = 20540594.9999999, bChange = 0.00147397, totNum = 3
+ROUND = 2109, SUM = 20540595, bChange = 0.00147406, totNum = 3
+ROUND = 2110, SUM = 20540595, bChange = 0.00147415, totNum = 3
+ROUND = 2111, SUM = 20540595.0000001, bChange = 0.00147424, totNum = 3
+ROUND = 2112, SUM = 20540595, bChange = 0.00147433, totNum = 3
+ROUND = 2113, SUM = 20540595.0000001, bChange = 0.00147442, totNum = 3
+ROUND = 2114, SUM = 20540595, bChange = 0.00147451, totNum = 3
+ROUND = 2115, SUM = 20540595.0000001, bChange = 0.0014746, totNum = 3
+ROUND = 2116, SUM = 20540594.9999999, bChange = 0.00147468, totNum = 3
+ROUND = 2117, SUM = 20540594.9999999, bChange = 0.00147477, totNum = 3
+ROUND = 2118, SUM = 20540595.0000001, bChange = 0.00147486, totNum = 3
+ROUND = 2119, SUM = 20540595.0000001, bChange = 0.00147495, totNum = 3
+ROUND = 2120, SUM = 20540595, bChange = 0.00147504, totNum = 3
+ROUND = 2121, SUM = 20540595, bChange = 0.00147513, totNum = 3
+ROUND = 2122, SUM = 20540595, bChange = 0.00147521, totNum = 3
+ROUND = 2123, SUM = 20540595, bChange = 0.0014753, totNum = 3
+ROUND = 2124, SUM = 20540595.0000001, bChange = 0.00147539, totNum = 3
+ROUND = 2125, SUM = 20540595.0000001, bChange = 0.00147548, totNum = 3
+ROUND = 2126, SUM = 20540595, bChange = 0.00147556, totNum = 3
+ROUND = 2127, SUM = 20540595, bChange = 0.00147565, totNum = 3
+ROUND = 2128, SUM = 20540595, bChange = 0.00147574, totNum = 3
+ROUND = 2129, SUM = 20540595.0000001, bChange = 0.00147583, totNum = 3
+ROUND = 2130, SUM = 20540595, bChange = 0.00147591, totNum = 3
+ROUND = 2131, SUM = 20540594.9999999, bChange = 0.001476, totNum = 2
+ROUND = 2132, SUM = 20540595.0000001, bChange = 0.00147609, totNum = 2
+ROUND = 2133, SUM = 20540595, bChange = 0.00147617, totNum = 2
+ROUND = 2134, SUM = 20540595, bChange = 0.00147626, totNum = 2
+ROUND = 2135, SUM = 20540595, bChange = 0.00147635, totNum = 2
+ROUND = 2136, SUM = 20540595, bChange = 0.00147643, totNum = 2
+ROUND = 2137, SUM = 20540594.9999999, bChange = 0.00147652, totNum = 2
+ROUND = 2138, SUM = 20540594.9999999, bChange = 0.0014766, totNum = 2
+ROUND = 2139, SUM = 20540595, bChange = 0.00147669, totNum = 2
+ROUND = 2140, SUM = 20540595, bChange = 0.00147678, totNum = 2
+ROUND = 2141, SUM = 20540595, bChange = 0.00147686, totNum = 2
+ROUND = 2142, SUM = 20540595, bChange = 0.00147695, totNum = 2
+ROUND = 2143, SUM = 20540595, bChange = 0.00147703, totNum = 2
+ROUND = 2144, SUM = 20540595, bChange = 0.00147712, totNum = 2
+ROUND = 2145, SUM = 20540594.9999999, bChange = 0.0014772, totNum = 2
+ROUND = 2146, SUM = 20540595.0000001, bChange = 0.00147729, totNum = 2
+ROUND = 2147, SUM = 20540595.0000001, bChange = 0.00147737, totNum = 2
+ROUND = 2148, SUM = 20540595, bChange = 0.00147746, totNum = 2
+ROUND = 2149, SUM = 20540595, bChange = 0.00147754, totNum = 2
+ROUND = 2150, SUM = 20540594.9999999, bChange = 0.00147763, totNum = 2
+ROUND = 2151, SUM = 20540595.0000002, bChange = 0.00147771, totNum = 2
+ROUND = 2152, SUM = 20540595, bChange = 0.00147779, totNum = 2
+ROUND = 2153, SUM = 20540595, bChange = 0.00147788, totNum = 2
+ROUND = 2154, SUM = 20540595, bChange = 0.00147796, totNum = 2
+ROUND = 2155, SUM = 20540595, bChange = 0.00147805, totNum = 2
+ROUND = 2156, SUM = 20540595, bChange = 0.00147813, totNum = 2
+ROUND = 2157, SUM = 20540595, bChange = 0.00147821, totNum = 2
+ROUND = 2158, SUM = 20540594.9999999, bChange = 0.0014783, totNum = 2
+ROUND = 2159, SUM = 20540595, bChange = 0.00147838, totNum = 2
+ROUND = 2160, SUM = 20540595.0000001, bChange = 0.00147846, totNum = 2
+ROUND = 2161, SUM = 20540595.0000001, bChange = 0.00147855, totNum = 2
+ROUND = 2162, SUM = 20540595.0000001, bChange = 0.00147863, totNum = 2
+ROUND = 2163, SUM = 20540595, bChange = 0.00147871, totNum = 2
+ROUND = 2164, SUM = 20540595, bChange = 0.00147879, totNum = 2
+ROUND = 2165, SUM = 20540595.0000001, bChange = 0.00147888, totNum = 2
+ROUND = 2166, SUM = 20540595.0000001, bChange = 0.00147896, totNum = 2
+ROUND = 2167, SUM = 20540595, bChange = 0.00147904, totNum = 2
+ROUND = 2168, SUM = 20540595, bChange = 0.0010518, totNum = 1
+ROUND = 2169, SUM = 20540595.0000001, bChange = 0.00105222, totNum = 1
+ROUND = 2170, SUM = 20540595, bChange = 0.00105265, totNum = 1
+ROUND = 2171, SUM = 20540595, bChange = 0.00105307, totNum = 1
+ROUND = 2172, SUM = 20540595.0000001, bChange = 0.00105349, totNum = 1
+ROUND = 2173, SUM = 20540595, bChange = 0.00105391, totNum = 1
+ROUND = 2174, SUM = 20540595, bChange = 0.00105434, totNum = 1
+ROUND = 2175, SUM = 20540595, bChange = 0.00105476, totNum = 1
+ROUND = 2176, SUM = 20540595, bChange = 0.00105518, totNum = 1
+ROUND = 2177, SUM = 20540595, bChange = 0.0010556, totNum = 1
+ROUND = 2178, SUM = 20540595.0000001, bChange = 0.00105603, totNum = 1
+ROUND = 2179, SUM = 20540595.0000001, bChange = 0.00105645, totNum = 1
+ROUND = 2180, SUM = 20540594.9999999, bChange = 0.00105687, totNum = 1
+ROUND = 2181, SUM = 20540595, bChange = 0.00105729, totNum = 1
+ROUND = 2182, SUM = 20540595.0000001, bChange = 0.00105772, totNum = 1
+ROUND = 2183, SUM = 20540594.9999999, bChange = 0.00105814, totNum = 1
+ROUND = 2184, SUM = 20540594.9999999, bChange = 0.00105856, totNum = 1
+ROUND = 2185, SUM = 20540595, bChange = 0.00105899, totNum = 1
+ROUND = 2186, SUM = 20540595, bChange = 0.00105941, totNum = 1
+ROUND = 2187, SUM = 20540595.0000001, bChange = 0.00105984, totNum = 1
+ROUND = 2188, SUM = 20540594.9999999, bChange = 0.00106026, totNum = 1
+ROUND = 2189, SUM = 20540595, bChange = 0.00106068, totNum = 1
+ROUND = 2190, SUM = 20540595.0000001, bChange = 0.00106111, totNum = 1
+ROUND = 2191, SUM = 20540595, bChange = 0.00106153, totNum = 1
+ROUND = 2192, SUM = 20540595, bChange = 0.00106196, totNum = 1
+ROUND = 2193, SUM = 20540595.0000001, bChange = 0.00106238, totNum = 1
+ROUND = 2194, SUM = 20540594.9999999, bChange = 0.0010628, totNum = 1
+ROUND = 2195, SUM = 20540595.0000001, bChange = 0.00106323, totNum = 1
+ROUND = 2196, SUM = 20540595, bChange = 0.00106365, totNum = 1
+ROUND = 2197, SUM = 20540595, bChange = 0.00106408, totNum = 1
+ROUND = 2198, SUM = 20540595, bChange = 0.0010645, totNum = 1
+ROUND = 2199, SUM = 20540595.0000001, bChange = 0.00106493, totNum = 1
+ROUND = 2200, SUM = 20540595, bChange = 0.00106535, totNum = 1
+ROUND = 2201, SUM = 20540595, bChange = 0.00106578, totNum = 1
+ROUND = 2202, SUM = 20540595.0000001, bChange = 0.0010662, totNum = 1
+ROUND = 2203, SUM = 20540595, bChange = 0.00106663, totNum = 1
+ROUND = 2204, SUM = 20540594.9999999, bChange = 0.00106705, totNum = 1
+ROUND = 2205, SUM = 20540595.0000001, bChange = 0.00106748, totNum = 1
+ROUND = 2206, SUM = 20540595.0000001, bChange = 0.00106791, totNum = 1
+ROUND = 2207, SUM = 20540595, bChange = 0.00106833, totNum = 1
+ROUND = 2208, SUM = 20540595.0000001, bChange = 0.00106876, totNum = 1
+ROUND = 2209, SUM = 20540595, bChange = 0.00106918, totNum = 1
+ROUND = 2210, SUM = 20540595, bChange = 0.00106961, totNum = 1
+ROUND = 2211, SUM = 20540595, bChange = 0.00107004, totNum = 1
+ROUND = 2212, SUM = 20540595, bChange = 0.00107046, totNum = 1
+ROUND = 2213, SUM = 20540595.0000001, bChange = 0.00107089, totNum = 1
+ROUND = 2214, SUM = 20540595, bChange = 0.00107131, totNum = 1
+ROUND = 2215, SUM = 20540595, bChange = 0.00107174, totNum = 1
+ROUND = 2216, SUM = 20540594.9999999, bChange = 0.00107217, totNum = 1
+ROUND = 2217, SUM = 20540595, bChange = 0.00107259, totNum = 1
+ROUND = 2218, SUM = 20540595.0000001, bChange = 0.00107302, totNum = 1
+ROUND = 2219, SUM = 20540594.9999999, bChange = 0.00107345, totNum = 1
+ROUND = 2220, SUM = 20540594.9999999, bChange = 0.00107387, totNum = 1
+ROUND = 2221, SUM = 20540595, bChange = 0.0010743, totNum = 1
+ROUND = 2222, SUM = 20540595, bChange = 0.00107473, totNum = 1
+ROUND = 2223, SUM = 20540595, bChange = 0.00107516, totNum = 1
+ROUND = 2224, SUM = 20540595.0000001, bChange = 0.00107558, totNum = 1
+ROUND = 2225, SUM = 20540595, bChange = 0.00107601, totNum = 1
+ROUND = 2226, SUM = 20540595, bChange = 0.00107644, totNum = 1
+ROUND = 2227, SUM = 20540595, bChange = 0.00107687, totNum = 1
+ROUND = 2228, SUM = 20540595, bChange = 0.00107729, totNum = 1
+ROUND = 2229, SUM = 20540594.9999999, bChange = 0.00107772, totNum = 1
+ROUND = 2230, SUM = 20540594.9999999, bChange = 0.00107815, totNum = 1
+ROUND = 2231, SUM = 20540594.9999999, bChange = 0.00107858, totNum = 1
+ROUND = 2232, SUM = 20540595, bChange = 0.00107901, totNum = 1
+ROUND = 2233, SUM = 20540595.0000001, bChange = 0.00107944, totNum = 1
+ROUND = 2234, SUM = 20540594.9999999, bChange = 0.00107986, totNum = 1
+ROUND = 2235, SUM = 20540595, bChange = 0.00108029, totNum = 1
+ROUND = 2236, SUM = 20540595, bChange = 0.00108072, totNum = 1
+ROUND = 2237, SUM = 20540595, bChange = 0.00108115, totNum = 1
+ROUND = 2238, SUM = 20540595, bChange = 0.00108158, totNum = 1
+ROUND = 2239, SUM = 20540594.9999999, bChange = 0.00108201, totNum = 1
+ROUND = 2240, SUM = 20540594.9999999, bChange = 0.00108244, totNum = 1
+ROUND = 2241, SUM = 20540594.9999999, bChange = 0.00108286, totNum = 1
+ROUND = 2242, SUM = 20540595, bChange = 0.00108329, totNum = 1
+ROUND = 2243, SUM = 20540595, bChange = 0.00108372, totNum = 1
+ROUND = 2244, SUM = 20540595, bChange = 0.00108415, totNum = 1
+ROUND = 2245, SUM = 20540595, bChange = 0.00108458, totNum = 1
+ROUND = 2246, SUM = 20540594.9999998, bChange = 0.00108501, totNum = 1
+ROUND = 2247, SUM = 20540595, bChange = 0.00108544, totNum = 1
+ROUND = 2248, SUM = 20540595.0000001, bChange = 0.00108587, totNum = 1
+ROUND = 2249, SUM = 20540595, bChange = 0.0010863, totNum = 1
+ROUND = 2250, SUM = 20540595, bChange = 0.00108673, totNum = 1
+ROUND = 2251, SUM = 20540595, bChange = 0.00108716, totNum = 1
+ROUND = 2252, SUM = 20540594.9999999, bChange = 0.00108759, totNum = 1
+ROUND = 2253, SUM = 20540594.9999999, bChange = 0.00108802, totNum = 1
+ROUND = 2254, SUM = 20540595, bChange = 0.00108845, totNum = 1
+ROUND = 2255, SUM = 20540595, bChange = 0.00108888, totNum = 1
+ROUND = 2256, SUM = 20540594.9999998, bChange = 0.00108931, totNum = 1
+ROUND = 2257, SUM = 20540595, bChange = 0.00108974, totNum = 1
+ROUND = 2258, SUM = 20540595, bChange = 0.00109017, totNum = 1
+ROUND = 2259, SUM = 20540595, bChange = 0.000888578, totNum = 0
+Expression Results are written!
+1000000 alignment lines are loaded!
+2000000 alignment lines are loaded!
+3000000 alignment lines are loaded!
+4000000 alignment lines are loaded!
+5000000 alignment lines are loaded!
+6000000 alignment lines are loaded!
+7000000 alignment lines are loaded!
+8000000 alignment lines are loaded!
+9000000 alignment lines are loaded!
+10000000 alignment lines are loaded!
+11000000 alignment lines are loaded!
+12000000 alignment lines are loaded!
+13000000 alignment lines are loaded!
+14000000 alignment lines are loaded!
+15000000 alignment lines are loaded!
+16000000 alignment lines are loaded!
+17000000 alignment lines are loaded!
+18000000 alignment lines are loaded!
+19000000 alignment lines are loaded!
+20000000 alignment lines are loaded!
+21000000 alignment lines are loaded!
+Bam output file is generated!
+Time Used for EM.cpp : 0 h 04 m 05 s
+
+rm -rf SRR1642915_counting.temp
+
