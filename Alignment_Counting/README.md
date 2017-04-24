@@ -79,3 +79,11 @@ We take the SRR1642915_counting.genes.results file as out counting file, especif
     Aspof_comp100023_c0 	Aspof_comp100023_c0_seq1	374.00  186.63  0.000.000.00
    
 Therefore, if we do all this process per each sample and then we compile all the results per gene and per specimen we will end up with the file that was made as imput for the edgeR analysis of differential expression.
+
+If we want to get the statistics of the alignment process we can call 
+
+    $ rsem-plot-model SRR1642915 SRR1642915_models.pdf
+
+That will produce a pdf file with the lenght of the reads, a comparison of the observed quality and the phred score and a percentage of mapped reads
+
+Only about 2% of reads were mapped. However in the paper they only reported mapped read percentages of those reads with concordant, paired alignments, so it seems like they did another filtering after the initial aligment.
