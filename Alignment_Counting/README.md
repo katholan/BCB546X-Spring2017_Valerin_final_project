@@ -2,7 +2,9 @@
 
 *Author: Valeria Velasquez Zapata*
 
-This folder contains a serie the results of the attempt of read aligment and quantification of expression, which corresponds to the step after the read cleaning procedure, which is located in the FASTQC_files folder. For this analysis we will take the SRR1642915 sample. 
+This folder contains the results of the attempt of read aligment and quantification of expression, which corresponds to the step after the read cleaning procedure, which is located in the FASTQC_files folder. For this analysis we will take the SRR1642915 sample. 
+
+The output of this pipeline is the counting data that is being used in the differential expression analysis in edgeR.
  
 ### Using bowtie2 to align clean reads to the transcriptome
 
