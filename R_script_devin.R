@@ -19,13 +19,15 @@ head(counts_data) #take a look at counts_data
 cd<-DGEList(counts=counts_data) #convert gene count data to DGEList
 keep <- rowSums(cpm(cd)>1) >= 3 #filters out lowly expressed genes
 cd <- cd[keep, , keep.lib.sizes=FALSE]
-#cd<-calcNormFactors(cd) #normalizes
+cd<-calcNormFactors(cd) #normalizes
 nrow(cd) #verify that we have 19980 genes
-#generates first figure (beautified by Katerina because she is awesome)
+#generates first figure (legend perfected by Kat)
 colors <- c("black","black","black","darkgreen","darkgreen","darkgreen","blue","blue","blue", "red", "red")
+plotMDS(cd, col=colors, top = 250, gene.selection = "pairwise", main="MDS plot ") #MDS plot without legend but the names indicate line and sex
 names<-c("female", "male","supermale","female", "male","supermale","female", "male")
 plotMDS(cd, col=colors, labels=names, top = 250, gene.selection = "pairwise")
-#legend('center',legend=c("Line_8A", "Line_8B","Line_10", "Line_9"), col= c("black","darkgreen","blue", "red"), ncol=2, title="Key" )
+#my initial legend below
+#legend("center",legend=c("Line_8A", "Line_8B","Line_10", "Line_9"), col= c("black","darkgreen","blue", "red"), ncol=2, title="Key" )
 
 
 #design matrix of sex and line
@@ -38,7 +40,7 @@ rownames(design) <- colnames(cd)
 design
 
 #estimates dispersion
-#cd <- estimateDisp(cd, design)
+#cd <- estimateDisp(cd, design) #if we use this, even though it is supposed to be equivalent to the three functions below, we will get far lower numbers
 cd <- estimateGLMCommonDisp(cd, design)
 cd <- estimateGLMTrendedDisp(cd, design)
 cd <- estimateGLMTagwiseDisp(cd, design)
@@ -51,20 +53,21 @@ fit <- glmFit(cd, design) #more restrictive glm
 lrt_FSupM <- glmLRT(fit, coef=6)  #Female VS Supermale
 summary(de_FemvsSupMal <- decideTestsDGE(lrt_FSupM, adjust.method="fdr"))
 FDR_FSupM <- p.adjust(lrt_FSupM$table$PValue, method="fdr") 
-sum(FDR_FSupM < 0.05) #462 differentially expressed genes
-plotMD(lrt_FSupM)
+sum(FDR_FSupM < 0.05) #408  differentially expressed genes (462 if not normalized)
+plotMD(lrt_FSupM, main="Female VS SuperMale")
+
 
 lrt_FM <- glmLRT(fit, coef=5) #female VS male
 summary(de_FemvsMal <- decideTestsDGE(lrt_FM, adjust.method="fdr"))
-FDR_FMale<-p.adjust(lrt_FM$table$PValue,method="fdr")
-sum(FDR_FMale<0.05) #263
-plotMD(lrt_FM)
+FDR_FMale<-p.adjust(lrt_FM$table$PValue,method="fdr") #adjust Pvalue
+sum(FDR_FMale<0.05) #221 significant differentially expressed genes
+plotMD(lrt_FM, main="Female VS Male")
 
 lrt_MSupM <- glmLRT(fit, contrast=c(0,0,0,0,-1,1)) #Male VS Supermale
 summary(de_MalvsSupMal <- decideTestsDGE(lrt_MSupM, adjust.method="fdr"))
 FDR_MSupMale<-p.adjust(lrt_MSupM$table$PValue,method="fdr")
-sum(FDR_MSupMale<0.05) #29
-plotMD(lrt_MSupM)
+sum(FDR_MSupMale<0.05) #27
+plotMD(lrt_MSupM, main="Male VS Supermale")
 
 
 ##Get the names of all of the genes that have a Pvalue<0.05 for FDR_FSupM
@@ -80,7 +83,7 @@ for (i in 1:total_FDR_FSupM){
 }
 names_of_FSupM_hit
 num_FSupM_hit<-length(names_of_FSupM_hit)
-num_FSupM_hit #462
+num_FSupM_hit #408 
 
 ##Get the names of all of the genes that have a Pvalue<0.05 for FDR_FMale
 total_FDR_FMale<-length(FDR_FMale)
@@ -95,7 +98,7 @@ for (i in 1:total_FDR_FMale){
 }
 names_of_FMale_hit
 num_FMale_hit<-length(names_of_FMale_hit)
-num_FMale_hit #263
+num_FMale_hit #221 DF genes in Female/Male pairwise comparison
 
 ##Get the names of all of the genes that have a Pvalue<0.05 for FDR_FMale
 total_FDR_MSupMale<-length(FDR_MSupMale)
@@ -110,39 +113,39 @@ for (i in 1:total_FDR_MSupMale){
 }
 names_of_MSupMale_hit
 num_MSupMale_hit<-length(names_of_MSupMale_hit)
-num_MSupMale_hit #29
+num_MSupMale_hit #27
 
 total_number_of_DF_genes<-sum(c(num_FMale_hit,num_FSupM_hit,num_MSupMale_hit), na.is=FALSE)
-total_number_of_DF_genes
+total_number_of_DF_genes #656 differentially expressed genes (including duplicates)
+
+###Checks the number of hits between FSupM and MSupMale
+FSupM_MSupM<-names_of_FSupM_hit %in% names_of_MSupMale_hit
+sum(FSupM_MSupM) 
+num_FSupM_MSupM<-sum(FSupM_MSupM) #23 common DF genes shared
 
 
-#FMale_FSupM<-table(names_of_FMale_hit[names_of_FMale_hit %in% names_of_MSupMale_hit])
-#FMale_FSupM
 FMale_FSupM<-names_of_FMale_hit %in% names_of_FSupM_hit
 sum(FMale_FSupM)
-num_FMale_FSupM<-sum(FMale_FSupM) #166
+num_FMale_FSupM<-sum(FMale_FSupM) #150 differential genes shared between Female/Male and Female/Supermale
 #length(FMale_FSupM[FMale_FSupM==TRUE])
-length(FMale_FSupM) #263
+length(FMale_FSupM) #221 genes in vector, checking the length of the logic vector is equivalent to the number of differentially expressed genes in FMale hits
 
+#FMale_MSupMale mini vector for all_compare
 FMale_MSupMale<-names_of_FMale_hit %in% names_of_MSupMale_hit
 sum(FMale_MSupMale)
 num_FMale_MSupMale<-sum(FMale_MSupMale) #2
-length(FMale_MSupMale) #263 #check length of total to make sure it matches
+length(FMale_MSupMale) #221 #check length of total to make sure it matches
 which_FMale_MSupMale<-which(names_of_FMale_hit %in% names_of_MSupMale_hit)
-which_FMale_MSupMale # 177 251, indexes of the found names
-#grep_Fmale_MSupMale<-grep(TRUE,names_of_FMale_hit %in% names_of_MSupMale_hit)
-#grep_Fmale_MSupMale
-names_of_Fmale_MSupMale<-c(names_of_FMale_hit[177],names_of_FMale_hit[251])
-names_of_Fmale_MSupMale #names of the matching genes
+which_FMale_MSupMale # returns indexes of the found names
+names_of_Fmale_MSupMale<-c(names_of_FMale_hit[which_FMale_MSupMale[1]],names_of_FMale_hit[which_FMale_MSupMale[2]])
+names_of_Fmale_MSupMale #names of the matching genes between Fmale and MSupMale groups
 
-FSupM_MSupM<-names_of_FSupM_hit %in% names_of_MSupMale_hit
-sum(FSupM_MSupM) 
-num_FSupM_MSupM<-sum(FSupM_MSupM) #24
 
+###compare all groups###
 FSupM_MSupM_FMale<-names_of_FMale_hit %in% names_of_FSupM_hit %in% names_of_MSupMale_hit
 sum(FSupM_MSupM_FMale)
-num_FSupM_MSupM_FMale<-sum(FSupM_MSupM_FMale) #0
-
+num_FSupM_MSupM_FMale<-sum(FSupM_MSupM_FMale) #0 DF genes shared between all three groups
+###verify the comparison of all groups###
 compare_all<-names_of_Fmale_MSupMale %in% names_of_FSupM_hit
 sum(compare_all) #0
 ###Checking for unique names###
@@ -160,6 +163,7 @@ paper_msupm <- read.delim("paper_msupm.txt") #extracted gene_id column from supp
 paper_detags <- rbind(paper_fsupm, paper_fm, paper_msupm) #combine all names from DF data of paper
 typeof(paper_detags) #type list, we want a vector
 uniq_paper_detags <- unique(paper_detags) #grab just the unique names
+uniq_paper_detags<-unlist(uniq_paper_detags)
 uniq_paper_detags <-as.vector(uniq_paper_detags) #convert the list to a vector
 uniq_paper_detags
 typeof(uniq_paper_detags) #vector now!
@@ -167,7 +171,7 @@ length(uniq_paper_detags) #570 DF genes from paper
 
 ###Compare our unique genes to the paper's###
 compare_to_paper<-uniq_paper_detags %in% unique_genes 
-sum(compare_to_paper) #516 genes in the 570 unique from the paper
+sum(compare_to_paper) #516 genes (when not normalized)in the 570 unique from the paper
 #when normalized, 476 of our 481 differential genes match the paper's 570 differential genes
 
 ###Venn Diagram###
