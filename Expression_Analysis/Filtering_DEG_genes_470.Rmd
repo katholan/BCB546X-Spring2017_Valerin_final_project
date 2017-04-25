@@ -97,4 +97,4 @@ FDR_MSupM <- p.adjust(lrt_MSupM$table$PValue, method="fdr")
 sum(FDR_MSupM < 0.05)
 ```
 
-If we sum up all the comparisons results we get 470 DEG
+If we sum up all the comparisons results we get 754 DEG, including duplicates
