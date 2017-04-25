@@ -21,44 +21,22 @@ genecounts <- read.csv("genecounts.csv", stringsAsFactors = F, row.names = "gene
 
 
 ###----------------------------------------------------------------------------------------------------------------
-###filtered genecounts to only include transcripts >1 CPM (counts per million) in at least 3 libraries
-###paper gets 19,986 genes with these parameters
+###From Devin/Valeria
+counts_data <- read.delim("Asparagus.RSEM_genecounts.txt", check.names = F, stringsAsFactors = F)
+cd<-DGEList(counts=counts_data)
+keep <- rowSums(cpm(cd)>1) >= 3
+cd <- cd[keep, , keep.lib.sizes=FALSE]
+group_line<-factor(c(88,88,88,89,89,89,103,103,103,9,9))
+group_sex <- factor(c("Female", "Male",	"Super Male",	"Female",	"Male",	"Super Male",	"Female",	"Male",	"Super Male",	"Female",	"Male"))
+design <- model.matrix(~group_line + group_sex)
+rownames(design) <- colnames(cd)
+cd <- estimateGLMCommonDisp(cd, design)
+cd <- estimateGLMTrendedDisp(cd, design)
+cd <- estimateGLMTagwiseDisp(cd, design)
+fit <- glmFit(cd, design)
 
-###round integers to whole numbers
-genecounts_round <- round(genecounts)
-
-#genecounts_round$total <- rowSums(genecounts_round[,])
-#filtered_genecounts <- genecounts_round[genecounts_round$total >= 3,]
-
-###results in 97630 total genes, but this includes genes that might have 2 or 3 CPM in a single library
-filtered_genecounts <- genecounts_round %>% 
-  filter((rowSums(genecounts_round[,,drop = F] > 1)) >= 3) 
-
-###results in 56482, which is more than 2x the number in the paper.
-###this code keeps dropping the rownames, even when drop = F
-
-
-###alternative code to filter the genecounts dataframe.  does the same as the above but doesn't require the dplyr package
-###doesn't drop row names
-filtered_genecounts <- genecounts_round[rowSums(genecounts_round[,,drop = F] > 1) >= 3,]
-
-###possible explanation for discrepency of gene numbers could be because I don't know what the units are in the file we received
-###the paper dropped any less than 1 CPM, but if the RSEM_genecounts file is NOT in CPM, that could be where the problem lies
-
-write.csv(filtered_genecounts, file = "filtered_genecounts")
-
-###----------------------------------------------------------------------------------------------------------------
-###From Devin
-counts <- read.delim("Asparagus.RSEM_genecounts.txt", check.names = F, stringsAsFactors = F)
-cd <- DGEList(counts = counts)
-filtered <- rowSums(cpm(cd)>1) >=3
-filtered_cd <- cd[filtered, , keep.lib.sizes = F]
-nrow(filtered_cd)
 ###19980 genes.  almost the same
 ###----------------------------------------------------------------------------------------------------------------
-
-
-
 
 
 
@@ -80,16 +58,157 @@ plot + ylim(0,100)
 
 FPKM_matrix <- as.matrix(FPKM_matrix)
 
-breaks=seq(-3, 3, by=0.5)
-my_palette <- colorpanel(n=length(breaks)-1,low="turquoise4",mid="white",high="maroon2")
+my_palette <- colorRampPalette(c("green","black","red"))(n = 1000)
 heatmap.2(FPKM_matrix, dendrogram="both", trace="none", scale="row", density.info="none", col=my_palette)
 ###tutorial heatmap of 570 genes, only 9 lines (doesn't include 8A male or 10 supermale)
+###---------------------------------------------------------------------------------------------------
 
 
-###adapted workflow for 570 DEGs
-heatmap.2(plot.data,density.info="none",col=mycol, key = F, trace='none', breaks=breaks, margins = c(1,10), dendrogram="none",
-          Rowv=NA, Colv=NA, cexRow=1, cexCol=1,
-          lmat=rbind(c(0,3), c(2,1), c(0,4)), lwid=c(0.5,4), lhei=c(0.5, 4,1))
+###---------------------------------------------------------------------------------------------------
+###female vs supermale
+lrt_FSupM <- glmLRT(fit, coef=6)
+summary(de_FemvsSupMal <- decideTestsDGE(lrt_FSupM, adjust.method="fdr"))
+FDR_FSupM <- p.adjust(lrt_FSupM$table$PValue, method="fdr")
+
+detags_FSupM <- rownames(cd)[as.logical(de_FemvsSupMal)]
+plotSmear(lrt_FSupM, de_FemvsSupMal.tags=detags)
+abline(h=c(-1, 1))
+
+sum(FDR_FSupM < 0.05)
+
+
+###female vs male
+lrt_FM <- glmLRT(fit, coef=5)
+summary(de_FemvsMal <- decideTestsDGE(lrt_FM, adjust.method="fdr"))
+FDR_FM <- p.adjust(lrt_FM$table$PValue, method="fdr")
+
+detags_FM <- rownames(cd)[as.logical(de_FemvsMal)]
+plotSmear(lrt_FM, de_FemvsMal.tags=detags_FM)
+abline(h=c(-1, 1))
+
+sum(FDR_FM < 0.05)
+
+
+###male vs supermale
+lrt_MSupM <- glmLRT(fit, contrast=c(0,0,0,0,-1,1))
+summary(de_MalvsSupMal <- decideTestsDGE(lrt_MSupM, adjust.method="fdr"))
+FDR_MSupM <- p.adjust(lrt_MSupM$table$PValue, method="fdr")
+sum(FDR_MSupM < 0.05)
+
+detags_MSupM <- rownames(cd)[as.logical(de_MalvsSupMal)]
+plotSmear(lrt_FM, de_MalvsSupMal.tags=detags_MSupM)
+abline(h=c(-1, 1))
+
+sum(FDR_MSupM < 0.05)
+###---------------------------------------------------------------------------------------------------
+
+
+###---------------------------------------------------------------------------------------------------
+###total number of unique DEGs in our analysis
+detags <- c(detags_FM, detags_FSupM, detags_MSupM)
+detags_df <- as.data.frame(detags)
+uniq_detags <- unique(detags_df)
+colnames(uniq_detags) <- "gene_id"
+###---------------------------------------------------------------------------------------------------
+
+
+###---------------------------------------------------------------------------------------------------
+###heatmap
+###pulling out only genes we found to be DE from the counts data
+counts2 <- counts_data
+counts2 <- read.csv("genecounts.csv", stringsAsFactors = F)
+genenames <- uniq_detags$gene_id
+DEG_counts <- counts2[counts2$gene_ID %in% genenames,]
+write.csv(DEG_counts, file = "DEG_counts.csv")
+
+heatmap_counts <- read.csv("DEG_counts.csv", header = T, row.names = "gene_ID")
+
+###introduces column with row numbers from original counts data frame
+heatmap_counts <- heatmap_counts[,2:12]
+heatmap_counts_matrix <- as.matrix(heatmap_counts)
+my_palette <- colorRampPalette(c("turquoise4","white","maroon2"))(n = 1000)
+
+heatmap.2(heatmap_counts_matrix, dendrogram="both", trace="none", scale="row", density.info="none", col=my_palette)
+###---------------------------------------------------------------------------------------------------
+
+
+###---------------------------------------------------------------------------------------------------
+###DEGs from paper
+paper_fsupm <- read.delim("paper_fsupm.txt")
+paper_fm <- read.delim("paper_fm.txt")
+paper_msupm <- read.delim("paper_msupm.txt")
+
+paper_detags <- rbind(paper_fsupm, paper_fm, paper_msupm)
+uniq_paper_detags <- unique(paper_detags)
+
+sort(uniq_detags[,1])
+sort(uniq_paper_detags[,1])
+in_both <- sum(sort(uniq_detags[,]) %in% sort(uniq_paper_detags[,]))
+###516 common between our analysis and theirs
+###---------------------------------------------------------------------------------------------------
+
+
+###---------------------------------------------------------------------------------------------------
+###Venn Diagrams
+
+###Venn Diagram of our genes
+###from devin (edited by Kat)
+FM <- length(detags_FM)
+FSupM <- length(detags_FSupM)
+MSupM <- length(detags_MSupM)
+
+FM_FSupM <- sum(detags_FM %in% detags_FSupM)
+FM_MSupM <- sum(detags_FM %in% detags_MSupM)
+FSupM_MSupM <- sum(detags_FSupM %in% detags_MSupM)
+
+FM_FSupM_MSupM <- sum(detags_FM %in% detags_FSupM %in% detags_MSupM)
+
+###Venn Diagram###
+###From devin
+#install.packages('VennDiagram')
+library(VennDiagram)
+grid.newpage()
+draw.triple.venn(area1 = FM, area2 = FSupM, area3 = MSupM, 
+                 n12 = FM_FSupM, n23 = FSupM_MSupM, n13 = FM_MSupM, 
+                 n123 = FM_FSupM_MSupM, 
+                 category = c("Male vs Female", "Supermale VS female", "Supermale VS male"), lty = "blank", 
+                 fill = c("skyblue", "pink1", "mediumorchid"),
+                 cex = 2, cat.cex = 2)
+
+
+###Venn Diagram of genes that matched between our analysis and the paper's
+###Kat
+paper_fsupm <- read.delim("paper_fsupm.txt")
+paper_fm <- read.delim("paper_fm.txt")
+paper_msupm <- read.delim("paper_msupm.txt")
+paper_fsupm <- as.vector(paper_fsupm)
+paper_fm <- as.vector(paper_fm)
+paper_msupm <- as.vector(paper_msupm)
+
+#p_fm_fsupm <- paper_fm %in% paper_fsupm
+#p_fm_msupm <- paper_fm %in% paper_msupm
+#p_fsupm_msupm <- paper_fsupm %in% paper_msupm
+#p_all <- paper_fm %in% paper_fsupm %in% paper_msupm
+
+compare_FM <- sum(detags_FM %in% paper_fm)
+compare_FSupM <- sum(detags_FSupM %in% paper_fsupm)
+compare_MSupM <- sum(detags_MSupM %in% paper_msupm)
+
+#FM_FSupM <- sum(detags_FM %in% detags_FSupM %in% p_fm_fsupm)
+#FM_MSupM <- sum(detags_FM %in% detags_MSupM %in% p_fm_msupm)
+#FSupM_MSupM <- sum(detags_FSupM %in% detags_MSupM %in% p_fsupm_msupm)
+
+compare_all <- sum(detags_FM %in% detags_FSupM %in% detags_MSupM %in% p_all)
+
+
+grid.newpage()
+draw.pairwise.venn(area1 = FM, area2 = paper_fm, cross.area = compare_FM,
+                 category = c("Ours", "Paper"), lty = "blank", 
+                 fill = c("skyblue", "pink1"),
+                 cex = 2, cat.cex = 2)
+
+
+###---------------------------------------------------------------------------------------------------
 
 
 
@@ -109,48 +228,8 @@ plotMDS(cd, col=colors, labels=names, top = 250, gene.selection = "pairwise", ma
 legend(3.5, 2.57, legend=c("Line 8A", "Line 8B","Line 10", "Line 9"), col= c("black","darkgreen","blue", "red"), title="Key", ncol = 1, pch = 19 )
 
 
-
-
 ###make plots pretty/colored/etc
 ###compare gene lists from comparisons to paper gene lists (detags), extract gene names that are different
-###venn diagram of de genes
-###heatmap of total DEGs, as well as smaller heatmaps for comparisons??
-lrt_FSupM <- glmLRT(fit, coef=4)
-summary(de_FemvsSupMal <- decideTestsDGE(lrt_FSupM, adjust.method="fdr"))
-FDR_FSupM <- p.adjust(lrt_FSupM$table$PValue, method="fdr")
-sum(FDR_FSupM < 0.05)
-detags_FSupM <- rownames(cd)[as.logical(de_FemvsSupMal)]
-plotSmear(lrt_FSupM, de_FemvsSupMal.tags=detags)
-abline(h=c(-1, 1))
-sum(FDR_FSupM < 0.05)
-
-lrt_FM <- glmLRT(fit, coef=3)
-summary(de_FemvsMal <- decideTestsDGE(lrt_FM, adjust.method="fdr"))
-detags_FM <- rownames(cd)[as.logical(de_FemvsMal)]
-FDR_FM <- p.adjust(lrt_FM$table$PValue, method="fdr")
-sum(FDR_FM < 0.05)
-
-lrt_MSupM <- glmLRT(fit, contrast=c(0,0,-1,1))
-summary(de_MalvsSupMal <- decideTestsDGE(lrt_MSupM, adjust.method="fdr"))
-detags_MSupM <- rownames(cd)[as.logical(de_MalvsSupMal)]
-FDR_MSupM <- p.adjust(lrt_MSupM$table$PValue, method="fdr")
-sum(FDR_MSupM < 0.05)
-
-###total number of unique DEGs in our analysis
-detags <- c(detags_FM, detags_FSupM, detags_MSupM)
-detags_df <- as.data.frame(detags)
-uniq_detags <- unique(detags_df)
-colnames(uniq_detags) <- "gene_id"
-
 ###double checking total number of unique DEGs from paper
-paper_fsupm <- read.delim("paper_fsupm.txt")
-paper_fm <- read.delim("paper_fm.txt")
-paper_msupm <- read.delim("paper_msupm.txt")
-
-paper_detags <- rbind(paper_fsupm, paper_fm, paper_msupm)
-uniq_paper_detags <- unique(paper_detags)
 
 
-###comparing paper DEGs to our DEGs
-total_detags <- rbind(uniq_detags, uniq_paper_detags) #931
-compare_detags <- unique(total_detags) #615
