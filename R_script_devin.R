@@ -47,14 +47,16 @@ cd <- estimateGLMTagwiseDisp(cd, design)
 #gits using glm QL fit (recommended glm)
 #fit <- glmQLFit(cd, design) #preferred but lenient
 fit <- glmFit(cd, design) #more restrictive glm
-#plotQLDisp(fit)
+
 
 ###COMPARISONS####
+#lrt_FSupM <- glmQLFTest(fit, coef=6) #gives us just one differentially expressed gene
 lrt_FSupM <- glmLRT(fit, coef=6)  #Female VS Supermale
 summary(de_FemvsSupMal <- decideTestsDGE(lrt_FSupM, adjust.method="fdr"))
 FDR_FSupM <- p.adjust(lrt_FSupM$table$PValue, method="fdr") 
 sum(FDR_FSupM < 0.05) #408  differentially expressed genes (462 if not normalized)
-plotMD(lrt_FSupM, main="Female VS SuperMale")
+plotMD(lrt_FSupM, main="Female VS SuperMale",hl.col=c("blue","red"), bg.col="grey")
+abline(h=c(-1,1), col="blue")
 
 
 lrt_FM <- glmLRT(fit, coef=5) #female VS male
@@ -134,6 +136,8 @@ length(FMale_FSupM) #221 genes in vector, checking the length of the logic vecto
 FMale_MSupMale<-names_of_FMale_hit %in% names_of_MSupMale_hit
 sum(FMale_MSupMale)
 num_FMale_MSupMale<-sum(FMale_MSupMale) #2
+
+
 length(FMale_MSupMale) #221 #check length of total to make sure it matches
 which_FMale_MSupMale<-which(names_of_FMale_hit %in% names_of_MSupMale_hit)
 which_FMale_MSupMale # returns indexes of the found names
