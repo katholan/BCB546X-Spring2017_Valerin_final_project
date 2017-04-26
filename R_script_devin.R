@@ -19,17 +19,14 @@ head(counts_data) #take a look at counts_data
 cd<-DGEList(counts=counts_data) #convert gene count data to DGEList
 keep <- rowSums(cpm(cd)>1) >= 3 #filters out lowly expressed genes
 cd <- cd[keep, , keep.lib.sizes=FALSE]
-<<<<<<< HEAD
-cd<-calcNormFactors(cd) #normalizes - Trimmed mean of M-values
-=======
 cd<-calcNormFactors(cd) #normalizes
->>>>>>> 6525f3c85b3ff9749df8bf943f406d46b74f65f8
+
 nrow(cd) #verify that we have 19980 genes
 #generates first figure (legend perfected by Kat)
 colors <- c("black","black","black","darkgreen","darkgreen","darkgreen","blue","blue","blue", "red", "red")
-plotMDS(cd, col=colors, top = 250, gene.selection = "pairwise", main="MDS plot ") #MDS plot without legend but the names indicate line and sex
-names<-c("female", "male","supermale","female", "male","supermale","female", "male")
-plotMDS(cd, col=colors, labels=names, top = 250, gene.selection = "pairwise")
+plotMDS(cd, col=colors, top = 250, gene.selection = "pairwise", main="MDS plot of various lines and sex of Asparagus officinalis")  #MDS plot without legend but the names indicate line and sex
+#names<-c("female", "male","supermale","female", "male","supermale","female", "male")
+#plotMDS(cd, col=colors, labels=names, top = 250, gene.selection = "pairwise")
 #my initial legend below
 #legend("center",legend=c("Line_8A", "Line_8B","Line_10", "Line_9"), col= c("black","darkgreen","blue", "red"), ncol=2, title="Key" )
 
@@ -37,11 +34,24 @@ plotMDS(cd, col=colors, labels=names, top = 250, gene.selection = "pairwise")
 #design matrix of sex and line
 rm(design)
 line<-factor(c(88,88,88,89,89,89,103,103,103,9,9))
+#line<-factor(c("Line_8A","Line_8A","Line_8A", "Line_8B","Line_8B","Line_8B","Line_10","Line_10","Line_10","Line_9","Line_9"))
 sex<-factor(c("XX","XY","YY","XX","XY","YY","XX","XY","YY","XX","XY"))
-#data.frame(Sample=colnames(cd),line,sex)
-design <- model.matrix(~line+sex)
+df<-data.frame(Sample=colnames(cd),line,sex)
+df
+is.factor(df$line)
+is.factor(df$sex)
+#design <- model.matrix(~sex+sex:line, data=df) #nested data frame
+#design <- model.matrix(~line+line:sex, data=df) #nested data frame
+#design <- model.matrix(~sex*line, data=df)
+design <- model.matrix(~line+sex,data=df)
+summary(design)
 rownames(design) <- colnames(cd)
 design
+
+colnames(design)
+
+
+
 
 #estimates dispersion
 #cd <- estimateDisp(cd, design) #if we use this, even though it is supposed to be equivalent to the three functions below, we will get far lower numbers
@@ -59,30 +69,38 @@ lrt_FSupM <- glmLRT(fit, coef=6)  #Female VS Supermale
 summary(de_FemvsSupMal <- decideTestsDGE(lrt_FSupM, adjust.method="fdr"))
 FDR_FSupM <- p.adjust(lrt_FSupM$table$PValue, method="fdr") 
 sum(FDR_FSupM < 0.05) #408  differentially expressed genes (462 if not normalized)
-<<<<<<< HEAD
+status<-rep("not significant",length(FDR_FSupM))
+status[FDR_FSupM<0.05 & lrt_FSupM$table$logFC>0]<-"up"
+status[FDR_FSupM<0.05 & lrt_FSupM$table$logFC<0]<-"down"
+plotMD(lrt_FSupM, main="SuperMale VS Female",hl.col=c("red","blue"),status = status, bg.col="grey")
+#abline(h=c(-1,1), col="blue")
+sum(FDR_FSupM<0.05 & lrt_FSupM$table$logFC>0)
+sum(FDR_FSupM<0.05 & lrt_FSupM$table$logFC<0)
+sum(FDR_FSupM<0.05 & lrt_FSupM$table$logFC>0)+sum(FDR_FSupM<0.05 & lrt_FSupM$table$logFC<0)
 
-=======
-plotMD(lrt_FSupM, main="Female VS SuperMale",hl.col=c("blue","red"), bg.col="grey")
-abline(h=c(-1,1), col="blue")
->>>>>>> 6525f3c85b3ff9749df8bf943f406d46b74f65f8
 
 
 lrt_FM <- glmLRT(fit, coef=5) #female VS male
+#lrt_FM <- glmLRT(fit, contrast=c(-1,0,0,0,1,0))
 summary(de_FemvsMal <- decideTestsDGE(lrt_FM, adjust.method="fdr"))
 FDR_FMale<-p.adjust(lrt_FM$table$PValue,method="fdr") #adjust Pvalue
 sum(FDR_FMale<0.05) #221 significant differentially expressed genes
-plotMD(lrt_FM, main="Female VS Male")
-<<<<<<< HEAD
+status<-rep("not significant",length(FDR_FMale))
+status[FDR_FMale<0.05 & lrt_FM$table$logFC>0]<-"up"
+status[FDR_FMale<0.05 & lrt_FM$table$logFC<0]<-"down"
+plotMD(lrt_FM, main="Male VS Female",hl.col=c("red","blue"),status = status, bg.col="grey")
+#abline(h=c(-1,1), col="blue")
 
-=======
->>>>>>> 6525f3c85b3ff9749df8bf943f406d46b74f65f8
 
 lrt_MSupM <- glmLRT(fit, contrast=c(0,0,0,0,-1,1)) #Male VS Supermale
 summary(de_MalvsSupMal <- decideTestsDGE(lrt_MSupM, adjust.method="fdr"))
 FDR_MSupMale<-p.adjust(lrt_MSupM$table$PValue,method="fdr")
 sum(FDR_MSupMale<0.05) #27
-plotMD(lrt_MSupM, main="Male VS Supermale")
-
+status<-rep("not significant",length(FDR_MSupMale))
+status[FDR_MSupMale<0.05 & lrt_MSupM$table$logFC>0]<-"up"
+status[FDR_MSupMale<0.05 & lrt_MSupM$table$logFC<0]<-"down"
+plotMD(lrt_MSupM, main="Supermale VS Male",hl.col=c("red","blue"),status = status, bg.col="grey")
+#abline(h=c(-1,1), col="blue")
 
 ##Get the names of all of the genes that have a Pvalue<0.05 for FDR_FSupM
 total_FDR_FSupM<-length(FDR_FSupM)
@@ -148,11 +166,8 @@ length(FMale_FSupM) #221 genes in vector, checking the length of the logic vecto
 FMale_MSupMale<-names_of_FMale_hit %in% names_of_MSupMale_hit
 sum(FMale_MSupMale)
 num_FMale_MSupMale<-sum(FMale_MSupMale) #2
-<<<<<<< HEAD
-=======
 
 
->>>>>>> 6525f3c85b3ff9749df8bf943f406d46b74f65f8
 length(FMale_MSupMale) #221 #check length of total to make sure it matches
 which_FMale_MSupMale<-which(names_of_FMale_hit %in% names_of_MSupMale_hit)
 which_FMale_MSupMale # returns indexes of the found names
