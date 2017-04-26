@@ -19,15 +19,16 @@ head(counts_data) #take a look at counts_data
 cd<-DGEList(counts=counts_data) #convert gene count data to DGEList
 keep <- rowSums(cpm(cd)>1) >= 3 #filters out lowly expressed genes
 cd <- cd[keep, , keep.lib.sizes=FALSE]
-<<<<<<< HEAD
-cd<-calcNormFactors(cd) #normalizes - Trimmed mean of M-values
-=======
 cd<-calcNormFactors(cd) #normalizes
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 =======
 >>>>>>> 6525f3c85b3ff9749df8bf943f406d46b74f65f8
 >>>>>>> 7855947ecb9001ee36647d07fdfecb2d38cad1e5
+=======
+
+>>>>>>> b6a7f296419edf6307028d7363142d2b54372506
 nrow(cd) #verify that we have 19980 genes
 #generates first figure (legend perfected by Kat)
 colors <- c("black","black","black","darkgreen","darkgreen","darkgreen","blue","blue","blue", "red", "red")
@@ -77,6 +78,9 @@ summary(de_FemvsSupMal <- decideTestsDGE(lrt_FSupM, adjust.method="fdr"))
 FDR_FSupM <- p.adjust(lrt_FSupM$table$PValue, method="fdr") 
 sum(FDR_FSupM < 0.05) #408  differentially expressed genes (462 if not normalized)
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> b6a7f296419edf6307028d7363142d2b54372506
 status<-rep("not significant",length(FDR_FSupM))
 status[FDR_FSupM<0.05 & lrt_FSupM$table$logFC>0]<-"up"
 status[FDR_FSupM<0.05 & lrt_FSupM$table$logFC<0]<-"down"
@@ -85,6 +89,7 @@ plotMD(lrt_FSupM, main="SuperMale VS Female",hl.col=c("red","blue"),status = sta
 sum(FDR_FSupM<0.05 & lrt_FSupM$table$logFC>0)
 sum(FDR_FSupM<0.05 & lrt_FSupM$table$logFC<0)
 sum(FDR_FSupM<0.05 & lrt_FSupM$table$logFC>0)+sum(FDR_FSupM<0.05 & lrt_FSupM$table$logFC<0)
+<<<<<<< HEAD
 
 =======
 <<<<<<< HEAD
@@ -94,6 +99,9 @@ plotMD(lrt_FSupM, main="Female VS SuperMale",hl.col=c("blue","red"), bg.col="gre
 abline(h=c(-1,1), col="blue")
 >>>>>>> 6525f3c85b3ff9749df8bf943f406d46b74f65f8
 >>>>>>> 7855947ecb9001ee36647d07fdfecb2d38cad1e5
+=======
+
+>>>>>>> b6a7f296419edf6307028d7363142d2b54372506
 
 
 lrt_FM <- glmLRT(fit, coef=5) #female VS male
@@ -102,11 +110,15 @@ summary(de_FemvsMal <- decideTestsDGE(lrt_FM, adjust.method="fdr"))
 FDR_FMale<-p.adjust(lrt_FM$table$PValue,method="fdr") #adjust Pvalue
 sum(FDR_FMale<0.05) #221 significant differentially expressed genes
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> b6a7f296419edf6307028d7363142d2b54372506
 status<-rep("not significant",length(FDR_FMale))
 status[FDR_FMale<0.05 & lrt_FM$table$logFC>0]<-"up"
 status[FDR_FMale<0.05 & lrt_FM$table$logFC<0]<-"down"
 plotMD(lrt_FM, main="Male VS Female",hl.col=c("red","blue"),status = status, bg.col="grey")
 #abline(h=c(-1,1), col="blue")
+<<<<<<< HEAD
 
 =======
 plotMD(lrt_FM, main="Female VS Male")
@@ -115,6 +127,9 @@ plotMD(lrt_FM, main="Female VS Male")
 =======
 >>>>>>> 6525f3c85b3ff9749df8bf943f406d46b74f65f8
 >>>>>>> 7855947ecb9001ee36647d07fdfecb2d38cad1e5
+=======
+
+>>>>>>> b6a7f296419edf6307028d7363142d2b54372506
 
 lrt_MSupM <- glmLRT(fit, contrast=c(0,0,0,0,-1,1)) #Male VS Supermale
 summary(de_MalvsSupMal <- decideTestsDGE(lrt_MSupM, adjust.method="fdr"))
@@ -190,11 +205,8 @@ length(FMale_FSupM) #221 genes in vector, checking the length of the logic vecto
 FMale_MSupMale<-names_of_FMale_hit %in% names_of_MSupMale_hit
 sum(FMale_MSupMale)
 num_FMale_MSupMale<-sum(FMale_MSupMale) #2
-<<<<<<< HEAD
-=======
 
 
->>>>>>> 6525f3c85b3ff9749df8bf943f406d46b74f65f8
 length(FMale_MSupMale) #221 #check length of total to make sure it matches
 which_FMale_MSupMale<-which(names_of_FMale_hit %in% names_of_MSupMale_hit)
 which_FMale_MSupMale # returns indexes of the found names
