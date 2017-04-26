@@ -4,7 +4,7 @@
 
 This Github repository contains all the analysis that were made for the final project of the BCB546X course. The structure of directories is split in 4: 
 
-#### First, we have priginal paper, supplementary tables and the final presentation.
+#### First, we have original paper and the supplementary tables in the Paper_supplementary _data folder and the final presentation.
 
 #### Second, the Trimming_Analysis folder: 
 
@@ -24,6 +24,13 @@ This Github repository contains all the analysis that were made for the final pr
 
 * This folder contains all the analysis for the differential expression, using R, specially the [edgeR](http://bioconductor.org/packages/release/bioc/html/edgeR.html) package. The counting data for all the samples was retrieved by contacting the paper's authors.
 * The folder contains one README file with the description of all the md notebooks that were made for filtering the genes and making each group of figures, the input files, and all the md notebooks for making each figure.
+
+#### Figures folder
+
+* This folder contains the figures our group made for our analysis and the presentation.
+	* 
+
+
 
 *Valeria Velásquez was in charge of doing the transcriptome profiling analysis, and also took part in the edgeR gene filtering procedure to get the candidate genes for the differential expression analysis*
 
