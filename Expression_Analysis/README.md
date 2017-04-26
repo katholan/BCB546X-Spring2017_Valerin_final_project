@@ -1,1 +1,1 @@
-# This folder contains all the script for the differential expression analysis, using edgeR
+# This folder contains all the scripts for the differential expression analysis, using edgeR
