@@ -54,17 +54,14 @@ Then we can do the counting, having the reference where the mapping and counting
 After finishing we can inpect the nohup.out file
     
     $ tail nohup.out
-
-
-17000000 alignment lines are loaded!
-18000000 alignment lines are loaded!
-19000000 alignment lines are loaded!
-20000000 alignment lines are loaded!
-21000000 alignment lines are loaded!
-Bam output file is generated!
-Time Used for EM.cpp : 0 h 04 m 05 s
-
-rm -rf SRR1642915_counting.temp
+	17000000 alignment lines are loaded!
+	18000000 alignment lines are loaded!
+	19000000 alignment lines are loaded!
+	20000000 alignment lines are loaded!
+	21000000 alignment lines are loaded!
+	Bam output file is generated!
+	Time Used for EM.cpp : 0 h 04 m 05 s
+	rm -rf SRR1642915_counting.temp
 
 That way we confirm that the analysis have finished as expected.
 
