@@ -26,13 +26,12 @@ cd <- cd[keep, , keep.lib.sizes=FALSE]
 cd<-calcNormFactors(cd) 
 colors <- c("black","black","black","darkgreen","darkgreen","darkgreen","blue","blue","blue", "red", "red")
 plotMDS(cd, col=colors, top = 250, gene.selection = "pairwise", main="MDS plot ")
-names<-c("female", "male","supermale","female", "male","supermale","female", "male")
-plotMDS(cd, col=colors, labels=names, top = 250, gene.selection = "pairwise")
 
 #design matrix of sex and line
 line<-factor(c(88,88,88,89,89,89,103,103,103,9,9))
 sex<-factor(c("XX","XY","YY","XX","XY","YY","XX","XY","YY","XX","XY"))
-design <- model.matrix(~line+sex)
+
+design <- model.matrix(~line+sex, data = df)
 rownames(design) <- colnames(cd)
 
 #estimates dispersion
