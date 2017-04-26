@@ -180,7 +180,7 @@ FSupM_MSupM <- sum(detags_FSupM %in% detags_MSupM)
 FM_FSupM_MSupM <- sum(detags_FM %in% detags_FSupM %in% detags_MSupM)
 
 ###Venn Diagram###
-###From devin
+###From Devin (edited by Kat)
 #install.packages('VennDiagram')
 library(VennDiagram)
 grid.newpage()
@@ -193,36 +193,8 @@ draw.triple.venn(area1 = FM, area2 = FSupM, area3 = MSupM,
                  cat.just=list(c(-0.2,4) , c(1,4) , c(0.5,-4)))
 
 
-###Venn Diagram of genes that matched between our analysis and the paper's
-###Kat
-paper_fsupm <- read.delim("paper_fsupm.txt")
-paper_fm <- read.delim("paper_fm.txt")
-paper_msupm <- read.delim("paper_msupm.txt")
-paper_fsupm <- as.vector(paper_fsupm)
-paper_fm <- as.vector(paper_fm)
-paper_msupm <- as.vector(paper_msupm)
-
-#p_fm_fsupm <- paper_fm %in% paper_fsupm
-#p_fm_msupm <- paper_fm %in% paper_msupm
-#p_fsupm_msupm <- paper_fsupm %in% paper_msupm
-#p_all <- paper_fm %in% paper_fsupm %in% paper_msupm
-
-compare_FM <- sum(detags_FM %in% paper_fm)
-compare_FSupM <- sum(detags_FSupM %in% paper_fsupm)
-compare_MSupM <- sum(detags_MSupM %in% paper_msupm)
-
-#FM_FSupM <- sum(detags_FM %in% detags_FSupM %in% p_fm_fsupm)
-#FM_MSupM <- sum(detags_FM %in% detags_MSupM %in% p_fm_msupm)
-#FSupM_MSupM <- sum(detags_FSupM %in% detags_MSupM %in% p_fsupm_msupm)
-
-compare_all <- sum(detags_FM %in% detags_FSupM %in% detags_MSupM %in% p_all)
-
-
-grid.newpage()
-draw.pairwise.venn(area1 = FM, area2 = paper_fm, cross.area = compare_FM,
-                 category = c("Ours", "Paper"), lty = "blank", 
-                 fill = c("skyblue", "pink1"),
-                 cex = 2, cat.cex = 2)
-
-
+###Breakdown of genes that matched between our analysis and the paper's
+compare_FM <- sum(detags_FM %in% paper_fm$gene_id)
+compare_FSupM <- sum(detags_FSupM %in% paper_fsupm$gene_id)
+compare_MSupM <- sum(detags_MSupM %in% paper_msupm$gene_id)
 ###---------------------------------------------------------------------------------------------------
