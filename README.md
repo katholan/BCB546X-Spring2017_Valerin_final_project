@@ -1,5 +1,5 @@
 # BCB546X Final project
-##Team Valerin: Valeria Velásquez, Katerina Holan, and Devin Molnau
+## Team Valerin: Valeria Velásquez, Katerina Holan, and Devin Molnau
 #### Research article: Harkess, A., Mercati, F., Shan, H. Y., Sunseri, F., Falavigna, A., & Leebens-Mack, J. (2015). Sex-biased gene expression in dioecious garden asparagus (Asparagus officinalis). New Phytologist, 207(3), 883–892. http://doi.org/10.1111/nph.13389
 
 ## Instructions
