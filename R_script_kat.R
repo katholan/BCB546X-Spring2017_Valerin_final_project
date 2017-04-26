@@ -83,7 +83,8 @@ plot + ylim(0,100)
 FPKM_matrix <- as.matrix(FPKM_matrix)
 
 my_palette <- colorRampPalette(c("turquoise4","white","maroon2"))(n = 1000)
-heatmap.2(FPKM_matrix, dendrogram="both", trace="none", scale="row", density.info="none", col=my_palette)
+heatmap.2(FPKM_matrix, dendrogram="both", trace="none", scale="row", density.info="none", col=my_palette,
+          srtCol=45, cexCol = 1)
 ###tutorial heatmap of 570 genes, only 9 lines (doesn't include 8A male or 10 supermale)
 ###---------------------------------------------------------------------------------------------------
 
@@ -122,6 +123,11 @@ colnames(uniq_detags) <- "gene_id"
 ###---------------------------------------------------------------------------------------------------
 ###heatmap
 ###pulling out only genes we found to be DE from the counts data
+library(ggplot2)
+#install.packages(c("reshape", "gplots"))
+library(reshape)
+library(gplots)
+
 cd_matrix <- as.matrix(cd)
 cd_df <- as.data.frame(cd_matrix)
 genenames <- uniq_detags$gene_id
@@ -129,8 +135,8 @@ genenames <- uniq_detags$gene_id
 library(data.table)
 setDT(cd_df, keep.rownames = TRUE)[]
 
-DEG_counts <- cd_df[cd_df$rn %in% genenames,]
-write.csv(DEG_counts, file = "DEG_counts.csv")
+#DEG_counts <- cd_df[cd_df$rn %in% genenames,]
+#write.csv(DEG_counts, file = "DEG_counts.csv")
 
 heatmap_counts <- read.csv("DEG_counts.csv", header = T, row.names = "rn")
 
@@ -140,7 +146,7 @@ heatmap_counts_matrix <- as.matrix(heatmap_counts)
 
 my_palette <- colorRampPalette(c("turquoise4","white","maroon2"))(n = 1000)
 
-heatmap.2(heatmap_counts_matrix, dendrogram="both", trace="none", scale="row", density.info="none", col=my_palette)
+heatmap.2(heatmap_counts_matrix, dendrogram="both", trace="none", scale="row", density.info="none", col=my_palette, srtCol=45, cexCol = 1)
 ###---------------------------------------------------------------------------------------------------
 
 
@@ -181,9 +187,10 @@ grid.newpage()
 draw.triple.venn(area1 = FM, area2 = FSupM, area3 = MSupM, 
                  n12 = FM_FSupM, n23 = FSupM_MSupM, n13 = FM_MSupM, 
                  n123 = FM_FSupM_MSupM, 
-                 category = c("Male vs Female", "Supermale VS female", "Supermale VS male"), lty = "blank", 
+                 category = c("Male vs Female", "Supermale vs female", "Supermale vs male"), lty = "blank", 
                  fill = c("skyblue", "pink1", "mediumorchid"),
-                 cex = 2, cat.cex = 2)
+                 cex = 2, cat.cex = 2,
+                 cat.just=list(c(-0.2,4) , c(1,4) , c(0.5,-4)))
 
 
 ###Venn Diagram of genes that matched between our analysis and the paper's
