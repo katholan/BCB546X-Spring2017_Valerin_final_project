@@ -11,14 +11,14 @@ The data is contained in the NCBI database, so, in order to get it we can downlo
 
     $ tar -xzf sratoolkit.current-centos_linux64.tar.gz
 
-After downloading and decompressing it we can get the raw sequences by calling fastq-dump on the SRA experiment number, as we can see in this web [page](https://www.ncbi.nlm.nih.gov/sra?linkname=bioproject_sra_all&from_uid=259909). For this analysis we are just downloading 2 datapoints, just as an example:
+After downloading and decompressing it we can get the raw sequences by calling fastq-dump on the SRA experiment number, as we can see in this web [page](https://www.ncbi.nlm.nih.gov/sra?linkname=bioproject_sra_all&from_uid=259909). For this analysis we are just downloading 2 datapoints, just as an example [https://trace.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?view=toolkit_doc&f=fastq-dump](https://trace.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?view=toolkit_doc&f=fastq-dump):
 
-Asparagus officinalis line 2 XX female postmeiotic bud(SRR1642915)
+*Asparagus officinalis* line 2 XX female postmeiotic bud(SRR1642915)
 
 
     $ ./sratoolkit.2.8.2-1-centos_linux64/bin/fastq-dump SRR1642915
 
-Asparagus officinalis line 8A XX female spear tip(SRR1639282)
+*Asparagus officinalis* line 8A XX female spear tip(SRR1639282)
 
     $ /sratoolkit.2.8.2-1-centos_linux64/bin/fastq-dump SRR1639282
 
@@ -103,6 +103,27 @@ Finally, we re run the FASTQC analysis and we can track the changes of each trim
     $ ./FastQC/fastqc SRR1642915_Adapt_Quali_9bp_trimmed.fastq
 	$ ./FastQC/fastqc SRR1642915_Adapt_Quali_9bp_noShortReads_trimmed.fastq
 
+Now we can [download](https://trace.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?view=toolkit_doc&f=fastq-dump) one of the paired-end read data and apply only the parameters that the author report for the trimming (reads with quality bigger than 20 Phred and lenght bigger than 40 bp)
+
+Asparagus officinalis line 10 YY supermale spear tip
+
+	$ ./sratoolkit.2.8.2-1-centos_linux64/bin/fastq-dump -I --split-files SRR1639681
+
+Assesing the raw quality
+
+	$ ./FastQC/fastqc SRR1639681_1.fastq
+	$ ./FastQC/fastqc SRR1639681_2.fastq
+
+Trimming:
+
+	$ cutadapt -q 20 -m 40 -o SRR1639681_1_trimmed.fastq SRR1639681_1.fastq
+	$ cutadapt -q 20 -m 40 -o SRR1639681_2_trimmed.fastq SRR1639681_2.fastq
+
+Assesing the raw quality
+
+	$ ./FastQC/fastqc SRR1639681_1_trimmed.fastq
+	$ ./FastQC/fastqc SRR1639681_2_trimmed.fastq
+
 ### Using MUlTIQC to summarize the results
 
 For installing MULTIQC we do:
@@ -113,4 +134,4 @@ Then for runnig it:
 
     $ multiqc .
 
-Then, it is earier to compare and look at the results. We can also look at each result separately
+Then, it is earier to compare and look at the results. We can also look at each result separately.
