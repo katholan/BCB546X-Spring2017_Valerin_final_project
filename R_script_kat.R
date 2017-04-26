@@ -17,25 +17,49 @@ genecounts <- read.csv("genecounts.csv", stringsAsFactors = F, row.names = "gene
 #class(genecounts$X88F)
 
 ###----------------------------------------------------------------------------------------------------------------
+###From Devin
+counts_data<-read.delim("Asparagus.RSEM_genecounts.txt", check.names=FALSE, stringsAsFactors = FALSE)
 
-
-
-###----------------------------------------------------------------------------------------------------------------
-###From Devin/Valeria
-counts_data <- read.delim("Asparagus.RSEM_genecounts.txt", check.names = F, stringsAsFactors = F)
-cd<-DGEList(counts=counts_data)
-keep <- rowSums(cpm(cd)>1) >= 3
+cd<-DGEList(counts=counts_data) 
+keep <- rowSums(cpm(cd)>1) >= 3 
 cd <- cd[keep, , keep.lib.sizes=FALSE]
-group_line<-factor(c(88,88,88,89,89,89,103,103,103,9,9))
-group_sex <- factor(c("Female", "Male",	"Super Male",	"Female",	"Male",	"Super Male",	"Female",	"Male",	"Super Male",	"Female",	"Male"))
-design <- model.matrix(~group_line + group_sex)
+cd<-calcNormFactors(cd) 
+colors <- c("black","black","black","darkgreen","darkgreen","darkgreen","blue","blue","blue", "red", "red")
+plotMDS(cd, col=colors, top = 250, gene.selection = "pairwise", main="MDS plot ")
+names<-c("female", "male","supermale","female", "male","supermale","female", "male")
+plotMDS(cd, col=colors, labels=names, top = 250, gene.selection = "pairwise")
+
+#design matrix of sex and line
+line<-factor(c(88,88,88,89,89,89,103,103,103,9,9))
+sex<-factor(c("XX","XY","YY","XX","XY","YY","XX","XY","YY","XX","XY"))
+design <- model.matrix(~line+sex)
 rownames(design) <- colnames(cd)
+
+#estimates dispersion
 cd <- estimateGLMCommonDisp(cd, design)
 cd <- estimateGLMTrendedDisp(cd, design)
 cd <- estimateGLMTagwiseDisp(cd, design)
-fit <- glmFit(cd, design)
+fit <- glmFit(cd, design) 
 
-###19980 genes.  almost the same
+###Comparisons
+
+#Female vs supermale
+lrt_FSupM <- glmLRT(fit, coef=6)
+summary(de_FemvsSupMal <- decideTestsDGE(lrt_FSupM, adjust.method="fdr"))
+FDR_FSupM <- p.adjust(lrt_FSupM$table$PValue, method="fdr") 
+sum(FDR_FSupM < 0.05) 
+
+#Female vs male
+lrt_FM <- glmLRT(fit, coef=5) #female VS male
+summary(de_FemvsMal <- decideTestsDGE(lrt_FM, adjust.method="fdr"))
+FDR_FMale<-p.adjust(lrt_FM$table$PValue,method="fdr") #adjust Pvalue
+sum(FDR_FMale<0.05)
+
+#Male vs supermale
+lrt_MSupM <- glmLRT(fit, contrast=c(0,0,0,0,-1,1)) #Male VS Supermale
+summary(de_MalvsSupMal <- decideTestsDGE(lrt_MSupM, adjust.method="fdr"))
+FDR_MSupMale<-p.adjust(lrt_MSupM$table$PValue,method="fdr")
+sum(FDR_MSupMale<0.05)
 ###----------------------------------------------------------------------------------------------------------------
 
 
@@ -58,7 +82,7 @@ plot + ylim(0,100)
 
 FPKM_matrix <- as.matrix(FPKM_matrix)
 
-my_palette <- colorRampPalette(c("green","black","red"))(n = 1000)
+my_palette <- colorRampPalette(c("turquoise4","white","maroon2"))(n = 1000)
 heatmap.2(FPKM_matrix, dendrogram="both", trace="none", scale="row", density.info="none", col=my_palette)
 ###tutorial heatmap of 570 genes, only 9 lines (doesn't include 8A male or 10 supermale)
 ###---------------------------------------------------------------------------------------------------
@@ -66,40 +90,23 @@ heatmap.2(FPKM_matrix, dendrogram="both", trace="none", scale="row", density.inf
 
 ###---------------------------------------------------------------------------------------------------
 ###female vs supermale
-lrt_FSupM <- glmLRT(fit, coef=6)
-summary(de_FemvsSupMal <- decideTestsDGE(lrt_FSupM, adjust.method="fdr"))
-FDR_FSupM <- p.adjust(lrt_FSupM$table$PValue, method="fdr")
-
 detags_FSupM <- rownames(cd)[as.logical(de_FemvsSupMal)]
-plotSmear(lrt_FSupM, de_FemvsSupMal.tags=detags)
-abline(h=c(-1, 1))
 
-sum(FDR_FSupM < 0.05)
-
+plotMD(lrt_FSupM, main="Female VS SuperMale", bg.col = "gray", hl.col = c("blue", "red"), status = (row.names(lrt_FSupM$table) %in% detags_FSupM), legend = "topright")
+abline(h=c(-1, 1), col = "red")
 
 ###female vs male
-lrt_FM <- glmLRT(fit, coef=5)
-summary(de_FemvsMal <- decideTestsDGE(lrt_FM, adjust.method="fdr"))
-FDR_FM <- p.adjust(lrt_FM$table$PValue, method="fdr")
-
 detags_FM <- rownames(cd)[as.logical(de_FemvsMal)]
-plotSmear(lrt_FM, de_FemvsMal.tags=detags_FM)
-abline(h=c(-1, 1))
 
-sum(FDR_FM < 0.05)
-
+plotMD(lrt_FM, main="Female VS Male", bg.col = "gray", hl.col = c("blue", "red"), status = (row.names(lrt_FSupM$table) %in% detags_FM), legend = "topright")
+abline(h=c(-1, 1), col = "red")
 
 ###male vs supermale
-lrt_MSupM <- glmLRT(fit, contrast=c(0,0,0,0,-1,1))
-summary(de_MalvsSupMal <- decideTestsDGE(lrt_MSupM, adjust.method="fdr"))
-FDR_MSupM <- p.adjust(lrt_MSupM$table$PValue, method="fdr")
-sum(FDR_MSupM < 0.05)
-
 detags_MSupM <- rownames(cd)[as.logical(de_MalvsSupMal)]
-plotSmear(lrt_FM, de_MalvsSupMal.tags=detags_MSupM)
-abline(h=c(-1, 1))
 
-sum(FDR_MSupM < 0.05)
+plotMD(lrt_MSupM, main="Male VS Supermale", bg.col = "gray", hl.col = c("blue", "red"), status = (row.names(lrt_FSupM$table) %in% detags_MSupM), legend = "topright")
+abline(h=c(-1, 1), col = "red")
+
 ###---------------------------------------------------------------------------------------------------
 
 
@@ -115,17 +122,22 @@ colnames(uniq_detags) <- "gene_id"
 ###---------------------------------------------------------------------------------------------------
 ###heatmap
 ###pulling out only genes we found to be DE from the counts data
-counts2 <- counts_data
-counts2 <- read.csv("genecounts.csv", stringsAsFactors = F)
+cd_matrix <- as.matrix(cd)
+cd_df <- as.data.frame(cd_matrix)
 genenames <- uniq_detags$gene_id
-DEG_counts <- counts2[counts2$gene_ID %in% genenames,]
+
+library(data.table)
+setDT(cd_df, keep.rownames = TRUE)[]
+
+DEG_counts <- cd_df[cd_df$rn %in% genenames,]
 write.csv(DEG_counts, file = "DEG_counts.csv")
 
-heatmap_counts <- read.csv("DEG_counts.csv", header = T, row.names = "gene_ID")
+heatmap_counts <- read.csv("DEG_counts.csv", header = T, row.names = "rn")
 
 ###introduces column with row numbers from original counts data frame
 heatmap_counts <- heatmap_counts[,2:12]
 heatmap_counts_matrix <- as.matrix(heatmap_counts)
+
 my_palette <- colorRampPalette(c("turquoise4","white","maroon2"))(n = 1000)
 
 heatmap.2(heatmap_counts_matrix, dendrogram="both", trace="none", scale="row", density.info="none", col=my_palette)
@@ -141,10 +153,8 @@ paper_msupm <- read.delim("paper_msupm.txt")
 paper_detags <- rbind(paper_fsupm, paper_fm, paper_msupm)
 uniq_paper_detags <- unique(paper_detags)
 
-sort(uniq_detags[,1])
-sort(uniq_paper_detags[,1])
 in_both <- sum(sort(uniq_detags[,]) %in% sort(uniq_paper_detags[,]))
-###516 common between our analysis and theirs
+###475 common between our analysis and theirs
 ###---------------------------------------------------------------------------------------------------
 
 
@@ -209,27 +219,3 @@ draw.pairwise.venn(area1 = FM, area2 = paper_fm, cross.area = compare_FM,
 
 
 ###---------------------------------------------------------------------------------------------------
-
-
-
-###---------------------------------------------------------------------------------------------------
-###from devin
-library(edgeR)
-counts_data<-read.delim("Asparagus.RSEM_genecounts.txt", check.names=FALSE, stringsAsFactors = FALSE) #read in gene counts
-cd<-DGEList(counts=counts_data) #convert gene count data to DGEList
-keep <- rowSums(cpm(cd)>1) >= 3 #filters out lowly expressed genes
-cd <- cd[keep, , keep.lib.sizes=FALSE]
-cd<-calcNormFactors(cd) #normalizes
-
-par(xpd = T)
-colors <- c("black","black","black","darkgreen","darkgreen","darkgreen","blue","blue","blue", "red", "red")
-names<-c("female", "male","supermale","female", "male","supermale","female", "male")
-plotMDS(cd, col=colors, labels=names, top = 250, gene.selection = "pairwise", main = "Multidimensional Scaling Plot")
-legend(3.5, 2.57, legend=c("Line 8A", "Line 8B","Line 10", "Line 9"), col= c("black","darkgreen","blue", "red"), title="Key", ncol = 1, pch = 19 )
-
-
-###make plots pretty/colored/etc
-###compare gene lists from comparisons to paper gene lists (detags), extract gene names that are different
-###double checking total number of unique DEGs from paper
-
-
