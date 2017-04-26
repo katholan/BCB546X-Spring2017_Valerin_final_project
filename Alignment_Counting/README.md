@@ -43,7 +43,7 @@ To install RSEM
 
 The first command that we will use will take the annotation file (supplementary information table S3 [http://onlinelibrary.wiley.com/doi/10.1111/nph.13389/full](http://onlinelibrary.wiley.com/doi/10.1111/nph.13389/full)
 
-We formatted the file, by taking just the first two columns and adding "Aspof_" prefix to each entry. Once this was dome we are ready for building the reference for the counting analysis. We should build this reference based on the trancriptome file, since there is no genome available for this specie yet (by using the `--transcript-to-gene-map` function)
+We formatted the file, by taking just the first two columns and adding "Aspof_" prefix to each entry. Once this was dome we are ready for building the reference for the counting analysis. We should build this reference based on the trancriptome file, since that was the way how the authors did the analysis (this step can also be done with the genome), by using the `--transcript-to-gene-map` function
 
     $ rsem-prepare-reference --transcript-to-gene-map ~/BCB546_final_project/data/rsem/asparagus_annotation.txt --bowtie2 --num-threads 10 ~/BCB546_final_project/data/bowtie_analysis/asparagus_transcriptome.fa asparagus_ref
 
@@ -54,17 +54,14 @@ Then we can do the counting, having the reference where the mapping and counting
 After finishing we can inpect the nohup.out file
     
     $ tail nohup.out
-
-
-17000000 alignment lines are loaded!
-18000000 alignment lines are loaded!
-19000000 alignment lines are loaded!
-20000000 alignment lines are loaded!
-21000000 alignment lines are loaded!
-Bam output file is generated!
-Time Used for EM.cpp : 0 h 04 m 05 s
-
-rm -rf SRR1642915_counting.temp
+	17000000 alignment lines are loaded!
+	18000000 alignment lines are loaded!
+	19000000 alignment lines are loaded!
+	20000000 alignment lines are loaded!
+	21000000 alignment lines are loaded!
+	Bam output file is generated!
+	Time Used for EM.cpp : 0 h 04 m 05 s
+	rm -rf SRR1642915_counting.temp
 
 That way we confirm that the analysis have finished as expected.
 

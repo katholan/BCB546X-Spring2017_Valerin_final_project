@@ -1,0 +1,11 @@
+PASS	Basic Statistics	SRR1642915_Adapt_Quali_9bp_trimmed.fastq
+PASS	Per base sequence quality	SRR1642915_Adapt_Quali_9bp_trimmed.fastq
+PASS	Per sequence quality scores	SRR1642915_Adapt_Quali_9bp_trimmed.fastq
+WARN	Per base sequence content	SRR1642915_Adapt_Quali_9bp_trimmed.fastq
+WARN	Per base GC content	SRR1642915_Adapt_Quali_9bp_trimmed.fastq
+WARN	Per sequence GC content	SRR1642915_Adapt_Quali_9bp_trimmed.fastq
+PASS	Per base N content	SRR1642915_Adapt_Quali_9bp_trimmed.fastq
+FAIL	Sequence Length Distribution	SRR1642915_Adapt_Quali_9bp_trimmed.fastq
+FAIL	Sequence Duplication Levels	SRR1642915_Adapt_Quali_9bp_trimmed.fastq
+FAIL	Overrepresented sequences	SRR1642915_Adapt_Quali_9bp_trimmed.fastq
+PASS	Kmer Content	SRR1642915_Adapt_Quali_9bp_trimmed.fastq
