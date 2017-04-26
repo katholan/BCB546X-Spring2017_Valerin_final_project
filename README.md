@@ -6,13 +6,13 @@ This Github repository contains all the analysis that were made for the final pr
 
 #### First, we have priginal paper, supplementary tables and the final presentation.
 
-#### Second, the FASTQC analysis folder: 
+#### Second, the Trimming_Analysis folder: 
 
 * It is the first part of the transcriptome profiling analysis, which comprisses the qualitity assesment of the raw and trimmed reads using [FASTQC](https://wiki.hpcc.msu.edu/display/Bioinfo/FastQC+Tutorial), the trimming using [cutadapt](https://github.com/marcelm/cutadapt) and the [MULTIQC](http://multiqc.info/) for summarizing the results.
 
 * The folder  contains one README.md file with the script for the pipeline and the output FASTQC and MULTIQC files for visualization. 
 
-#### Third, the Alignment_counting folder: 
+#### Third, the Alignment_Counting folder: 
 
 * This folder contains the second step in the transcriptome profiling analysis. The alignment and expression quantification using [bowtie2](http://bowtie-bio.sourceforge.net/bowtie2/index.shtml) and [RSEM](https://github.com/deweylab/RSEM). 
 
