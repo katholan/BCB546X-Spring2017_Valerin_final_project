@@ -4,7 +4,7 @@
 #The following is the script for expression data analysis
 
 #set directory
-setwd("C:/Users/Devin/Documents/GradSchool/IowaState/EEOB_546X/BCB546X-Spring2017_Valerin_final_project")
+setwd("C:/Users/Devin/Documents/GradSchool/IowaState/EEOB_546X/BCB546X-Spring2017_Valerin_final_project/Expression_Analysis")
 getwd()
 #import bioconductor and required libraries
 source("http://bioconductor.org/biocLite.R")
@@ -190,9 +190,9 @@ unique_genes
 length(unique_genes) #481 unique differentially expressed genes
 
 ###Compare to genes in paper### #script from Kat
-paper_fsupm <- read.delim("paper_fsupm.txt") #extracted gene_id column from supplementary table 1
-paper_fm <- read.delim("paper_fm.txt") # extracted gene_id column from supplementary table 1
-paper_msupm <- read.delim("paper_msupm.txt") #extracted gene_id column from supplementary table 1
+paper_fsupm <- read.delim("DF_gene_names/paper_fsupm.txt") #extracted gene_id column from supplementary table 1
+paper_fm <- read.delim("DF_gene_names/paper_fm.txt") # extracted gene_id column from supplementary table 1
+paper_msupm <- read.delim("DF_gene_names/paper_msupm.txt") #extracted gene_id column from supplementary table 1
 
 paper_detags <- rbind(paper_fsupm, paper_fm, paper_msupm) #combine all names from DF data of paper
 typeof(paper_detags) #type list, we want a vector
@@ -213,6 +213,8 @@ install.packages('VennDiagram')
 library(VennDiagram)
 grid.newpage()
 draw.triple.venn(area1 = num_FMale_hit, area2 = num_FSupM_hit, area3 = num_MSupMale_hit, n12 = num_FMale_FSupM, n23 = num_FSupM_MSupM, n13 = num_FMale_MSupMale, 
-                 n123 = num_FSupM_MSupM_FMale, category = c("Male vs Female", "Supermale VS female", "Supermale VS male"), lty = "blank", 
-                 fill = c("skyblue", "pink1", "mediumorchid"))
+                 n123 = num_FSupM_MSupM_FMale, category = c("Male VS Female", "Supermale VS female", "Supermale VS male"), lty = "blank", 
+                 fill = c("skyblue", "pink1", "mediumorchid"),
+                 cex = 1.5, cat.cex = 1.5,
+                 cat.just=list(c(-0.2,3) , c(1,3) , c(0.5,-3))) #formatting figured out by Kat
 
