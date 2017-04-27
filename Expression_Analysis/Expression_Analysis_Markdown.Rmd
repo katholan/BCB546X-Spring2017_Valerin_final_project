@@ -279,9 +279,9 @@ uniq_detags <- unique(detags_df)
 colnames(uniq_detags) <- "gene_id"
 
 ###DEGs from paper
-paper_fsupm <- read.delim("paper_fsupm.txt")
-paper_fm <- read.delim("paper_fm.txt")
-paper_msupm <- read.delim("paper_msupm.txt")
+paper_fsupm <- read.delim("DE_genes_names/paper_fsupm.txt")
+paper_fm <- read.delim("DE_genes_names/paper_fm.txt")
+paper_msupm <- read.delim("DE_genes_names/paper_msupm.txt")
 paper_detags <- rbind(paper_fsupm, paper_fm, paper_msupm)
 uniq_paper_detags <- unique(paper_detags)
 in_both <- sum(sort(uniq_detags[,]) %in% sort(uniq_paper_detags[,]))
@@ -300,8 +300,10 @@ workflow from https://github.com/alexharkess/PBIO_6550/wiki/Lab-8-:-Data-munging
 
 Tutorial heatmap using 9 out of 11 lines (missing 8A male and 10 supermale).  TMM normalized FPKM values for the 570 DE genes determined in the paper were used to generate the heatmap.
 ```{r}
+install.packages("reshape")
+install.packages("gplots")
+install.packages("ggplot2")
 library(ggplot2)
-#install.packages(c("reshape", "gplots"))
 library(reshape)
 library(gplots)
 
