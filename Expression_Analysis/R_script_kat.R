@@ -228,12 +228,19 @@ uniq_detags_aspof <- gsub("comp", "Aspof_comp", uniq_detags_vector)
 
 ###subset fpkm values by only those determined to be DEG
 deg_fpkm <- subset(fpkm_colnames, rownames(fpkm_colnames) %in% uniq_detags_aspof)
+deg_fpkm$FPKM_1 <- as.numeric(as.character(deg_fpkm$FPKM_1))
+deg_fpkm$FPKM_2 <- as.numeric(as.character(deg_fpkm$FPKM_2))
 
 ###make into matrix and generate heatmap
-deg_fpkm_matrix <- as.matrix(deg_fpkm)
-my_palette <- colorRampPalette(c("turquoise4","white","maroon2"))(n = 1000)
+#since FPKM values are strongly right-tailed with few very large numbers, a log2 transformation is done to better visualize the data.  1 is added the each value to prevent the 0s from being changed to infinity values
+deg_fpkm_log <- log2(deg_fpkm[,] + 1)
+#use summary to decide where you want to have your breaks.
+summary(deg_fpkm_log)
+#breaks sets how many colors in your gradient and what values get assigned what colors.  Max is 10.567
+breaks=seq(0, 11, by=0.1)
 
-breaks=seq(0, 100, by=1)
+deg_fpkm_matrix <- as.matrix(deg_fpkm_log)
+
 my_col <- colorpanel(n=length(breaks)-1,low="gray75",high="black")
 
 heatmap.2(deg_fpkm_matrix, breaks = breaks, dendrogram = "none", trace="none", density.info="none", col=my_col, srtCol=45, cexCol = 1)
