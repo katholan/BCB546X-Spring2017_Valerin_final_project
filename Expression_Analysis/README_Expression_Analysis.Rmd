@@ -211,6 +211,7 @@ FSupM_MSupM_FMale<-names_of_FMale_hit %in% names_of_FSupM_hit %in% names_of_MSup
 sum(FSupM_MSupM_FMale)
 num_FSupM_MSupM_FMale<-sum(FSupM_MSupM_FMale) #0 DF genes shared between all three groups
 ```
+
 Generating the VennDiagram
 ```{r}
 ###Venn Diagram###
@@ -229,4 +230,132 @@ draw.triple.venn(area1 = num_FMale_hit, area2 = num_FSupM_hit,
                 #dimensions courtesy of Kat
 
 ```
+
+
+Alternative code for generating Venn diagram
+```{r}
+#getting genenames for the DE genes in Female vs supermale comparison 
+detags_FSupM <- rownames(cd)[as.logical(de_FemvsSupMal)]
+#female vs male
+detags_FM <- rownames(cd)[as.logical(de_FemvsMal)]
+#male vs supermale
+detags_MSupM <- rownames(cd)[as.logical(de_MalvsSupMal)]
+
+#Getting numbers for each section of the Venn diagram
+FM <- length(detags_FM)
+FSupM <- length(detags_FSupM)
+MSupM <- length(detags_MSupM)
+FM_FSupM <- sum(detags_FM %in% detags_FSupM)
+FM_MSupM <- sum(detags_FM %in% detags_MSupM)
+FSupM_MSupM <- sum(detags_FSupM %in% detags_MSupM)
+FM_FSupM_MSupM <- sum(detags_FM %in% detags_FSupM %in% detags_MSupM)
+
+#generating Venn diagram
+#install.packages('VennDiagram')
+library(VennDiagram)
+grid.newpage()
+draw.triple.venn(area1 = FM, area2 = FSupM, area3 = MSupM, 
+                 n12 = FM_FSupM, n23 = FSupM_MSupM, n13 = FM_MSupM, 
+                 n123 = FM_FSupM_MSupM, 
+                 category = c("Male vs Female", "Supermale vs female", "Supermale vs male"),
+                 lty = "blank", 
+                 fill = c("skyblue", "pink1", "mediumorchid"),
+                 cex = 2, cat.cex = 2,
+                 cat.just=list(c(-0.2,4) , c(1,4) , c(0.5,-4)))
+```
+
+###DE Genes Breakdown
+Breakdown of gene names from each comparison from our analysis and from the paper's analysis, as well as a comparison of the DE genes from each comparison.
+```{r}
+#DE genes for each comparison
+detags_FSupM <- rownames(cd)[as.logical(de_FemvsSupMal)]
+detags_FM <- rownames(cd)[as.logical(de_FemvsMal)]
+detags_MSupM <- rownames(cd)[as.logical(de_MalvsSupMal)]
+
+###total number/names of unique DEGs in our analysis
+detags <- c(detags_FM, detags_FSupM, detags_MSupM)
+detags_df <- as.data.frame(detags)
+uniq_detags <- unique(detags_df)
+colnames(uniq_detags) <- "gene_id"
+
+###DEGs from paper
+paper_fsupm <- read.delim("paper_fsupm.txt")
+paper_fm <- read.delim("paper_fm.txt")
+paper_msupm <- read.delim("paper_msupm.txt")
+paper_detags <- rbind(paper_fsupm, paper_fm, paper_msupm)
+uniq_paper_detags <- unique(paper_detags)
+in_both <- sum(sort(uniq_detags[,]) %in% sort(uniq_paper_detags[,]))
+###475 common between our analysis and theirs
+
+###Breakdown of genes that matched between our analysis and the paper's
+compare_FM <- sum(detags_FM %in% paper_fm$gene_id)
+compare_FSupM <- sum(detags_FSupM %in% paper_fsupm$gene_id)
+compare_MSupM <- sum(detags_MSupM %in% paper_msupm$gene_id)
+
+```
+
+
+###Figure 4:  Heatmap
+workflow from https://github.com/alexharkess/PBIO_6550/wiki/Lab-8-:-Data-munging-and-visualization
+
+Tutorial heatmap using 9 out of 11 lines (missing 8A male and 10 supermale).  TMM normalized FPKM values for the 570 DE genes determined in the paper were used to generate the heatmap.
+```{r}
+library(ggplot2)
+#install.packages(c("reshape", "gplots"))
+library(reshape)
+library(gplots)
+
+FPKM_matrix <- read.table("TMM_normalized_FPKM_matrix.txt", header = T, row.names = 1)
+FPKM_matrix_melt <- melt(FPKM_matrix)
+plot <- ggplot(FPKM_matrix_melt, aes(x = variable, y = value)) + geom_boxplot() +
+  geom_jitter()
+plot
+plot + ylim(0,100)
+
+FPKM_matrix <- as.matrix(FPKM_matrix)
+
+my_palette <- colorRampPalette(c("turquoise4","white","maroon2"))(n = 1000)
+heatmap.2(FPKM_matrix, dendrogram="both", trace="none", scale="row", density.info="none", col=my_palette,
+          srtCol=45, cexCol = 1)
+
+```
+
+Since our assembly analysis only looked at 2 samples, we made a heatmap of just the counts data, instead of the FPKM values.
+Pulling out only genes we found to be DE from the counts data
+```{r}
+library(ggplot2)
+#install.packages(c("reshape", "gplots"))
+library(reshape)
+library(gplots)
+
+cd_matrix <- as.matrix(cd)
+cd_df <- as.data.frame(cd_matrix)
+genenames <- uniq_detags$gene_id
+library(data.table)
+setDT(cd_df, keep.rownames = TRUE)[]
+#DEG_counts <- cd_df[cd_df$rn %in% genenames,]
+#write.csv(DEG_counts, file = "DEG_counts.csv")
+heatmap_counts <- read.csv("DEG_counts.csv", header = T, row.names = "rn")
+
+```
+
+Importing the csv switched the row names column with the row numbers.  This removes the extra column of numbers and changes the heatmap to a matrix which is needed to input into the heatmap function.
+```{r}
+###introduces column with row numbers from original counts data frame
+heatmap_counts <- heatmap_counts[,2:12]
+heatmap_counts_matrix <- as.matrix(heatmap_counts)
+
+```
+
+Setting color palette for the heatmap, creating heatmap.
+```{r}
+my_palette <- colorRampPalette(c("turquoise4","white","maroon2"))(n = 1000)
+
+heatmap.2(heatmap_counts_matrix, dendrogram="both", trace="none", scale="row", density.info="none", col=my_palette, srtCol=45, cexCol = 1)
+
+```
+
+
+
+
 
