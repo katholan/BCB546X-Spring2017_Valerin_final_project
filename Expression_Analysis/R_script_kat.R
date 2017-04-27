@@ -81,9 +81,9 @@ plot + ylim(0,100)
 
 FPKM_matrix <- as.matrix(FPKM_matrix)
 
-my_palette <- colorRampPalette(c("turquoise4","white","maroon2"))(n = 1000)
+my_palette <- colorRampPalette(c("green", "black", "red"))(n = 1000)
 heatmap.2(FPKM_matrix, dendrogram="both", trace="none", scale="row", density.info="none", col=my_palette,
-          srtCol=45, cexCol = 1)
+          srtCol=45, cexCol = .9)
 ###tutorial heatmap of 570 genes, only 9 lines (doesn't include 8A male or 10 supermale)
 ###---------------------------------------------------------------------------------------------------
 
@@ -243,7 +243,7 @@ deg_fpkm_matrix <- as.matrix(deg_fpkm_log)
 
 my_col <- colorpanel(n=length(breaks)-1,low="gray75",high="black")
 
-heatmap.2(deg_fpkm_matrix, breaks = breaks, dendrogram = "none", trace="none", density.info="none", col=my_col, srtCol=45, cexCol = 1)
+heatmap.2(deg_fpkm_matrix, breaks = breaks, dendrogram = "row", trace="none", density.info="none", col=my_col, srtCol=360, cexCol = 2)
 
 
 
