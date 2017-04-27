@@ -13,3 +13,5 @@ The Df\_gene\_names directory contains 3 text files with the names of the differ
 The figures directory contains all figures generated during analysis.
 
 TMM\_normalized\_FPKM\_matrix.txt is a file used during heatmap clustering.
+
+SRR1639681_counting.genes.results and SRR1642915_counting.genes.results are the 2 samples that were run in the assembly pipeline that are used for generating the FPKM heatmap.

@@ -356,6 +356,60 @@ heatmap.2(heatmap_counts_matrix, dendrogram="both", trace="none", scale="row", d
 ```
 
 
+###Creating heatmap from samples that went through transcriptome pipeline
+read in the 2 files with FPKM values
+```{r}
+#read in files with FPKM.  from alignment counting folder
+samp1 <- read.delim("SRR1639681_counting.genes.results", stringsAsFactors = FALSE)
+samp2 <- read.delim("SRR1642915_counting.genes.results", stringsAsFactors = FALSE)
+ 
+```
+
+Join fpkm columns from each sample together into one data frame
+```{r}
+#rename fpkm columns with sample name
+
+colnames(samp1)[6] <- "FPKM_1"
+colnames(samp2)[6] <- "FPKM_2"
+
+joined_fpkm <- cbind(samp1$gene_id, samp1$FPKM_1, samp2$FPKM_2)
+joined_fpkm <- as.data.frame(joined_fpkm)
+
+```
+
+Rename rows with the gene_id names and label columns with sample numbers
+```{r}
+fpkm_rownames <- data.frame(joined_fpkm[,-1], row.names=joined_fpkm[,1])
+fpkm_colnames <- fpkm_rownames
+colnames(fpkm_colnames)[1] <- "FPKM_1"
+colnames(fpkm_colnames)[2] <- "FPKM_2"
+
+```
+
+gene id names are different format in uniq_detags and fpkm data frame so need to change uniq_detags to match those in fpkm (or vice-versa).  This turns out to be fairly easy with a simple find and replace function gsub()
+```{r}
+uniq_detags_vector <- as.vector(uniq_detags$gene_id)
+uniq_detags_aspof <- gsub("comp", "Aspof_comp", uniq_detags_vector)
+```
+
+subset fpkm values by only those determined to be DEG
+```{r}
+deg_fpkm <- subset(fpkm_colnames, rownames(fpkm_colnames) %in% uniq_detags_aspof)
+```
+
+make into matrix and generate heatmap
+```{r}
+deg_fpkm_matrix <- as.matrix(deg_fpkm)
+#breaks sets how many colors in your gradient and what values get assigned what colors
+breaks=seq(0, 100, by=1)
+#defines color palette.  Since there aren't negative values, only used 2 colors 
+my_col <- colorpanel(n=length(breaks)-1,low="gray75",high="black")
+
+#can add dendrogram to show clustering of genes or samples, but since there are only 2 samples doesn't make sense to show that cluster
+heatmap.2(deg_fpkm_matrix, breaks = breaks, dendrogram = "none", trace="none", density.info="none", col=my_col, srtCol=45, cexCol = 1)
+
+```
+
 
 
 

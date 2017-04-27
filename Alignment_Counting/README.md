@@ -104,4 +104,4 @@ If we want to get the statistics of the alignment process we can call
 
     $ rsem-plot-model SRR1639681_counting SRR1639681_models.pdf
 
-This analysis showed that with this sample we got the same number of reads, that is mainly because the initial quality of the reads was very good so the trimming procedure really did not make a big difference to the file. 86% of the reads were mapped to the transcriptome which correcponds with the data that the authors report.
+This analysis showed that with this sample we got the same number of reads, that is mainly because the initial quality of the reads was very good so the trimming procedure really did not make a big difference to the file. 86% of the reads were mapped to the transcriptome which corresponds with the data that the authors report.
