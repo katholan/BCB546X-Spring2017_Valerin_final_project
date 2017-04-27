@@ -197,3 +197,32 @@ compare_FM <- sum(detags_FM %in% paper_fm$gene_id)
 compare_FSupM <- sum(detags_FSupM %in% paper_fsupm$gene_id)
 compare_MSupM <- sum(detags_MSupM %in% paper_msupm$gene_id)
 ###---------------------------------------------------------------------------------------------------
+
+
+
+
+###---------------------------------------------------------------------------------------------------
+###Creating heatmap from samples that went through transcriptome pipeline
+
+#read in files with FPKM
+samp1 <- read.delim("SRR1639681_counting.genes.results", check.names=FALSE, stringsAsFactors = FALSE)
+samp2 <- read.delim("SRR1642915_counting.genes.results", check.names=FALSE, stringsAsFactors = FALSE)
+
+#join fpkm columns together
+#rename fpkm columns with sample name
+colnames(samp1)[] <- "FPKM_1"
+colnames(trSamp) <- "newname2"
+
+
+samp1_fpkm <- samp1[samp1$FPKM,] > 0
+
+
+
+
+
+
+
+
+
+
+
