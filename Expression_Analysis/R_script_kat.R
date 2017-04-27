@@ -204,6 +204,7 @@ compare_MSupM <- sum(detags_MSupM %in% paper_msupm$gene_id)
 ###---------------------------------------------------------------------------------------------------
 ###Creating heatmap from samples that went through transcriptome pipeline
 
+stringsAsFactors = F
 #read in files with FPKM
 samp1 <- read.delim("SRR1639681_counting.genes.results", stringsAsFactors = FALSE)
 samp2 <- read.delim("SRR1642915_counting.genes.results", stringsAsFactors = FALSE)
@@ -214,14 +215,28 @@ colnames(samp1)[6] <- "FPKM_1"
 colnames(samp2)[6] <- "FPKM_2"
 
 joined_fpkm <- cbind(samp1$gene_id, samp1$FPKM_1, samp2$FPKM_2)
+joined_fpkm <- as.data.frame(joined_fpkm)
+fpkm_rownames <- data.frame(joined_fpkm[,-1], row.names=joined_fpkm[,1])
+fpkm_colnames <- fpkm_rownames
+colnames(fpkm_colnames)[1] <- "FPKM_1"
+colnames(fpkm_colnames)[2] <- "FPKM_2"
 
-samp1_fpkm <- samp1[samp1$FPKM,] > 0
+###gene id names are different format in uniq_detags and fpkm data frame 
+###change uniq_detags to match those in fpkm
+uniq_detags_vector <- as.vector(uniq_detags$gene_id)
+uniq_detags_aspof <- gsub("comp", "Aspof_comp", uniq_detags_vector)
 
+###subset fpkm values by only those determined to be DEG
+deg_fpkm <- subset(fpkm_colnames, rownames(fpkm_colnames) %in% uniq_detags_aspof)
 
+###make into matrix and generate heatmap
+deg_fpkm_matrix <- as.matrix(deg_fpkm)
+my_palette <- colorRampPalette(c("turquoise4","white","maroon2"))(n = 1000)
 
+breaks=seq(0, 100, by=1)
+my_col <- colorpanel(n=length(breaks)-1,low="gray75",high="black")
 
-
-
+heatmap.2(deg_fpkm_matrix, breaks = breaks, dendrogram = "none", trace="none", density.info="none", col=my_col, srtCol=45, cexCol = 1)
 
 
 
