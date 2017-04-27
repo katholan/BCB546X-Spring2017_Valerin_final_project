@@ -1,10 +1,10 @@
 ---
-title: "README_Expression_Analysis"
+title: "Expression_Analysis_Markdown"
 author: "Devin Molnau and Katerina Holan"
 date: "April 25, 2017"
 output: html_document
 ---
-#README for Expression Analysis
+#Expression Analysis Markdown
 
 Figure 1 is a multidimensional scaling plot that represents the distance between all samples of Asparagus officinalis as the root-mean-square deviation. This was done to the top 250 most heterogeneously expressed genes in a pairwise comparison.
 
